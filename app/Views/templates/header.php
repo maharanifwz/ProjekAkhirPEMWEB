@@ -30,27 +30,3 @@
 </head>
 
 <body>
-    <section id="login">
-        <div class="container-fluid">
-            <h1>Masuk</h1>
-            <form action="#" method="POST">
-                <div>
-                    <label for="username">Username</label><br>
-                    <input type="text" name="username" id="username" required>
-                </div>
-                <div>
-                    <label for="password">Password</label><br>
-                    <input type="password" name="password" id="password" required>
-                </div>
-                <div>
-                    <button style="width: 300px" type="button" class="btn btn-primary">Masuk</button>
-                    <p class="submit-desc">Belum memiliki akun ? <span><a href="register.php" class="identity">Daftar
-                                disini</a></span>
-                    </p>
-                </div>
-            </form>
-        </div>
-    </section>
-</body>
-
-</html>
