@@ -36,7 +36,7 @@
             <header>
                 <nav class="navigasi">
                     <div href="#" class="logo">
-                        <img src="./images/logo.png" alt="Logo PetMate">
+                        <img src="../../public/images/logo.png" alt="Logo PetMate">
                         <a class="logo-desc">Pet<span class="identity">Mate</span></a>
                     </div>
                     <ul>
@@ -202,7 +202,7 @@
                 </div>
                 <div class="col">
                     <div className="logo">
-                        <img src="./images/logo.png" />
+                        <img src="../../public/images/logo.png" />
                         <a class="logo-desc">Pet<span class="identity">Mate</span></a>
                     </div>
                     <p>Dapatkan informasi terbaru tentang layanan dan promo dari Pet Mate</p>

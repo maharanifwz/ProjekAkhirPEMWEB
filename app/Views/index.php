@@ -49,7 +49,7 @@
             <header>
                 <nav class="navigasi">
                     <div href="#" class="logo">
-                        <img src="./images/logo.png" alt="Logo PetMate">
+                        <img src="../../public/images/logo.png" alt="Logo PetMate">
                         <a class="logo-desc">Pet<span class="identity">Mate</span></a>
                     </div>
                     <ul>
@@ -80,7 +80,7 @@
             <div class="container service-section">
                 <div class="row">
                     <div class="col service-desc-1">
-                        <img src="./images/service.png" alt="Service Image">
+                        <img src="../../public/images/service.png" alt="Service Image">
                         <h3 class="identity">Konsultasi</h3>
                         <p>Kami membantu Anda menemukan layanan konsultasi kesehatan hewan disekitarmu.</p>
                     </div>
@@ -144,18 +144,18 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col review-desc">
-                                    <img src="./images/review1.png" alt="Review 1">
+                                    <img src="../../public/images/review1.png" alt="Review 1">
                                     <h3>Meisya</h3>
                                     <p>PetMate membuat saya merasa tidak khawatir untuk memesan layanan konsultasi di
                                         kala pandemi.</p>
                                 </div>
                                 <div class="col review-desc">
-                                    <img src="./images/review2.png" alt="Review 2">
+                                    <img src="../../public/images/review2.png" alt="Review 2">
                                     <h3>Andrew</h3>
                                     <p>PetMate menyediakan layanan terbaik untuk merawat hewan peliharaan saya.</p>
                                 </div>
                                 <div class="col review-desc">
-                                    <img src="./images/review3.png" alt="Review 3">
+                                    <img src="../../public/images/review3.png" alt="Review 3">
                                     <h3>Hanan</h3>
                                     <p>Temukan komunitas pada PetMate mempertemukan saya dengan penyayang hewan
                                         peliharaan lain.</p>
@@ -167,19 +167,19 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col review-desc">
-                                    <img src="./images/review1.png" alt="Review 1">
+                                    <img src="../../public/images/review1.png" alt="Review 1">
                                     <h3>Meisya</h3>
                                     <p>PetMate membuat saya merasa tidak khawatir untuk memesan layanan konsultasi
                                         di
                                         kala pandemi.</p>
                                 </div>
                                 <div class="col review-desc">
-                                    <img src="./images/review2.png" alt="Review 2">
+                                    <img src="../../public/images/review2.png" alt="Review 2">
                                     <h3>Andrew</h3>
                                     <p>PetMate menyediakan layanan terbaik untuk merawat hewan peliharaan saya.</p>
                                 </div>
                                 <div class="col review-desc">
-                                    <img src="./images/review3.png" alt="Review 3">
+                                    <img src="../../public/images/review3.png" alt="Review 3">
                                     <h3>Hanan</h3>
                                     <p>Temukan komunitas pada PetMate mempertemukan saya dengan penyayang hewan
                                         peliharaan lain.</p>
@@ -191,19 +191,19 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col review-desc">
-                                    <img src="./images/review1.png" alt="Review 1">
+                                    <img src="../../public/images/review1.png" alt="Review 1">
                                     <h3>Meisya</h3>
                                     <p>PetMate membuat saya merasa tidak khawatir untuk memesan layanan konsultasi
                                         di
                                         kala pandemi.</p>
                                 </div>
                                 <div class="col review-desc">
-                                    <img src="./images/review2.png" alt="Review 2">
+                                    <img src="../../public/images/review2.png" alt="Review 2">
                                     <h3>Andrew</h3>
                                     <p>PetMate menyediakan layanan terbaik untuk merawat hewan peliharaan saya.</p>
                                 </div>
                                 <div class="col review-desc">
-                                    <img src="./images/review3.png" alt="Review 3">
+                                    <img src="../../public/images/review3.png" alt="Review 3">
                                     <h3>Hanan</h3>
                                     <p>Temukan komunitas pada PetMate mempertemukan saya dengan penyayang hewan
                                         peliharaan lain.</p>
@@ -256,7 +256,7 @@
                 </div>
                 <div class="col">
                     <div className="logo">
-                        <img src="./images/logo.png" />
+                        <img src="../../public/images/logo.png" />
                         <a class="logo-desc">Pet<span class="identity">Mate</span></a>
                     </div>
                     <p>Dapatkan informasi terbaru tentang layanan dan promo dari Pet Mate</p>
