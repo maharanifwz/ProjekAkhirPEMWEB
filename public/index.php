@@ -1,6 +1,9 @@
 <?php
+require_once '..\vendor\autoload.php';
+use Kel1\ProjekAkhirPemweb\Routes;
+use Kel1\ProjekAkhirPemweb\Controllers\HomeController;
 
-// Router::add('GET','/', HomeController::class,'index');
+Routes::add('GET','/', HomeController::class,'index');
 // Router::add('GET','/aboutUs', HomeController::class,'aboutUs');
 // Router::add();
 // Router::add();
@@ -8,4 +11,4 @@
 // Router::add();
 // Router::add();
 
-// Router::run();
+Routes::run();

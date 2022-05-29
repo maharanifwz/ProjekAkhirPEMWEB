@@ -1,8 +1,9 @@
 <?php
-
+namespace Kel1\ProjekAkhirPemweb;
+use Kel1\Petmate\Controllers\HomeController;
 // namespace quiz2;
 
-class Router{
+class Routes{
     private static array $routes = [];
 
     public static function add(string $method, string $path, string $controller, string $function):void
