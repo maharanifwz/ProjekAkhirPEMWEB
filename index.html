@@ -47,7 +47,7 @@
     <div class="container-fluid">
         <div class="wrapper">
             <header>
-                <nav>
+                <nav class="navigasi">
                     <div href="#" class="logo">
                         <img src="./images/logo.png" alt="Logo PetMate">
                         <a class="logo-desc">Pet<span class="identity">Mate</span></a>
