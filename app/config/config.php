@@ -1,6 +1,6 @@
 <?php
 
-define('BASEURL', 'http://localhost/quiz2MVC/public');
+define('BASEURL', 'http://localhost/ProjekAkhirPEMWEB/ProjekAkhirPEMWEB/public');
 
 // Database
 // define('DB_HOST' , 'localhost');
