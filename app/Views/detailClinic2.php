@@ -36,7 +36,7 @@
             <header>
                 <nav class="navigasi">
                     <div href="#" class="logo">
-                        <img src="./images/logo.png" alt="Logo PetMate">
+                        <img src="../../public/images/logo.png" alt="Logo PetMate">
                         <a class="logo-desc">Pet<span class="identity">Mate</span></a>
                     </div>
                     <ul>
@@ -67,7 +67,7 @@
                 <div class="container">
                     <div class="row">
                         <div class="col">
-                            <img src="./images/detailclinic.png" alt="Detail Clinic">
+                            <img src="../../public/images/detailclinic.png" alt="Detail Clinic">
                             <div class="detailClinic-ket">
                                 <p>Rumah Sakit Hewan Dinas Peternakan Provinsi Jawa Timur pada awalnya adalah sebuah
                                     Klinik
@@ -149,7 +149,7 @@
                 </div>
                 <div class="col">
                     <div className="logo">
-                        <img src="./images/logo.png" />
+                        <img src="../../public/images/logo.png" />
                         <a class="logo-desc">Pet<span class="identity">Mate</span></a>
                     </div>
                     <p>Dapatkan informasi terbaru tentang layanan dan promo dari Pet Mate</p>
