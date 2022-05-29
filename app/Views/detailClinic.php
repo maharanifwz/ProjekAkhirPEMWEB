@@ -18,7 +18,7 @@
         crossorigin="anonymous"></script>
 
     <!-- Link CSS -->
-    <link rel="stylesheet" href="http://localhost/ProjekAkhirPEMWEB/public/css/styles.css">
+    <link rel="stylesheet" href="styles.css">
 
     <!-- Link Google Fonts -->
     <!-- Roboto -->
