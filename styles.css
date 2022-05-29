@@ -535,7 +535,11 @@ footer hr {
 }
 
 .btn-detail {
-    width: 255px;
-    height: 50px;
+    width: 260px;
+    height: 40px;
     margin-top: 25px;
+}
+
+.form-select {
+    margin-top: 18px;
 }
