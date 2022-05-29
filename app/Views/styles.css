@@ -62,7 +62,9 @@ p {
     color: #353F28;
 }
 
+
 /* navbar */
+
 .wrapper {
     width: 90%;
     margin: 0 auto;
@@ -82,10 +84,12 @@ p {
     background: #FFFFFF;
 }
 
+
 /* .navigasi .sticky {
     padding: 5px 10px;
     background: black;
 } */
+
 
 /* header .sticky .logo,
 header .sticky ul li a {
@@ -150,6 +154,7 @@ header .sticky ul li a {
     display: none;
 }
 
+
 /* logo */
 
 .logo {
@@ -172,12 +177,14 @@ header .sticky ul li a {
     color: #829C5F;
 }
 
+
 /* landing page */
+
 .heroBlock {
     padding: 150px 0;
     height: 100vh;
     margin-left: 70px;
-    background-image: url('./images/banner.png');
+    background-image: url('../../public/images/banner.png');
     background-repeat: no-repeat;
     background-position: right bottom 150%;
 }
@@ -213,7 +220,9 @@ header .sticky ul li a {
     --bs-btn-hover-color: var(--bs-white);
 }
 
+
 /* service */
+
 #service {
     background: #F6EDD9;
     height: 100vh;
@@ -260,11 +269,13 @@ header .sticky ul li a {
     margin-left: 190px;
 }
 
+
 /* benefit */
+
 #benefit {
     padding: 60px 0;
     margin-left: 70px;
-    background-image: url('./images/banner2.png');
+    background-image: url('../../public/images/banner2.png');
     background-repeat: no-repeat;
     background-position: right 105% bottom 100%;
 }
@@ -320,7 +331,9 @@ header .sticky ul li a {
     margin-left: 415px;
 }
 
+
 /* review */
+
 #review {
     height: 100vh;
     padding-top: 65px;
@@ -374,6 +387,7 @@ header .sticky ul li a {
     left: 700px;
 }
 
+
 /* 
 .carousel-indicators [data-bs-target] {
     background-color: aqua;
@@ -384,7 +398,9 @@ header .sticky ul li a {
     z-index: 2;
 } */
 
+
 /* footer */
+
 footer {
     padding: 60px 0 15px;
 }
@@ -428,9 +444,11 @@ footer hr {
     margin-top: 75px;
 }
 
+
 /* login dan sign in */
+
 #login {
-    background: url('./images/login.png');
+    background: url('../../public/images/login.png');
     background-position: right;
     background-repeat: no-repeat;
     height: 100vh;
@@ -459,9 +477,11 @@ footer hr {
     margin-bottom: 25px;
 }
 
+
 /* consultation */
+
 #consultation {
-    background-image: url('./images/banner3.png');
+    background-image: url('../../public/images/banner3.png');
     background-repeat: no-repeat;
     background-position: right 5% bottom;
     margin-left: 70px;
@@ -476,7 +496,9 @@ footer hr {
     margin-bottom: 0;
 }
 
+
 /* faq */
+
 #faq {
     width: 900px;
     height: 600px;
@@ -499,13 +521,17 @@ footer hr {
     --bs-accordion-btn-focus-box-shadow: rgba(130, 156, 95, 0.3);
 }
 
+
 /* breadcrumb */
+
 .breadcrumb-item a {
     text-decoration: none;
     color: #829C5F;
 }
 
+
 /* detail clinic */
+
 #detailClinic {
     padding: 150px 0;
     height: 100vh;
