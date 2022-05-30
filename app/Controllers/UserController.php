@@ -3,7 +3,7 @@
 namespace Kel1\ProjekAkhirPemweb\Controllers;
 use Kel1\ProjekAkhirPemweb\Models\User_model;
 
-class UserController{
+class UserController extends Controller{
 
     private $username;
     private $nama;
@@ -29,7 +29,7 @@ class UserController{
     {
         session_unset();
         session_destroy();
-        $this_->view('index');
+        $this->view('index');
     }
 
 }
