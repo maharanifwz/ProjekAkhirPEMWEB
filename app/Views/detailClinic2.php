@@ -55,9 +55,16 @@
                             <div class="form-floating">
                                 <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
                                     <option selected>Pilih Jam Yang Tersedia</option>
-                                    <option value="1">10.00</option>
+                                    <?php
+                                    foreach ($data['jam'] as $jam) {
+                                    ?>
+                                        <option value=<?php (string)$jam?>><?= $jam ?></option>
+                                    <?php
+                                    }
+                                    ?>
+                                    <!-- <option value="1">10.00</option>
                                     <option value="2">13.00</option>
-                                    <option value="3">15.00</option>
+                                    <option value="3">15.00</option> -->
                                 </select>
                                 <label for="floatingSelect">Pilih jam disini</label>
                             </div>

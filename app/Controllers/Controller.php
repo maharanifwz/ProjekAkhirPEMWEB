@@ -1,4 +1,5 @@
 <?php
+
 namespace Kel1\ProjekAkhirPemweb\Controllers;
 
 class Controller
@@ -8,10 +9,10 @@ class Controller
         require_once '../app/Views/' . $view . '.php';
     }
 
-    public function show($path)
+    public function show($path, $data = [])
     {
         $this->view('templates/header');
-        $this->view($path);
+        $this->view($path, $data);
         $this->view('templates/footer');
     }
 

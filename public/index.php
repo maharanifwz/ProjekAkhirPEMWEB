@@ -1,6 +1,7 @@
 <?php
 require_once '..\vendor\autoload.php';
 require_once '..\app\config\config.php';
+require_once '..\app\core\Database.php';
 use Kel1\ProjekAkhirPemweb\Routes;
 use Kel1\ProjekAkhirPemweb\Controllers\HomeController;
 use Kel1\ProjekAkhirPemweb\Controllers\UserController;
