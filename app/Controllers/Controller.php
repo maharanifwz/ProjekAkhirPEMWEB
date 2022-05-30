@@ -8,6 +8,13 @@ class Controller
         require_once '../app/Views/' . $view . '.php';
     }
 
+    public function show($path)
+    {
+        $this->view('templates/header');
+        $this->view($path);
+        $this->view('templates/footer');
+    }
+
     public function model($model, $data = [])
     {
         require_once '../app/models/' . $model . '.php';
