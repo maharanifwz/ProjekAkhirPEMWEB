@@ -10,12 +10,15 @@ Routes::add('GET','/', HomeController::class,'index');
 Routes::add('GET','/konsultasi', HomeController::class,'konsultasi');
 Routes::add('GET','/tentangKami', HomeController::class,'tentangKami');
 
-// Ini sementara pakai home controller
-Routes::add('GET','/klinik', HomeController::class,'klinik');
+
 
 // User
 Routes::add('GET','/login', HomeController::class,'login');
 Routes::add('GET','/register', HomeController::class,'register');
+
+// Booking
+Routes::add('GET','/klinik', BookingController::class,'index');
+Routes::add('GET','/check_availability', BookingController::class,'check_availability');
 
 
 Routes::run();

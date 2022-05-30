@@ -22,13 +22,6 @@ class HomeController extends Controller{
         // $this->view('templates/footer');
     }
 
-    // Sementara ini di sini dulu
-    public function klinik()
-    {
-        $this->show('detailClinic');
-    }
-
-
     public function login()
     {
         $this->view('login');
