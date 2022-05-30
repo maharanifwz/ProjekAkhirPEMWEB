@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
     <!-- Link CSS -->
-    <link rel="stylesheet" href="<?= BASEURL ?>\css\styles.cssstyles.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>\css\styles.css">
 
     <!-- Link Google Fonts -->
     <!-- Roboto -->
@@ -30,3 +30,21 @@
 </head>
 
 <body>
+        <!-- navbar section -->
+    <div class="container-fluid">
+        <div class="wrapper">
+            <header>
+                <nav class="navigasi">
+                    <div href="/" class="logo">
+                        <img src="<?= BASEURL ?>/images/logo.png" alt="Logo PetMate">
+                        <a class="logo-desc">Pet<span class="identity">Mate</span></a>
+                    </div>
+                    <ul>
+                        <li><a href="<?= BASEURL ?>/konsultasi">Konsultasi</a></li>
+                        <li><a href="<?= BASEURL ?>/tentangKami">Tentang Kami</a></li>
+                        <li><a href="<?= BASEURL ?>/login">Masuk</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+    </div>

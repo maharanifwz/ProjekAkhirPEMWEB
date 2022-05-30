@@ -15,7 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
     <!-- Link CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="<?= BASEURL ?>\css\styles.css">
 
     <!-- Link Google Fonts -->
     <!-- Roboto -->
@@ -56,7 +56,7 @@
                 </div>
                 <div>
                     <button style="width: 300px" type="button" class="btn btn-primary">Masuk</button>
-                    <p class="submit-desc">Sudah memiliki akun ? <span><a href="register.php" class="identity">Masuk
+                    <p class="submit-desc">Sudah memiliki akun ? <span><a href="<?= BASEURL ?>\login" class="identity">Masuk
                                 disini</a></span>
                     </p>
                 </div>
