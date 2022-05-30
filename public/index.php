@@ -16,6 +16,7 @@ Routes::add('GET','/klinik', HomeController::class,'klinik');
 // User
 Routes::add('GET','/login', HomeController::class,'login');
 Routes::add('GET','/register', HomeController::class,'register');
+Routes::add('POST','/prosesRegister', UserController::class,'testing');
 
 
 Routes::run();

@@ -33,7 +33,7 @@
     <section id="login">
         <div class="container-fluid">
             <h1>Daftar</h1>
-            <form action="#" method="POST">
+            <form action="<?= BASEURL ?>\prosesRegister" method="POST">
                 <div>
                     <label for="name">Nama</label><br>
                     <input type="text" name="name" id="name" required>
@@ -55,7 +55,7 @@
                     <input type="password" name="password" id="password" required>
                 </div>
                 <div>
-                    <button style="width: 300px" type="button" class="btn btn-primary">Masuk</button>
+                    <button style="width: 300px" type="submit" class="btn btn-primary">Masuk</button>
                     <p class="submit-desc">Sudah memiliki akun ? <span><a href="<?= BASEURL ?>\login" class="identity">Masuk
                                 disini</a></span>
                     </p>
