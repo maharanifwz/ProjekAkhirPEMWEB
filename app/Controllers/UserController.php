@@ -1,9 +1,10 @@
 <?php
 
 namespace Kel1\ProjekAkhirPemweb\Controllers;
-use Kel1\ProjekAkhirPemweb\Models\User;
+use Kel1\ProjekAkhirPemweb\Models\User_model;
 
 class UserController extends Controller{
+<<<<<<< HEAD
 
     private $data = [];
 
@@ -30,6 +31,8 @@ class UserController extends Controller{
     {
         unset($this->data);
     }
+=======
+>>>>>>> 76e80a0d97ff8f65d3faf4669ce9e390e574c842
 
 
     public function fetchUname()
@@ -73,7 +76,7 @@ class UserController extends Controller{
     {
         session_unset();
         session_destroy();
-        $this_->view('index');
+        $this->view('index');
     }
 
 }

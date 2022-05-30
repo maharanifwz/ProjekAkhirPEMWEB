@@ -2,8 +2,7 @@
     <section id="detailClinic">
         <div class="container-fluid">
             <!-- breadcrumb -->
-            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);"
-                aria-label="breadcrumb">
+            <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Beranda</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Konsultasi</li>
@@ -45,16 +44,17 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="form-floating mb-3">
-                                <input type="date" class="form-control" id="floatingInput"
-                                    placeholder="Pilih Tanggal Konsultasi">
-                                <label for="floatingInput">Tanggal</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="Jumlah Hewan">
-                                <label for="floatingPassword">Jumlah Hewan</label>
-                            </div>
-                            <button type="button" class="btn btn-primary btn-detail">Cek Ketersediaan Jam Konsultasi</button>
+                            <form action="<?= BASEURL ?>/check_availability" method="GET">
+                                <div class="form-floating mb-3">
+                                    <input type="date" class="form-control" id="floatingInput" placeholder="Pilih Tanggal Konsultasi">
+                                    <label for="floatingInput">Tanggal</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="floatingInput" placeholder="Jumlah Hewan">
+                                    <label for="floatingPassword">Jumlah Hewan</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-detail">Cek Ketersediaan Jam Konsultasi</button>
+                            </form>
                         </div>
                     </div>
                 </div>
