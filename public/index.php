@@ -16,6 +16,7 @@ Routes::add('GET','/tentangKami', HomeController::class,'tentangKami');
 // User
 Routes::add('GET','/login', HomeController::class,'login');
 Routes::add('GET','/register', HomeController::class,'register');
+Routes::add('POST','/prosesRegister', UserController::class,'testing');
 
 // Booking
 Routes::add('GET','/klinik', BookingController::class,'index');
