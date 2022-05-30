@@ -18,7 +18,7 @@
         crossorigin="anonymous"></script>
 
     <!-- Link CSS -->
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="http://localhost:3000/public/css/styles.css">
 
     <!-- Link Google Fonts -->
     <!-- Roboto -->
