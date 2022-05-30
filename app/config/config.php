@@ -1,6 +1,6 @@
 <?php
 
-define('BASEURL', 'http://localhost/ProjekAkhirPEMWEB/ProjekAkhirPEMWEB/public');
+define('BASEURL', '../../public');
 
 // Database
 // define('DB_HOST' , 'localhost');

@@ -6,32 +6,44 @@ class HomeController extends Controller{
 
     public function index()
     {
-        return $this->view('index');
-    }
-
-    public function login()
-    {
-        return $this->view('login');
-    }
-
-    public function register()
-    {
-        return $this->view('register');
+        $this->view('templates/header');
+        $this->view('index');
+        $this->view('templates/footer');
     }
 
     public function konsultasi()
     {
-        return $this->view('konsultasi');
+        $this->view('templates/header');
+        $this->view('konsultasi');
+        $this->view('templates/footer');
     }
 
-    public function aboutUs()
+    public function tentangKami()
     {
-        return $this->view('aboutUs');
+        $this->view('templates/header');
+        $this->view('tentangKami');
+        // ini pengaturannya ada sendiri gak untuk ukuran divnya. Soalnya tabrakan.
+        // $this->view('templates/footer');
     }
 
-    public function riwayat()
+    // Sementara ini di sini dulu
+    public function klinik()
     {
-        return $this->view('riwayat');
+        $this->view('templates/header');
+        $this->view('detailClinic');
+        $this->view('templates/footer');
     }
+
+
+    public function login()
+    {
+        $this->view('login');
+    }
+
+    public function register()
+    {
+        $this->view('register');
+    }
+
 
 }

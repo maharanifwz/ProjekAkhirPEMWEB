@@ -1,67 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PetMate</title>
-
-    <!-- Font Awsome -->
-    <script src="https://kit.fontawesome.com/ea1f512027.js" crossorigin="anonymous"></script>
-
-    <!-- Link Bootstrap -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2"
-        crossorigin="anonymous"></script>
-
-    <!-- Link CSS -->
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Link Google Fonts -->
-    <!-- Roboto -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;0,900;1,400;1,500;1,700;1,900&display=swap"
-        rel="stylesheet">
-
-    <!-- Nunito -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link
-        href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-
-    <!-- Quicksand -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
-
-</head>
-
-<body>
-    <!-- navbar section -->
-    <div class="container-fluid">
-        <div class="wrapper">
-            <header>
-                <nav class="navigasi">
-                    <div href="#" class="logo">
-                        <img src="../../public/images/logo.png" alt="Logo PetMate">
-                        <a class="logo-desc">Pet<span class="identity">Mate</span></a>
-                    </div>
-                    <ul>
-                        <li><a href="#">Konsultasi</a></li>
-                        <li><a href="#">Tentang Kami</a></li>
-                        <li><a href="#">Masuk</a></li>
-                    </ul>
-                </nav>
-            </header>
-        </div>
-    </div>
-
     <!-- landing page -->
     <div class="heroBlock">
         <h1>Layanan terbaik untuk hewan peliharaan kesayanganmu</h1>
@@ -80,7 +16,7 @@
             <div class="container service-section">
                 <div class="row">
                     <div class="col service-desc-1">
-                        <img src="../../public/images/service.png" alt="Service Image">
+                        <img src="<?= BASEURL ?>/images/service.png" alt="Service Image">
                         <h3 class="identity">Konsultasi</h3>
                         <p>Kami membantu Anda menemukan layanan konsultasi kesehatan hewan disekitarmu.</p>
                     </div>
@@ -144,18 +80,18 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col review-desc">
-                                    <img src="../../public/images/review1.png" alt="Review 1">
+                                    <img src="<?= BASEURL ?>/images/review1.png" alt="Review 1">
                                     <h3>Meisya</h3>
                                     <p>PetMate membuat saya merasa tidak khawatir untuk memesan layanan konsultasi di
                                         kala pandemi.</p>
                                 </div>
                                 <div class="col review-desc">
-                                    <img src="../../public/images/review2.png" alt="Review 2">
+                                    <img src="<?= BASEURL ?>/images/review2.png" alt="Review 2">
                                     <h3>Andrew</h3>
                                     <p>PetMate menyediakan layanan terbaik untuk merawat hewan peliharaan saya.</p>
                                 </div>
                                 <div class="col review-desc">
-                                    <img src="../../public/images/review3.png" alt="Review 3">
+                                    <img src="<?= BASEURL ?>/images/review3.png" alt="Review 3">
                                     <h3>Hanan</h3>
                                     <p>Temukan komunitas pada PetMate mempertemukan saya dengan penyayang hewan
                                         peliharaan lain.</p>
@@ -167,19 +103,19 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col review-desc">
-                                    <img src="../../public/images/review1.png" alt="Review 1">
+                                    <img src="<?= BASEURL ?>/images/review1.png" alt="Review 1">
                                     <h3>Meisya</h3>
                                     <p>PetMate membuat saya merasa tidak khawatir untuk memesan layanan konsultasi
                                         di
                                         kala pandemi.</p>
                                 </div>
                                 <div class="col review-desc">
-                                    <img src="../../public/images/review2.png" alt="Review 2">
+                                    <img src="<?= BASEURL ?>/images/review2.png" alt="Review 2">
                                     <h3>Andrew</h3>
                                     <p>PetMate menyediakan layanan terbaik untuk merawat hewan peliharaan saya.</p>
                                 </div>
                                 <div class="col review-desc">
-                                    <img src="../../public/images/review3.png" alt="Review 3">
+                                    <img src="<?= BASEURL ?>/images/review3.png" alt="Review 3">
                                     <h3>Hanan</h3>
                                     <p>Temukan komunitas pada PetMate mempertemukan saya dengan penyayang hewan
                                         peliharaan lain.</p>
@@ -191,19 +127,19 @@
                         <div class="container">
                             <div class="row">
                                 <div class="col review-desc">
-                                    <img src="../../public/images/review1.png" alt="Review 1">
+                                    <img src="<?= BASEURL ?>/images/review1.png" alt="Review 1">
                                     <h3>Meisya</h3>
                                     <p>PetMate membuat saya merasa tidak khawatir untuk memesan layanan konsultasi
                                         di
                                         kala pandemi.</p>
                                 </div>
                                 <div class="col review-desc">
-                                    <img src="../../public/images/review2.png" alt="Review 2">
+                                    <img src="<?= BASEURL ?>/images/review2.png" alt="Review 2">
                                     <h3>Andrew</h3>
                                     <p>PetMate menyediakan layanan terbaik untuk merawat hewan peliharaan saya.</p>
                                 </div>
                                 <div class="col review-desc">
-                                    <img src="../../public/images/review3.png" alt="Review 3">
+                                    <img src="<?= BASEURL ?>/images/review3.png" alt="Review 3">
                                     <h3>Hanan</h3>
                                     <p>Temukan komunitas pada PetMate mempertemukan saya dengan penyayang hewan
                                         peliharaan lain.</p>
@@ -228,47 +164,3 @@
 
     <!-- footer -->
     <footer>
-        <hr />
-        <div class="container">
-            <div class="row">
-                <div class="col">
-                    <h4>Mari Terhubung</h4>
-                    <ul class='socials'>
-                        <li><a href="https://www.facebook.com/"><i class="fa-brands fa-whatsapp-square fa-2x"></i></a>
-                        </li>
-                        <li><a href="https://www.twitter.com/"><i class="fa-brands fa-instagram-square fa-2x"></i></a>
-                        </li>
-                        <li><a href="https://www.instagram.com/"><i class="fa-brands fa-linkedin fa-2x"></i></a></li>
-                        <li><a href="https://www.instagram.com/"><i class="fa-brands fa-facebook-square fa-2x"></i></a>
-                        </li>
-                    </ul>
-                    <p class="copy">&copy; Pet Mate.2022.All rights reserved.</p>
-                </div>
-                <div class="col">
-                    <h4>Informasi Website</h4>
-                    <ul>
-                        <li>Konsultasi</li>
-                        <li>Layanan Grooming</li>
-                        <li>Komunitas</li>
-                        <li>Blog</li>
-                        <li>Tentang Kami</li>
-                    </ul>
-                </div>
-                <div class="col">
-                    <div className="logo">
-                        <img src="../../public/images/logo.png" />
-                        <a class="logo-desc">Pet<span class="identity">Mate</span></a>
-                    </div>
-                    <p>Dapatkan informasi terbaru tentang layanan dan promo dari Pet Mate</p>
-                    <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Email Anda" aria-label="Email Anda"
-                            aria-describedby="button-addon2">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">Submit</button>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </footer>
-</body>
-
-</html>
