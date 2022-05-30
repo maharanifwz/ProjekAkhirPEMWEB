@@ -1,7 +1,7 @@
 <?php
 
 namespace Kel1\ProjekAkhirPemweb\Controllers;
-use Kel1\ProjekAkhirPemweb\Models\User;
+use Kel1\ProjekAkhirPemweb\Models\User_model;
 
 class UserController{
 
