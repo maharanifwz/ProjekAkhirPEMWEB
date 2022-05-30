@@ -46,11 +46,11 @@
                         <div class="col">
                             <form action="<?= BASEURL ?>/check_availability" method="GET">
                                 <div class="form-floating mb-3">
-                                    <input type="date" class="form-control" id="floatingInput" placeholder="Pilih Tanggal Konsultasi" name="date" required>
+                                    <input type="date" class="form-control" id="floatingInput" placeholder="Pilih Tanggal Konsultasi" name="date" min=<?= date('Y-m-d') ?> required>
                                     <label for="floatingInput">Tanggal</label>
                                 </div>
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="floatingInput" placeholder="Jumlah Hewan" name="jumlahHewan" required>
+                                    <input type="number" class="form-control" id="floatingInput" placeholder="Jumlah Hewan" name="jumlahHewan" min = 1 max = 3 required>
                                     <label for="floatingPassword">Jumlah Hewan</label>
                                 </div>
                                 <button type="submit" class="btn btn-primary btn-detail">Cek Ketersediaan Jam Konsultasi</button>
