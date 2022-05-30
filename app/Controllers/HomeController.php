@@ -6,16 +6,12 @@ class HomeController extends Controller{
 
     public function index()
     {
-        $this->view('templates/header');
-        $this->view('index');
-        $this->view('templates/footer');
+        $this->show('index');
     }
 
     public function konsultasi()
     {
-        $this->view('templates/header');
-        $this->view('konsultasi');
-        $this->view('templates/footer');
+        $this->show('konsultasi');
     }
 
     public function tentangKami()
@@ -29,9 +25,7 @@ class HomeController extends Controller{
     // Sementara ini di sini dulu
     public function klinik()
     {
-        $this->view('templates/header');
-        $this->view('detailClinic');
-        $this->view('templates/footer');
+        $this->show('detailClinic');
     }
 
 

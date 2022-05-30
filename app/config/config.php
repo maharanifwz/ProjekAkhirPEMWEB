@@ -1,4 +1,5 @@
 <?php
+namespace Kel1\ProjekAkhirPemweb\config;
 
 define('BASEURL', '../../public');
 
