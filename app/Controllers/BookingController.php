@@ -12,7 +12,10 @@ class BookingController extends Controller{
 
     public function check_availability()
     {
-        $data['jam'] = $this->model('Booking_model')->getHour();
+        $booking_model = new Booking_model();
+
+        // $data['jam'] = $this->model('Booking_model')->getHour();
+        $data['jam'] = $booking_model->getHour($_GET["date"]);
         $this->show('detailClinic2',$data);
     }
 

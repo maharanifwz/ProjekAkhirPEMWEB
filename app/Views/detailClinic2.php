@@ -45,11 +45,11 @@
                         </div>
                         <div class="col">
                             <div class="form-floating mb-3">
-                                <input type="date" class="form-control" id="floatingInput" placeholder="Pilih Tanggal Konsultasi">
+                                <input type="date" class="form-control" id="floatingInput" placeholder="Pilih Tanggal Konsultasi" readonly="readonly">
                                 <label for="floatingInput">Tanggal</label>
                             </div>
                             <div class="form-floating">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="Jumlah Hewan">
+                                <input type="text" class="form-control" id="floatingInput" placeholder="Jumlah Hewan" readonly="readonly">
                                 <label for="floatingPassword">Jumlah Hewan</label>
                             </div>
                             <div class="form-floating">
@@ -58,7 +58,7 @@
                                     <?php
                                     foreach ($data['jam'] as $jam) {
                                     ?>
-                                        <option value=<?php (string)$jam?>><?= $jam ?></option>
+                                        <option value=<?php (string)$jam?>><?= (string)$jam ?></option>
                                     <?php
                                     }
                                     ?>
