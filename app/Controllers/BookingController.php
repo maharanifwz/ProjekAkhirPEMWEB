@@ -29,4 +29,10 @@ class BookingController extends Controller
         // $data['jam'] = $this->model('Booking_model')->getHour();
         $this->show('form');
     }
+
+    //Upload Image
+    public function insertInvoice()
+    {
+        
+    }
 }
