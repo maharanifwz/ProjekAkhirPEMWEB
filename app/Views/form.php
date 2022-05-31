@@ -23,47 +23,51 @@
                             </div>
                         </div>
                         <div class="col">
-                            <?php for ($i = 0; $i < (int)$data['jumlahHewan']; $i++) {
+                            <?php 
+                            
+                            for ($i = 0; $i < (int)$data['jumlahHewan']; $i++) {
+                                echo "<h3 class = 'identity'>Data Hewan ke-" . $i + 1 . " </h3>";
                             ?>
                                 <div class="row">
                                     <div class="col">
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="floatingInput" placeholder="Contoh: Chloe">
+                                            <?php echo "<input type='text' class='form-control' id='floatingInput' placeholder='Contoh: Chloe' name='name$i' required>"; ?>
                                             <label for="floatingInput">Nama Hewan</label>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                                <option selected>Pilih Jenis Hewan</option>
-                                                <option value="1">Kucing</option>
-                                                <option value="2">Anjing</option>
-                                                <option value="3">Burung</option>
+                                            <?php echo "<select class='form-select' id='floatingSelect' aria-label='Floating label select example' name='type$i' required>"; ?>
+                                            <option selected>Pilih Jenis Hewan</option>
+                                            <option value="cat">Kucing</option>
+                                            <option value="dog">Anjing</option>
+                                            <option value="bird">Burung</option>
                                             </select>
                                             <label for="floatingSelect">Jenis Hewan</label>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="floatingRas" placeholder="Contoh: Pomeranian">
+                                            <?php echo "<input type='text' class='form-control' id='floatingRas' placeholder='Contoh: Pomeranian' name='race$i' required>"; ?>
                                             <label for="floatingRas">Ras</label>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                                <option selected>Pilih Jenis Kelamin</option>
-                                                <option value="1">Laki-laki</option>
-                                                <option value="2">Perempuan</option>
+
+                                            <?php echo "<select class='form-select' id='floatingSelect' aria-label='Floating label select example' name='gender$i' required>"; ?>
+                                            <option selected>Pilih Jenis Kelamin</option>
+                                            <option value="1">Laki-laki</option>
+                                            <option value="2">Perempuan</option>
                                             </select>
                                             <label for="floatingSelect">Jenis Kelamin</label>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="floatingBerat" placeholder="Contoh: 1 kg">
+                                            <?php echo "<input type='text' class='form-control' id='floatingBerat' placeholder='Contoh: 1 kg' name='weight$i' required>"; ?>
                                             <label for="floatingBerat">Berat Badan</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-floating mb-3">
-                                            <input type="text" class="form-control" id="floatingUmur" placeholder="Contoh: 1 tahun 2 bulan">
+                                            <?php echo "<input type='text' class='form-control' id='floatingUmur' placeholder='Contoh: 1.2 tahun' name='age$i' required>"; ?>
                                             <label for="floatingUmur">Umur</label>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <textarea class="form-control success" placeholder="Tuliskan Kelihan" id="floatingTextarea2" style="height: 100px" name="keluhan"></textarea>
+                                            <?php echo "<textarea class='form-control success' placeholder='Tuliskan Keluhan' id='floatingTextarea2' style='height: 100px' name='complaint$i' required></textarea>"; ?>
                                             <label for="floatingTextarea2">Keluhan</label>
                                         </div>
                                     </div>
