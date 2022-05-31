@@ -57,6 +57,7 @@
                 <h4>Andista Animal Care</h4>
                 <p>Jl. Kamboja No.2C, Jakarta Barat</p>
                 <p>09.00 - 24.00 WIB</p>
+            <button type="button" class="btn btn-outline-secondary">Lihat Kembali Detail Klinik</button>
             </div>
             <div class="col">
                 <div class="form-floating mb-3">
@@ -89,8 +90,17 @@
                     <label for="floatingBerat">Berat Badan</label>
                 </div>
             </div>
-            <div class="col">col</div>
-            <div class="col">col</div>
+            <div class="col">
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingUmur" placeholder="Contoh: 1 tahun 2 bulan">
+                    <label for="floatingUmur">Umur</label>
+                </div>
+                <div class="form-floating">
+                    <textarea class="form-control" placeholder="Tuliskan Kelihan" id="floatingTextarea2" style="height: 100px"></textarea>
+                    <label for="floatingTextarea2">Keluhan</label>
+                </div>
+                <button type="button" class="btn btn-primary">Lanjutkan ke Pembayaran</button>
+            </div>
         </div>
     </div>
 </body>
