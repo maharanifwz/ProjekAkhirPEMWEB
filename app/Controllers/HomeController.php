@@ -35,4 +35,9 @@ class HomeController extends Controller
     {
         $this->view('form');
     }
+
+    public function form2()
+    {
+        $this->show('form2');
+    }
 }

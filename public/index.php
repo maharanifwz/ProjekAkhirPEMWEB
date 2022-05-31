@@ -11,6 +11,7 @@ Routes::add('GET','/', HomeController::class,'index');
 Routes::add('GET','/konsultasi', HomeController::class,'konsultasi');
 Routes::add('GET','/tentangKami', HomeController::class,'tentangKami');
 Routes::add('GET','/form', HomeController::class,'form');
+Routes::add('GET','/form2', HomeController::class,'form2');
 
 
 
