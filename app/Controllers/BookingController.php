@@ -23,9 +23,8 @@ class BookingController extends Controller
     public function fill_data()
     {
         $this->data = $_POST;
-        // var_dump($this->data);
         $booking_model = new Booking_model();
-        $this->show('form');
+        $this->show('form', $_POST);
     }
 
     public function upload_invoice()
