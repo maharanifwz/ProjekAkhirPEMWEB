@@ -50,4 +50,9 @@ class HomeController extends Controller
     {
         $this->show('riwayatKonsultasi');
     }
+
+    public function riwayatKonsul2()
+    {
+        $this->show('riwayatKonsultasi2');
+    }
 }

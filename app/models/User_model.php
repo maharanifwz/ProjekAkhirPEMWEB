@@ -52,4 +52,19 @@ class User_model{
         $this->db->execute();
     }
 
+    public function addImage($filename)
+    {
+        $que = ("INSERT INTO testing (nama) VALUES ('$filename')");
+
+        $this->db->query($que);
+        $this->db->execute();
+    }
+
+    public function fetchImage()
+    {
+        $this->db->query("SELECT * FROM testing" );
+        return $this->db->resultSet();
+    }
+
+
 }

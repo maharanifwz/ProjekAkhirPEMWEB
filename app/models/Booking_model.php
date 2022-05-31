@@ -25,6 +25,11 @@ class Booking_model
         $this->db = new Database;
     }
 
+    public function __destruct()
+    {
+        unset($this->db);
+    }
+
     public function getAvailableHour($date, $jumlahHewan)
     {
         $hours = [];
@@ -56,4 +61,13 @@ class Booking_model
         }
         return $hours;
     }
+
+    //Upload Image
+    public function addImage($fileName)
+    {
+        $que = ("INSERT INTO riwayatkonsultasi (invoice) VALUES ('$filename')");
+        $this->db->query($que);
+        $this->db->execute();
+    }
+
 }

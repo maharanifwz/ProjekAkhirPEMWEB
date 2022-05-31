@@ -34,4 +34,9 @@ class BookingController extends Controller
         var_dump($this->data);
         $this->show('form2');
     }
+
+    //Upload Image
+    public function insertInvoice()
+    {
+    }
 }
