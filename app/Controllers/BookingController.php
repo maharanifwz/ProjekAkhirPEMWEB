@@ -15,8 +15,8 @@ class BookingController extends Controller
 
     public function check_availability()
     {
-        // $booking_model = new Booking_model();
-        $data['available_hour'] = $this->booking_model->getAvailableHour($_GET["date"], $_GET["jumlahHewan"]);
+        $booking_model = new Booking_model();
+        $data['available_hour'] = $booking_model->getAvailableHour($_GET["date"], $_GET["jumlahHewan"]);
         $this->show('detailClinic2', $data);
     }
 
