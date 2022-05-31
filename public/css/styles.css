@@ -579,8 +579,8 @@ footer hr {
 }
 
 /* tentang kami */
-.tentangKami {
-    padding: 150px 0;
+#tentangKami {
+    padding-top: 150px;
     margin-left: 70px;
     background-image: url('../../public/images/banner4.png');
     background-repeat: no-repeat;
@@ -593,7 +593,7 @@ footer hr {
     margin-bottom: 150px;
 }
 
-.tentangKami h3 {
+#tentangKami h3 {
     color: #4F692F;
 }
 
@@ -606,7 +606,6 @@ footer hr {
     align-items: center;
     padding: 5%;
     margin: 0 auto;
-    margin-bottom: 25px;
 }
 
 .tentangKami-box h2 {
@@ -627,14 +626,17 @@ footer hr {
 .formPendaftaran-desc {
     width: 1159px;
     height: 550px;
-    margin: 0 auto;
     background: #F6EDD9;
     border-radius: 10px;
-    padding: 5%;
+    padding: 6%;
+    margin: 0 auto;
     margin-bottom: 25px;
+    margin-right: 30px;
 }
 
-.btn-Form {
+.btn-Form,
+.btn-Form2,
+.btn-Bayar {
     width: 275.48px;
     margin-top: 50px;
 }
@@ -652,7 +654,6 @@ footer hr {
 }
 
 .clinic-box h4 {
-    margin-top: 15px;
     margin-bottom: 20px;
 }
 
@@ -666,7 +667,77 @@ footer hr {
     font-weight: 700;
 }
 
-.alert{
+.buktiBayar {
+    width: 250px;
+    text-align: center;
+}
+
+.clinic-box2 {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    padding: 2%;
+    flex: 0;
+}
+
+.logo-bca {
+    flex: 0;
+}
+
+.unggahBayar {
+    text-align: center;
+    align-items: center;
+}
+
+.btn-Bayar {
+    margin-top: 160px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.top,
+.clinic-box h4 {
+    margin-top: 15px;
+}
+
+.formPendaftaran2 {
+    justify-content: space-around;
+}
+
+.bca-container {
+    margin-top: 35px;
+}
+
+/* form 3 */
+
+.clinic-box3 {
+    width: 565px;
+    height: 425px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    align-items: center;
+    text-align: center;
+    margin: 0 auto;
+    padding: 5%;
+}
+
+.clinic-box3 h3 {
+    margin-bottom: 25px;
+}
+
+.fa-clock {
+    color: #829C5F;
+    margin-bottom: 25px;
+}
+
+.btn-Selesai {
+    margin-top: 50px;
+    width: 200px;
+}
+
+.alert {
     width: 350px;
     height: 40px;
     padding-top: 7px;

@@ -2,7 +2,8 @@
 
 namespace Kel1\ProjekAkhirPemweb\Controllers;
 
-class HomeController extends Controller{
+class HomeController extends Controller
+{
 
     public function index()
     {
@@ -35,5 +36,18 @@ class HomeController extends Controller{
         $this->view('form');
     }
 
+    public function form2()
+    {
+        $this->show('form2');
+    }
 
+    public function form3()
+    {
+        $this->show('form3');
+    }
+
+    public function riwayatKonsul()
+    {
+        $this->show('riwayatKonsultasi');
+    }
 }
