@@ -33,15 +33,27 @@ class BookingController extends Controller
 
     public function fill_data()
     {
+        // Initialize the session
+        session_start();
+
+        $_SESSION['date'] = $_POST['date'];
+        $_SESSION['jumlahHewan'] = $_POST['jumlahHewan'];
+        $_SESSION['jam'] = $_POST['jam'];
+
         $this->data = $_POST;
-        $booking_model = new Booking_model();
         $this->show('form', $_POST);
     }
 
     public function upload_invoice()
     {
-        array_push($this->data, $this->$_POST);
-        var_dump($this->data);
+        // Initialize the session
+        session_start();
+
+        foreach ($_POST as $key => $value){
+            $_SESSION[$key] = $value;
+        }
+        var_dump($_SESSION);
+
         $this->show('form2');
     }
 
@@ -63,6 +75,6 @@ class BookingController extends Controller
         // }else{
         //     echo "<script> alert('Tolong pilih gambar')</script>";
         // };
-        
+
     }
 }

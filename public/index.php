@@ -28,6 +28,7 @@ Routes::add('POST','/prosesRegister', UserController::class,'register');
 Routes::add('GET','/klinik', BookingController::class,'index');
 Routes::add('GET','/check_availability', BookingController::class,'check_availability');
 Routes::add('POST','/fill_data', BookingController::class,'fill_data');
+Routes::add('POST','/upload_invoice', BookingController::class,'upload_invoice');
 Routes::add('POST','/konfirmasi', BookingController::class,'insertInvoice');
 
 //Testing
