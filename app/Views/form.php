@@ -13,11 +13,11 @@
             <div class="container formPendaftaran-desc">
                 <form action="<?= BASEURL ?>/upload_invoice" method="POST">
                     <div class="row">
-                        <div class="col">
+                        <div class="col clinic-container">
                             <div class="clinic-box">
                                 <img src="../../public/images/form.png" src="Andista Animal Care">
                                 <h4>Andista Animal Care</h4>
-                                <p>J=Jl. Kamboja No.2C, Jakarta Barat</p>
+                                <p>Jl. Kamboja No.2C, Jakarta Barat</p>
                                 <p class="clinic-desc">09.00 - 24.00 WIB</p>
                                 <button type="button" class="btn btn-outline-secondary btn-Form">Lihat Kembali Detail Klinik</button>
                             </div>
@@ -68,6 +68,8 @@
                                         </div>
                                     </div>
                                 </div>
+                                <br>
+                                <br>
                             <?php
                             } ?>
                         </div>
