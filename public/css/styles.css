@@ -173,7 +173,7 @@ header .sticky ul li a {
     color: #829C5F;
 }
 
-.identity {
+.identity, th {
     color: #829C5F;
 }
 
@@ -617,7 +617,8 @@ footer hr {
 }
 
 /* form */
-#formPendaftaran {
+#formPendaftaran,
+#riwayatKonsultasi {
     padding: 150px 0;
     /* height: 100vh; */
     margin-left: 70px;
@@ -645,7 +646,8 @@ footer hr {
     margin-left: 50px;
 }
 
-.clinic-box {
+.clinic-box,
+.riwayat-box {
     width: 296px;
     height: 309px;
     background: #FFFFFF;
@@ -735,6 +737,35 @@ footer hr {
 .btn-Selesai {
     margin-top: 50px;
     width: 200px;
+}
+
+/* riwayat konsultasi */
+#riwayatKonsultasi {
+    margin-right: 30px;
+}
+
+.riwayat-box {
+    box-shadow: 0px 6px 4px rgba(37, 42, 49, 0.16);
+    height: 219px;
+    margin-right: 100px;
+    width: 500px;
+}
+
+.row>* {
+    max-width: fit-content;
+}
+
+table {
+    align-items: center;
+    text-align: center;
+}
+
+td {
+    width: 139px;
+}
+
+.fa-circle {
+    color: red;
 }
 
 .alert {
