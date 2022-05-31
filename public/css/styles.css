@@ -643,7 +643,8 @@ footer hr {
 }
 
 .btn-Form2 {
-    margin-left: 50px;
+    margin-top: 25px;
+    margin-left: 725px;
 }
 
 .clinic-box,
@@ -672,6 +673,7 @@ footer hr {
 .buktiBayar {
     width: 250px;
     text-align: center;
+    margin-top: 25px;
 }
 
 .clinic-box2 {
@@ -709,7 +711,8 @@ footer hr {
 }
 
 .bca-container {
-    margin-top: 35px;
+    margin-top: 45px;
+    align-items: center;
 }
 
 /* form 3 */
@@ -751,7 +754,7 @@ footer hr {
     width: 500px;
 }
 
-.row>* {
+#riwayatKonsultasi .row>* {
     max-width: fit-content;
 }
 
@@ -766,6 +769,10 @@ td {
 
 .fa-circle {
     color: red;
+}
+
+.riwayat-heading {
+    width: 700px;
 }
 
 .alert {
