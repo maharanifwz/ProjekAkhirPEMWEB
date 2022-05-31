@@ -112,7 +112,7 @@
                             <textarea class="form-control success" placeholder="Tuliskan Kelihan" id="floatingTextarea2" style="height: 100px"></textarea>
                             <label for="floatingTextarea2">Keluhan</label>
                         </div>
-                        <button type="button" class="btn btn-primary btn-Form btn-Form2">Lanjutkan ke Pembayaran</button>
+                        <button type="button" class="btn btn-primary btn-Form2">Lanjutkan ke Pembayaran</button>
                     </div>
                 </div>
             </div>

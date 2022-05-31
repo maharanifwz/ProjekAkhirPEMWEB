@@ -626,14 +626,16 @@ footer hr {
 .formPendaftaran-desc {
     width: 1159px;
     height: 550px;
-    margin: 0 auto;
     background: #F6EDD9;
     border-radius: 10px;
     padding: 5%;
     margin-bottom: 25px;
+    margin-right: 30px;
 }
 
-.btn-Form {
+.btn-Form,
+.btn-Form2,
+.btn-Bayar {
     width: 275.48px;
     margin-top: 50px;
 }
@@ -651,7 +653,6 @@ footer hr {
 }
 
 .clinic-box h4 {
-    margin-top: 15px;
     margin-bottom: 20px;
 }
 
@@ -665,7 +666,50 @@ footer hr {
     font-weight: 700;
 }
 
-.alert{
+.buktiBayar {
+    width: 250px;
+    text-align: center;
+}
+
+.clinic-box2 {
+    background: #FFFFFF;
+    border: 1px solid #E5E5E5;
+    border-radius: 10px;
+    padding: 2%;
+    flex: 0;
+}
+
+.logo-bca {
+    flex: 0;
+}
+
+.unggahBayar {
+    text-align: center;
+    align-items: center;
+}
+
+.btn-Bayar {
+    margin-top: 160px;
+}
+
+.bold {
+    font-weight: 700;
+}
+
+.top,
+.clinic-box h4 {
+    margin-top: 15px;
+}
+
+.formPendaftaran2 {
+    justify-content: space-around;
+}
+
+.bca-container {
+    margin-top: 35px;
+}
+
+.alert {
     width: 350px;
     height: 40px;
     padding-top: 7px;
