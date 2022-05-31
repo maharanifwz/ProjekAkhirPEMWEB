@@ -10,13 +10,15 @@ use Kel1\ProjekAkhirPemweb\Controllers\BookingController;
 Routes::add('GET','/', HomeController::class,'index');
 Routes::add('GET','/konsultasi', HomeController::class,'konsultasi');
 Routes::add('GET','/tentangKami', HomeController::class,'tentangKami');
+Routes::add('GET','/form', HomeController::class,'form');
 
 
 
 // User
 Routes::add('GET','/login', HomeController::class,'login');
+Routes::add('POST','/prosesLogin', UserController::class,'login');
 Routes::add('GET','/register', HomeController::class,'register');
-Routes::add('POST','/prosesRegister', UserController::class,'testing2');
+Routes::add('POST','/prosesRegister', UserController::class,'register');
 
 // Booking
 Routes::add('GET','/klinik', BookingController::class,'index');

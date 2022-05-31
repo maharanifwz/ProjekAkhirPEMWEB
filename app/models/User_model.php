@@ -15,13 +15,25 @@ class User_model{
         $this->db = new Database;
     }
 
-    // public function __destruct() {
-    //     unset($this->db);
-    // }
+    public function __destruct() {
+        unset($this->db);
+    }
 
-    public function getNama()
+    public function fetchUname($username)
     {
-        $this->db->query("SELECT nama FROM pengguna WHERE nama = 'chii' " );
+        $this->db->query("SELECT username FROM pengguna WHERE username = '$username' " );
+        return $this->db->resultSet();
+    }
+
+    public function fetchEmail($email)
+    {
+        $this->db->query("SELECT email FROM pengguna WHERE email = '$email' " );
+        return $this->db->resultSet();
+    }
+
+     public function fetchPwd($username)
+    {
+        $this->db->query("SELECT password FROM pengguna WHERE username = '$username' " );
         return $this->db->resultSet();
     }
 
@@ -32,6 +44,7 @@ class User_model{
         $email = $data['email'];
         $alamat = $data['alamat'];
         $pwd = $data['password'];
+
         $que = ("INSERT INTO pengguna  VALUES (
             NULL, '$nama','$username', '$email', '$alamat', '$pwd')");
 
