@@ -1,38 +1,9 @@
 <?php
 
 namespace Kel1\ProjekAkhirPemweb\Controllers;
-use Kel1\ProjekAkhirPemweb\Models\User_model;
+use Kel1\ProjekAkhirPemweb\models\User_model;
 
 class UserController extends Controller{
-<<<<<<< HEAD
-
-    private $data = [];
-
-    public function __construct()
-    {
-        $this->data = [
-            'name'=> $_POST['name'],
-            'username' => $_POST['username'],
-            'email' => $_POST['email'],
-            'password' => $_POST['password'],
-            'alamat' => $_POST['alamat']
-        ];
-        
-    }
-
-    public function testing()
-    {
-        // echo $this->data['name'];
-
-    }
-
-
-    public function destruct()
-    {
-        unset($this->data);
-    }
-=======
->>>>>>> 76e80a0d97ff8f65d3faf4669ce9e390e574c842
 
 
     public function fetchUname()
@@ -77,6 +48,41 @@ class UserController extends Controller{
         session_unset();
         session_destroy();
         $this->view('index');
+    }
+
+    public function testing()
+    {
+        $data = [];
+        $user = new User_model();
+        $data['nama'] = $user->getNama();
+        // $this->show('detailClinic2',$data);
+        // print json_encode($data);
+        foreach($data["nama"] as $listitem) {
+            $memo = $listitem["nama"];
+            echo $memo; echo "\n";
+        }
+    }
+
+    public function testing2()
+    {
+        $data = [
+            'nama' => 'chii',
+            'username' => 'ochi',
+            'email' => 'ochi@gmacil.com',
+            'alamat' => 'jln.Ochi',
+            'password' => '123'
+        ];
+        $user = new User_model();
+        $user->addUser($data);
+        // $this->show('detailClinic2',$data);
+        // print json_encode($data);
+        $data1['nama'] = $user->getNama();
+        // $this->show('detailClinic2',$data);
+        // print json_encode($data);
+        foreach($data1["nama"] as $listitem) {
+            $memo = $listitem["nama"];
+            echo $memo; echo "\n";
+        }
     }
 
 }
