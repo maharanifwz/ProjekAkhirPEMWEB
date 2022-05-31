@@ -31,7 +31,7 @@
 
 
 <body>
-        <!-- navbar section -->
+    <!-- navbar section -->
     <div class="container-fluid">
         <div class="wrapper">
             <header>
@@ -43,14 +43,13 @@
                     <ul>
                         <li><a href="<?= BASEURL ?>/konsultasi">Konsultasi</a></li>
                         <li><a href="<?= BASEURL ?>/tentangKami">Tentang Kami</a></li>
-                        <?php 
-                        if(isset($_SESSION['loginState'])){?>
+                        <?php
+                        if (isset($_SESSION['loginState'])) { ?>
                             <li><a href="<?= BASEURL ?>/login">Sudah Masuk</a></li>
-                        <?php }
-                        else {?>
+                        <?php } else { ?>
                             <li><a href="<?= BASEURL ?>/login">Masuk</a></li>
-                        <?php }?>
-                        
+                        <?php } ?>
+
                     </ul>
                 </nav>
             </header>
