@@ -34,6 +34,12 @@
         <div class="container-fluid">
             <h1>Masuk</h1>
             <form action="<?= BASEURL ?>\prosesLogin" method="POST">
+            <?php if(isset($_SESSION['state'])){?>
+                <div class="alert alert-danger" role="alert">
+                    <?php echo $_SESSION['state']?>
+                </div>
+            <?php } ;?>
+                
                 <div>
                     <label for="username">Username</label><br>
                     <input type="text" name="username" id="username" required>

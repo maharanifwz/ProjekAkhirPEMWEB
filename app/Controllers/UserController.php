@@ -2,7 +2,7 @@
 
 namespace Kel1\ProjekAkhirPemweb\Controllers;
 use Kel1\ProjekAkhirPemweb\models\User_model;
-// session_start();
+session_start();
 
 class UserController extends Controller{
 
@@ -16,7 +16,6 @@ class UserController extends Controller{
     public function __destruct()
     {
         unset($this->model);
-        // session_destroy();
     }
 
     public function register()
@@ -53,35 +52,32 @@ class UserController extends Controller{
             'username' => $_POST['username'],
             'password' => $_POST['password']
         ];
-
         
         $uname = $this->model->fetchUname($data['username']);
         $pwdHash = $this->model->fetchPwd($data['username']);
         
         //verify username
         if(!empty($uname)){
+            $_SESSION['state'] = "";
             if(!empty($pwdHash)){
                 $encodePwd = password_verify($data['password'], $pwdHash[0]['password']);
                 if(!$encodePwd){
-                    echo "<script>alert('Password Salah');</script>";
+                    $_SESSION['state'] = "Password Anda salah. Silahkan coba lagi!";
                     $this->view('login');
+                    unset($_SESSION['state']);
                     return;
                 }
-                //sementara gini
-                // if($pwdHash[0]['password'] != $data['password']){
-                //     echo "<script>alert('Password Salah');</script>";
-                //     $this->view('login');
-                //     return;
-                // };
             }
             //success
-            // $_SESSION['loginState'] = true;
+            $_SESSION['loginState'] = true;
+            unset($_SESSION['state']);
             $this->show('index');
             unset($data);
             return;
         };
-        echo "<script>alert('Username Salah');</script>";
+        $_SESSION['state'] = "Username Anda salah. Silahkan coba lagi!";
         $this->view('login');
+        unset($_SESSION['state']);
         return;
         
     }
@@ -90,47 +86,7 @@ class UserController extends Controller{
     {
         session_unset();
         session_destroy();
-        $this->view('index');
-    }
-
-    public function testing()
-    {
-        $data = [];
-        $user = new User_model();
-        $data['nama'] = $user->getNama();
-        // $this->show('detailClinic2',$data);
-        // print json_encode($data);
-        foreach($data["nama"] as $listitem) {
-            $memo = $listitem["nama"];
-            echo $memo; echo "\n";
-        }
-    }
-
-    public function testing2()
-    {
-        $data = [
-            'nama' => $_POST['name'],
-            'username' => $_POST['username'],
-            'email' => $_POST['email'],
-            'alamat' => $_POST['alamat'],
-            'password' => $_POST['password']
-        ];
-        $user = new User_model();
-        // $user->addUser($data);
-        $data1 = $user->fetchEmail($data['email']);
-        // $this->show('detailClinic2',$data);
-        // 
-        // foreach($data1["nama"] as $listitem) {
-        //     $memo = $listitem["nama"];
-        //     echo $memo; echo "\n";
-        // }
-        if(!empty($data1)){
-            print json_encode($data1);
-            // echo $data1[0]['username'];
-            return;
-        }
-        echo 'data tidak ada';
-        
+        $this->show('index');
     }
 
 }

@@ -608,3 +608,10 @@ footer hr {
 .tentangKami-box img {
     margin-bottom: 15px;
 }
+
+.alert{
+    width: 350px;
+    height: 40px;
+    padding-top: 7px;
+    border: 0;
+}

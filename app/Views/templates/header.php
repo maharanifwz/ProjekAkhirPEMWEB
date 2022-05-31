@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Detail Clinic</title>
+    <title>Pet Mate</title>
 
     <!-- Font Awsome -->
     <script src="https://kit.fontawesome.com/ea1f512027.js" crossorigin="anonymous"></script>
@@ -43,10 +43,11 @@
                     <ul>
                         <li><a href="<?= BASEURL ?>/konsultasi">Konsultasi</a></li>
                         <li><a href="<?= BASEURL ?>/tentangKami">Tentang Kami</a></li>
-                        <?php
-                        if (isset($_SESSION['loginState'])) { ?>
-                            <li><a href="<?= BASEURL ?>/login">Sudah Masuk</a></li>
-                        <?php } else { ?>
+                        <?php 
+                        if(isset($_SESSION['loginState'])){?>
+                            <li><a href="<?= BASEURL ?>/logout">Keluar</a></li>
+                        <?php }
+                        else {?>
                             <li><a href="<?= BASEURL ?>/login">Masuk</a></li>
                         <?php } ?>
 
