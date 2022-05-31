@@ -17,6 +17,7 @@ Routes::add('GET','/form', HomeController::class,'form');
 // User
 Routes::add('GET','/login', HomeController::class,'login');
 Routes::add('POST','/prosesLogin', UserController::class,'login');
+Routes::add('GET','/logout', UserController::class,'logout');
 Routes::add('GET','/register', HomeController::class,'register');
 Routes::add('POST','/prosesRegister', UserController::class,'register');
 

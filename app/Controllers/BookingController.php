@@ -27,6 +27,6 @@ class BookingController extends Controller
         $booking_model = new Booking_model();
 
         // $data['jam'] = $this->model('Booking_model')->getHour();
-        $this->show('detailClinic');
+        $this->show('form');
     }
 }

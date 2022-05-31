@@ -665,3 +665,10 @@ footer hr {
     color: #4F692F;
     font-weight: 700;
 }
+
+.alert{
+    width: 350px;
+    height: 40px;
+    padding-top: 7px;
+    border: 0;
+}
