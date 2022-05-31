@@ -32,13 +32,13 @@
                     </div>
                     <button type="button" class="btn btn-primary btn-Form">Unggah Bukti Pembayaran</button>
                 </div>
-                <div class="col clinic-box2">
+                <form action="<?= BASEURL ?>/konfirmasi" method="post" class="col clinic-box2" enctype="multipart/form-data">
                     <div class="mb-3 unggahBayar">
                         <label for="formFile" class="form-label">Default file input example</label>
-                        <input class="form-control" type="file" id="formFile">
+                        <input class="form-control" type="file" id="formFile" name="invoice">
                     </div>
-                    <button type="button" class="btn btn-outline-secondary btn-Bayar">Konfirmasi Pembayaran</button>
-                </div>
+                    <button type="submit" class="btn btn-outline-secondary btn-Bayar" name="konfirm">Konfirmasi Pembayaran</button>
+                </form>
             </div>
         </div>
 </section>

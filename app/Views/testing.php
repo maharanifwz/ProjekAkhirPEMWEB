@@ -24,9 +24,7 @@
         <form method="POST"
               action="<?= BASEURL?>/testingprocess"
               enctype="multipart/form-data">
-            <input type="file"
-                   name="uploadfile"
-                   value="" />
+            <input type="file" name="uploadfile" value="" />
  
             <div>
                 <button type="submit"

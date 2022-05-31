@@ -63,9 +63,9 @@ class Booking_model
     }
 
     //Upload Image
-    public function addImage($fileName)
+    public function addImage($fileName, $id)
     {
-        $que = ("INSERT INTO riwayatkonsultasi (invoice) VALUES ('$filename')");
+        $que = ("UPDATE riwayatkonsultasi  SET invoice = '$fileName' WHERE id =' $id' ");
         $this->db->query($que);
         $this->db->execute();
     }
