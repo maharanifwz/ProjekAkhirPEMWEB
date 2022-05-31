@@ -653,6 +653,10 @@ footer hr {
     margin-left: 725px;
 }
 
+.clinic-container {
+    flex: 0;
+}
+
 .clinic-box,
 .riwayat-box {
     width: 296px;
