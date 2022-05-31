@@ -5,7 +5,7 @@
             <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Beranda</a></li>
-                    <li class="breadcrumb-item active" aria-current="page">Konsultasi</li>
+                    <li class="breadcrumb-item" aria-current="page">Konsultasi</li>
                     <li class="breadcrumb-item active" aria-current="page">Andista Animal Care</li>
                 </ol>
             </nav>
@@ -44,13 +44,13 @@
                             </div>
                         </div>
                         <div class="col">
-                            <form action="<?= BASEURL ?>/fill_data" method="GET">
+                            <form action="<?= BASEURL ?>/fill_data" method="POST">
                                 <div class="form-floating mb-3">
-                                    <input type="date" class="form-control" id="floatingInput" value="<?= $_GET['date'] ?>" readonly="readonly">
+                                    <input type="date" class="form-control" id="floatingInput" value="<?= $_GET['date'] ?>" name="date" readonly="readonly">
                                     <label for="floatingInput">Tanggal</label>
                                 </div>
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="floatingInput" value="<?= $_GET['jumlahHewan'] ?>" readonly="readonly">
+                                    <input type="text" class="form-control" id="floatingInput" value="<?= $_GET['jumlahHewan'] ?>" name="jumlahHewan" readonly="readonly">
                                     <label for="floatingPassword">Jumlah Hewan</label>
                                 </div>
                                 <div class="form-floating">
@@ -59,12 +59,13 @@
                                         <option value="">Pilih Jam Yang Tersedia</option>
                                         <?php
                                         foreach ($data['available_hour'] as $hour) {
-                                            if (count($hour) > 1) {
-                                                $hour_to_show = str_replace("0:00", "0", $hour[0]) . " - " . str_replace("0:00", "0", date('h:i:s', strtotime("+30 minutes", strtotime($hour[count($hour) - 1]))));
-                                            }
-                                        ?>
-                                            <option value=<?php $hour ?>><?= $hour_to_show; ?></option>
-                                        <?php
+                                            $hour_to_show = str_replace("0:00", "0", $hour[0]) . " - " . str_replace("0:00", "0", date('H:i:s', strtotime("+30 minutes", strtotime($hour[count($hour) - 1]))));
+                                            $hour_val = "";
+                                            foreach ($hour as $hour_) {
+                                                $hour_val .= $hour_ . " ";
+                                            };
+
+                                            echo "<option value='$hour_val'>$hour_to_show</option>";
                                         }
                                         ?>
                                     </select>

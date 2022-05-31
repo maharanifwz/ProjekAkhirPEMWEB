@@ -30,7 +30,6 @@
                             </div>
                         </div>
                     </div>
-                    <button type="button" class="btn btn-primary btn-Form">Unggah Bukti Pembayaran</button>
                 </div>
                 <form action="<?= BASEURL ?>/konfirmasi" method="post" class="col clinic-box2" enctype="multipart/form-data">
                     <div class="mb-3 unggahBayar">

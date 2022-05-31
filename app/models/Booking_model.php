@@ -13,8 +13,7 @@ class Booking_model
         '10:00:00', '10:30:00', '11:00:00', '11:30:00',
         '12:00:00', '12:30:00', '13:00:00', '13:30:00',
         '14:00:00', '14:30:00', '15:00:00', '15:30:00',
-        '16:00:00', '16:30:00', '17:00:00', '17:30:00',
-        '18:00:00', '18:30:00', '19:00:00', '19:30:00'
+        '16:00:00', '16:30:00', '17:00:00'
     ];
 
     private $table = 'riwayatKonsultasi';
@@ -36,9 +35,9 @@ class Booking_model
         $this->db->query('SELECT * FROM ' . $this->table . " WHERE tanggal = '$date'");
         $Booking_data = $this->db->resultSet();
         foreach ($Booking_data as $jam) {
-            $jam = $jam['jam'];
+            $jam = explode(" ", $jam['jam']);
             for ($i = 0; $i < count($this->hours); $i++) {
-                if ($jam == $this->hours[$i]) {
+                if (in_array($this->hours[$i], $jam)) {
                     unset($this->hours[$i]);
                 }
             }
