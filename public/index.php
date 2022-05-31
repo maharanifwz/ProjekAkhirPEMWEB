@@ -13,6 +13,7 @@ Routes::add('GET','/tentangKami', HomeController::class,'tentangKami');
 Routes::add('GET','/form', HomeController::class,'form');
 Routes::add('GET','/form2', HomeController::class,'form2');
 Routes::add('GET','/form3', HomeController::class,'form3');
+Routes::add('GET','/riwayatKonsul', HomeController::class,'riwayatKonsul');
 
 // User
 Routes::add('GET','/login', HomeController::class,'login');

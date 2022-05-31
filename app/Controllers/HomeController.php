@@ -45,4 +45,9 @@ class HomeController extends Controller
     {
         $this->show('form3');
     }
+
+    public function riwayatKonsul()
+    {
+        $this->show('riwayatKonsultasi');
+    }
 }
