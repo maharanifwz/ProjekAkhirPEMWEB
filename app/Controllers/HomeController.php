@@ -16,10 +16,7 @@ class HomeController extends Controller{
 
     public function tentangKami()
     {
-        $this->view('templates/header');
-        $this->view('tentangKami');
-        // ini pengaturannya ada sendiri gak untuk ukuran divnya. Soalnya tabrakan.
-        // $this->view('templates/footer');
+        $this->show('tentangKami');
     }
 
     public function login()
