@@ -32,5 +32,11 @@ class HomeController extends Controller{
         $this->view('register');
     }
 
+    //untuk sementara
+    public function form()
+    {
+        $this->view('form');
+    }
+
 
 }
