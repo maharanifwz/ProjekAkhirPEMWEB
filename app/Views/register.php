@@ -34,6 +34,11 @@
         <div class="container-fluid">
             <h1>Daftar</h1>
             <form action="<?= BASEURL ?>\prosesRegister" method="POST">
+                <?php if(isset($_SESSION['state'])){?>
+                    <div class="alert alert-danger" role="alert">
+                        <?php echo $_SESSION['state']?>
+                    </div>
+                <?php } ;?>
                 <div>
                     <label for="name">Nama</label><br>
                     <input type="text" name="name" id="name" required>

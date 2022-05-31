@@ -30,13 +30,15 @@ class UserController extends Controller{
 
         $uname = $this->model->fetchUname($data['username']);
         $email = $this->model->fetchEmail($data['email']);
-
+        $_SESSION['state'] = "";
         if(!empty($email)){
-            echo "<script>alert('Email telah digunakan');</script>";
+            $_SESSION['state'] = "Email telah terdaftar!";
+            // echo "<script>alert('Email telah digunakan');</script>";
             $this->view('register');
             return;
         }elseif(!empty($uname)){
-            echo "<script>alert('Username telah digunakan');</script>";
+            $_SESSION['state'] = "Username telah terdaftar!";
+            // echo "<script>alert('Username telah digunakan');</script>";
             $this->view('register');
             return;
         }

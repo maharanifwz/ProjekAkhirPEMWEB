@@ -36,10 +36,10 @@
         <div class="wrapper">
             <header>
                 <nav class="navigasi">
-                    <div href="/" class="logo">
+                    <a href="<?= BASEURL ?>/" class="logo">
                         <img src="<?= BASEURL ?>/images/logo.png" alt="Logo PetMate">
-                        <a class="logo-desc">Pet<span class="identity">Mate</span></a>
-                    </div>
+                        <a href="<?= BASEURL ?>/" class="logo-desc">Pet<span class="identity">Mate</span></a>
+                    </a>
                     <ul>
                         <li><a href="<?= BASEURL ?>/konsultasi">Konsultasi</a></li>
                         <li><a href="<?= BASEURL ?>/tentangKami">Tentang Kami</a></li>

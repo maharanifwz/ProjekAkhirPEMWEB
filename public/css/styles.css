@@ -211,6 +211,13 @@ header .sticky ul li a {
     --bs-btn-hover-border-color: #829C5F;
     --bs-btn-hover-color: #829C5F;
     width: 178px;
+    --bs-btn-border-color: #829C5F;
+    --bs-btn-active-bg: #829C5F;
+    --bs-btn-active-border-color: #829C5F;
+}
+
+.btn {
+    --bs-btn-focus-box-shadow: #829C5F;
 }
 
 .btn-outline-secondary {
@@ -218,6 +225,8 @@ header .sticky ul li a {
     --bs-btn-hover-bg: #829C5F;
     --bs-btn-hover-border-color: #829C5F;
     --bs-btn-hover-color: var(--bs-white);
+    --bs-btn-active-color: #829C5F;
+    --bs-btn-active-bg: none;
 }
 
 
@@ -484,7 +493,6 @@ footer hr {
     background-image: url('../../public/images/banner3.png');
     background-repeat: no-repeat;
     background-position: right 5% bottom;
-    margin-left: 70px;
     padding: 150px 0;
     height: 100vh;
     margin-left: 70px;
@@ -524,11 +532,11 @@ footer hr {
 
 /* breadcrumb */
 
-.breadcrumb-item a {
+.breadcrumb-item a,
+.breadcrumb-item {
     text-decoration: none;
     color: #829C5F;
 }
-
 
 /* detail clinic */
 
@@ -607,6 +615,55 @@ footer hr {
 
 .tentangKami-box img {
     margin-bottom: 15px;
+}
+
+/* form */
+#formPendaftaran {
+    padding: 150px 0;
+    /* height: 100vh; */
+    margin-left: 70px;
+}
+
+.formPendaftaran-desc {
+    width: 1159px;
+    height: 550px;
+    margin: 0 auto;
+    background: #F6EDD9;
+    border-radius: 10px;
+    padding: 5%;
+    margin-bottom: 25px;
+}
+
+.btn-Form {
+    width: 275.48px;
+    margin-top: 50px;
+}
+
+.btn-Form2 {
+    margin-left: 50px;
+}
+
+.clinic-box {
+    width: 296px;
+    height: 309px;
+    background: #FFFFFF;
+    border-radius: 10px;
+    padding: 3%;
+}
+
+.clinic-box h4 {
+    margin-top: 15px;
+    margin-bottom: 20px;
+}
+
+.clinic-box p {
+    margin-bottom: 0;
+}
+
+.clinic-desc {
+    font-size: 12px;
+    color: #4F692F;
+    font-weight: 700;
 }
 
 .alert{
