@@ -30,8 +30,8 @@
                         </label>
                     </div>
                 </div>
-                <div class="col riwayat-box">
-                    <img src="../../public/images/riwayat.png" alt="Riwayat Konsultasi">
+                <div class="col riwayat-box center">
+                    <img src="../../public/images/riwayat.svg" alt="Riwayat Konsultasi">
                     <p class="riwayat-heading">Anda belum pernah memesan layanan konsultasi</p>
                 </div>
             </div>

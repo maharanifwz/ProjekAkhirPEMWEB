@@ -31,7 +31,7 @@
                     </div>
                 </div>
                 <div class="col riwayat-box">
-                    <table class="table">
+                    <table class="table table-hover">
                         <thead>
                             <tr>
                                 <th scope="col">Nama Klinik</th>

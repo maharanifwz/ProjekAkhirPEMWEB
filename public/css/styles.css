@@ -173,7 +173,8 @@ header .sticky ul li a {
     color: #829C5F;
 }
 
-.identity, th {
+.identity,
+th {
     color: #829C5F;
 }
 
@@ -625,7 +626,7 @@ footer hr {
 }
 
 .formPendaftaran-desc {
-    width: 1159px;
+    width: fit-content;
     height: 550px;
     background: #F6EDD9;
     border-radius: 10px;
@@ -754,6 +755,10 @@ footer hr {
     width: 500px;
 }
 
+.riwayat-box img {
+    width: 150px;
+}
+
 #riwayatKonsultasi .row>* {
     max-width: fit-content;
 }
@@ -773,6 +778,11 @@ td {
 
 .riwayat-heading {
     width: 700px;
+}
+
+.center {
+    align-items: center;
+    text-align: center;
 }
 
 .alert {
