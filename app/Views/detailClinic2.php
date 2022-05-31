@@ -59,18 +59,13 @@
                                         <option value="">Pilih Jam Yang Tersedia</option>
                                         <?php
                                         foreach ($data['available_hour'] as $hour) {
-                                            if (count($hour) > 1) {
-                                                $hour_to_show = str_replace("0:00", "0", $hour[0]) . " - " . str_replace("0:00", "0", date('h:i:s', strtotime("+30 minutes", strtotime($hour[count($hour) - 1]))));
-                                                $hour_val = "";
-                                                foreach ($hour as $hour_) {
-                                                    $hour_val .= $hour_ . " ";
-                                                };
-                                            }
+                                            $hour_to_show = str_replace("0:00", "0", $hour[0]) . " - " . str_replace("0:00", "0", date('H:i:s', strtotime("+30 minutes", strtotime($hour[count($hour) - 1]))));
+                                            $hour_val = "";
+                                            foreach ($hour as $hour_) {
+                                                $hour_val .= $hour_ . " ";
+                                            };
+
                                             echo "<option value='$hour_val'>$hour_to_show</option>";
-                                        ?>
-                                            <!-- <option value= "1"><?= $hour_val; ?></option>
-                                            <option value= "1"><?= $hour_to_show; ?></option> -->
-                                        <?php
                                         }
                                         ?>
                                     </select>
