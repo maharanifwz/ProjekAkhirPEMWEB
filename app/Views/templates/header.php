@@ -31,7 +31,7 @@
 
 
 <body>
-        <!-- navbar section -->
+    <!-- navbar section -->
     <div class="container-fluid">
         <div class="wrapper">
             <header>
@@ -49,8 +49,8 @@
                         <?php }
                         else {?>
                             <li><a href="<?= BASEURL ?>/login">Masuk</a></li>
-                        <?php }?>
-                        
+                        <?php } ?>
+
                     </ul>
                 </nav>
             </header>

@@ -25,7 +25,9 @@
                         <p class="service-desc-2">Kami sadar bahwa hewan peliharaan sangat berperan besar bagi kehidupan
                             pemiliknya. Untuk itu
                             kami hadir memberikan fitur yang terbaik bagi hewan peliharaan kesayanganmu</p>
-                        <button type="button" class="btn btn-primary btn-service">Pesan</button>
+                        <a href="<?= BASEURL ?>\klinik">
+                            <button type="button" class="btn btn-primary btn-service">Pesan</button>
+                        </a>
                     </div>
                 </div>
             </div>
