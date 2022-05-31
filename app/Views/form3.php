@@ -15,8 +15,10 @@
                 <h3 class="identity">Pendaftaran Anda sedang diproses</h3>
                 <i class="fa-solid fa-clock fa-6x"></i>
                 <p>Silahkan tunggu verifikasi pendaftaran yang akan kami kirimkan melalui whatsapp</p>
-                <button type="button" class="btn btn-primary btn-Selesai">Lihat Riwayat Konsultasi</button>
-                <button type="button" class="btn btn-outline-secondary btn-Selesai">Kembali ke Beranda</button>
+                <!-- <button type="button" class="btn btn-primary btn-Selesai">Lihat Riwayat Konsultasi</button>
+                <button type="button" class="btn btn-outline-secondary btn-Selesai">Kembali ke Beranda</button> -->
+                <a href="<?=BASEURL?>\riwayatKonsul"><button type="button" class="btn btn-primary btn-Selesai">Lihat Riwayat Konsultasi</button></a>
+                <a href="<?= BASEURL ?>\"><button type="button" class="btn btn-outline-secondary btn-Selesai">Kembali ke Beranda</button></a>
             </div>
         </div>
 </section>
