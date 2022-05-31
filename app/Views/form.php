@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Tentang Kami</title>
+    <title>Document</title>
 
     <!-- Font Awsome -->
     <script src="https://kit.fontawesome.com/ea1f512027.js" crossorigin="anonymous"></script>
@@ -49,44 +49,50 @@
         </div>
     </div>
 
-    <!-- landing page -->
-    <div class="tentangKami">
-        <h1>PT PetMate Sejahtera</h1>
-        <h3>Your Pet Your Soulmate</h3>
-        <div class="tentangKami-desc">
-            <p>Kami percaya bahwa setiap pemilik hewan peliharaan selalu ingin memberikan hal terbaik untung hewan peliharaannya. PetMate akan membersamai tujuan tersebut, karena your pet your soulmate.</p>
-            <p>Dengan alasan itu, PetMate hadir dengan membawa perubahan bagi para pemilik hewan peliharaan. Kami menyediakan booking layanan konsultasi langsung ke klinik atau ke rumah. Kami juga menyediakan kemudahan bagi para pemilik hewan peliharaan untuk bisa menemukan komunitas serta mendapatkan edukasi untuk pemeliharaan hewan.</p><br>
-            <p>PetMate</p>
-            <p>Your pet, your soulmate</p>
-        </div>
-        <div class="tentangKami-box">
-            <h2 class="identity">Mari bertemu dengan tim kami</h2>
-            <div class="container">
-                <div class="row">
-                    <div class="col">
-                        <img src="../../public/images/putri.png" alt="Putri Rahmawati">
-                        <h3>Imelda Fransisca</h3>
-                        <p>sebagai Back-End</p>
-                    </div>
-                    <div class="col">
-                        <img src="../../public/images/harun.png" alt="Muhammad Harun A.">
-                        <h3>Muhammad Harun A.</h3>
-                        <p>sebagai Back-End</p>
-                    </div>
-                    <div class="col">
-                        <img src="../../public/images/hani.png" alt="Maharani Fawwaz A.">
-                        <h3>Maharani Fawwaz A.</h3>
-                        <p>sebagai Front-End</p>
-                    </div>
+    <!-- form section -->
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <img src="../../public/images/form.png" src="Andista Animal Care">
+                <h4>Andista Animal Care</h4>
+                <p>Jl. Kamboja No.2C, Jakarta Barat</p>
+                <p>09.00 - 24.00 WIB</p>
+            </div>
+            <div class="col">
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" id="floatingInput" placeholder="Contoh: Chloe">
+                    <label for="floatingInput">Nama Hewan</label>
+                </div>
+                <div class="form-floating">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <option selected>Pilih Jenis Hewan</option>
+                        <option value="1">Kucing</option>
+                        <option value="2">Anjing</option>
+                        <option value="3">Burung</option>
+                    </select>
+                    <label for="floatingSelect">Jenis Hewan</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingRas" placeholder="Contoh: Pomeranian">
+                    <label for="floatingRas">Ras</label>
+                </div>
+                <div class="form-floating">
+                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                        <option selected>Pilih Jenis Kelamin</option>
+                        <option value="1">Laki-laki</option>
+                        <option value="2">Perempuan</option>
+                    </select>
+                    <label for="floatingSelect">Jenis Kelamin</label>
+                </div>
+                <div class="form-floating">
+                    <input type="text" class="form-control" id="floatingBerat" placeholder="Contoh: 1 kg">
+                    <label for="floatingBerat">Berat Badan</label>
                 </div>
             </div>
+            <div class="col">col</div>
+            <div class="col">col</div>
         </div>
-
-        <!-- footer -->
-        <!-- footer -->
-    <footer>
-
-
+    </div>
 </body>
 
 </html>
