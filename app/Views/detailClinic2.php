@@ -60,7 +60,7 @@
                                         <?php
                                         foreach ($data['available_hour'] as $hour) {
                                             if (count($hour) > 1) {
-                                                $hour_to_show = str_replace("0:00", "0", $hour[0]) . " - " . str_replace("0:00", "0", $hour[count($hour) - 1]);
+                                                $hour_to_show = str_replace("0:00", "0", $hour[0]) . " - " . str_replace("0:00", "0", date('h:i:s', strtotime("+30 minutes", strtotime($hour[count($hour) - 1]))));
                                             }
                                         ?>
                                             <option value=<?php $hour ?>><?= $hour_to_show; ?></option>
