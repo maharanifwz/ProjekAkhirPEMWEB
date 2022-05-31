@@ -26,7 +26,7 @@ Routes::add('POST','/prosesRegister', UserController::class,'register');
 // Booking
 Routes::add('GET','/klinik', BookingController::class,'index');
 Routes::add('GET','/check_availability', BookingController::class,'check_availability');
-Routes::add('GET','/fill_data', BookingController::class,'fill_data');
+Routes::add('POST','/fill_data', BookingController::class,'fill_data');
 
 //Testing
 Routes::add('GET','/testing', UserController::class,'testing');

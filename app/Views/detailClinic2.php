@@ -44,13 +44,13 @@
                             </div>
                         </div>
                         <div class="col">
-                            <form action="<?= BASEURL ?>/fill_data" method="GET">
+                            <form action="<?= BASEURL ?>/fill_data" method="POST">
                                 <div class="form-floating mb-3">
-                                    <input type="date" class="form-control" id="floatingInput" value="<?= $_GET['date'] ?>" readonly="readonly">
+                                    <input type="date" class="form-control" id="floatingInput" value="<?= $_GET['date'] ?>" name="date" readonly="readonly">
                                     <label for="floatingInput">Tanggal</label>
                                 </div>
                                 <div class="form-floating">
-                                    <input type="text" class="form-control" id="floatingInput" value="<?= $_GET['jumlahHewan'] ?>" readonly="readonly">
+                                    <input type="text" class="form-control" id="floatingInput" value="<?= $_GET['jumlahHewan'] ?>" name="jumlahHewan" readonly="readonly">
                                     <label for="floatingPassword">Jumlah Hewan</label>
                                 </div>
                                 <div class="form-floating">
@@ -61,9 +61,15 @@
                                         foreach ($data['available_hour'] as $hour) {
                                             if (count($hour) > 1) {
                                                 $hour_to_show = str_replace("0:00", "0", $hour[0]) . " - " . str_replace("0:00", "0", date('h:i:s', strtotime("+30 minutes", strtotime($hour[count($hour) - 1]))));
+                                                $hour_val = "";
+                                                foreach ($hour as $hour_) {
+                                                    $hour_val .= $hour_ . " ";
+                                                };
                                             }
+                                            echo "<option value='$hour_val'>$hour_to_show</option>";
                                         ?>
-                                            <option value=<?php $hour ?>><?= $hour_to_show; ?></option>
+                                            <!-- <option value= "1"><?= $hour_val; ?></option>
+                                            <option value= "1"><?= $hour_to_show; ?></option> -->
                                         <?php
                                         }
                                         ?>

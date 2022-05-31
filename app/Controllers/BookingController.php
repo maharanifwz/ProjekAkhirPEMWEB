@@ -6,6 +6,7 @@ use Kel1\ProjekAkhirPemweb\Models\Booking_model;
 
 class BookingController extends Controller
 {
+    private $data;
 
     public function index()
     {
@@ -21,8 +22,16 @@ class BookingController extends Controller
 
     public function fill_data()
     {
+        $this->data = $_POST;
+        // var_dump($this->data);
         $booking_model = new Booking_model();
-
         $this->show('form');
+    }
+
+    public function upload_invoice()
+    {
+        array_push($this->data, $this->$_POST);
+        var_dump($this->data);
+        $this->show('form2');
     }
 }
