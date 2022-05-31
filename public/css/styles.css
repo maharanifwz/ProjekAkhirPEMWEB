@@ -569,3 +569,42 @@ footer hr {
 .form-select {
     margin-top: 18px;
 }
+
+/* tentang kami */
+.tentangKami {
+    padding: 150px 0;
+    margin-left: 70px;
+    background-image: url('../../public/images/banner4.png');
+    background-repeat: no-repeat;
+    background-position: right bottom 85%;
+}
+
+.tentangKami-desc {
+    width: 569px;
+    height: 295px;
+    margin-bottom: 150px;
+}
+
+.tentangKami h3 {
+    color: #4F692F;
+}
+
+.tentangKami-box {
+    width: 1000px;
+    height: 450px;
+    background: #F6EDD9;
+    border-radius: 10px;
+    text-align: center;
+    align-items: center;
+    padding: 5%;
+    margin: 0 auto;
+    margin-bottom: 25px;
+}
+
+.tentangKami-box h2 {
+    margin-bottom: 35px;
+}
+
+.tentangKami-box img {
+    margin-bottom: 15px;
+}
