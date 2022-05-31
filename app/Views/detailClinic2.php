@@ -44,31 +44,34 @@
                             </div>
                         </div>
                         <div class="col">
-                            <div class="form-floating mb-3">
-                                <input type="date" class="form-control" id="floatingInput" placeholder="Pilih Tanggal Konsultasi" readonly="readonly">
-                                <label for="floatingInput">Tanggal</label>
-                            </div>
-                            <div class="form-floating">
-                                <input type="text" class="form-control" id="floatingInput" placeholder="Jumlah Hewan" readonly="readonly">
-                                <label for="floatingPassword">Jumlah Hewan</label>
-                            </div>
-                            <div class="form-floating">
-                                <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-                                    <option selected>Pilih Jam Yang Tersedia</option>
-                                    <?php
-                                    foreach ($data['jam'] as $jam) {
-                                    ?>
-                                        <option value=<?php (string)$jam?>><?= (string)$jam ?></option>
-                                    <?php
-                                    }
-                                    ?>
-                                    <!-- <option value="1">10.00</option>
-                                    <option value="2">13.00</option>
-                                    <option value="3">15.00</option> -->
-                                </select>
-                                <label for="floatingSelect">Pilih jam disini</label>
-                            </div>
-                            <button type="button" class="btn btn-primary btn-detail">Buat Janji Konsultasi</button>
+                            <form action="<?= BASEURL ?>/fill_data" method="GET">
+                                <div class="form-floating mb-3">
+                                    <input type="date" class="form-control" id="floatingInput" value="<?= $_GET['date'] ?>" readonly="readonly">
+                                    <label for="floatingInput">Tanggal</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input type="text" class="form-control" id="floatingInput" value="<?= $_GET['jumlahHewan'] ?>" readonly="readonly">
+                                    <label for="floatingPassword">Jumlah Hewan</label>
+                                </div>
+                                <div class="form-floating">
+                                    <select class="form-select" id="floatingSelect" aria-label="Floating label select example" name="jam" required>
+                                        <!-- <option value="">None</option> -->
+                                        <option value="">Pilih Jam Yang Tersedia</option>
+                                        <?php
+                                        foreach ($data['available_hour'] as $hour) {
+                                            if (count($hour) > 1) {
+                                                $hour_to_show = str_replace("0:00", "0", $hour[0]) . " - " . str_replace("0:00", "0", $hour[count($hour) - 1]);
+                                            }
+                                        ?>
+                                            <option value=<?php $hour ?>><?= $hour_to_show; ?></option>
+                                        <?php
+                                        }
+                                        ?>
+                                    </select>
+                                    <label for="floatingSelect">Pilih jam disini</label>
+                                </div>
+                                <button type="submit" class="btn btn-primary btn-detail">Buat Janji Konsultasi</button>
+                            </form>
                         </div>
                     </div>
                 </div>

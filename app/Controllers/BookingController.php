@@ -1,9 +1,11 @@
 <?php
 
 namespace Kel1\ProjekAkhirPemweb\Controllers;
+
 use Kel1\ProjekAkhirPemweb\Models\Booking_model;
 
-class BookingController extends Controller{
+class BookingController extends Controller
+{
 
     public function index()
     {
@@ -15,8 +17,16 @@ class BookingController extends Controller{
         $booking_model = new Booking_model();
 
         // $data['jam'] = $this->model('Booking_model')->getHour();
-        $data['jam'] = $booking_model->getHour($_GET["date"]);
-        $this->show('detailClinic2',$data);
+        $data['available_hour'] = $booking_model->getAvailableHour($_GET["date"], $_GET["jumlahHewan"]);
+        $this->show('detailClinic2', $data);
     }
 
+    public function fill_data()
+    {
+        #belom mulai bikin
+        $booking_model = new Booking_model();
+
+        // $data['jam'] = $this->model('Booking_model')->getHour();
+        $this->show('detailClinic');
+    }
 }
