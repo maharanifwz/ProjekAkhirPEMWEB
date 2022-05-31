@@ -539,6 +539,7 @@ footer hr {
     color: #829C5F;
 }
 
+
 /* detail clinic */
 
 #detailClinic {
@@ -579,7 +580,9 @@ footer hr {
     margin-top: 18px;
 }
 
+
 /* tentang kami */
+
 #tentangKami {
     padding-top: 150px;
     margin-left: 70px;
@@ -617,7 +620,9 @@ footer hr {
     margin-bottom: 15px;
 }
 
+
 /* form */
+
 #formPendaftaran,
 #riwayatKonsultasi {
     padding: 150px 0;
@@ -627,7 +632,7 @@ footer hr {
 
 .formPendaftaran-desc {
     width: fit-content;
-    height: 550px;
+    height: fit-content;
     background: #F6EDD9;
     border-radius: 10px;
     padding: 6%;
@@ -716,6 +721,7 @@ footer hr {
     align-items: center;
 }
 
+
 /* form 3 */
 
 .clinic-box3 {
@@ -743,7 +749,9 @@ footer hr {
     width: 200px;
 }
 
+
 /* riwayat konsultasi */
+
 #riwayatKonsultasi {
     margin-right: 30px;
 }
