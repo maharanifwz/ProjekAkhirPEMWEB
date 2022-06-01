@@ -797,9 +797,14 @@ td {
     text-align: center;
 }
 
-.alert {
+#loginAlert {
     width: 350px;
     height: 40px;
     padding-top: 7px;
     border: 0;
+}
+
+#invoiceAlert{
+    width: 100%;
+    
 }

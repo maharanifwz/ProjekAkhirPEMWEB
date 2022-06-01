@@ -37,6 +37,12 @@ class User_model{
         return $this->db->resultSet();
     }
 
+    public function fetchId($username)
+    {
+        $this->db->query("SELECT id_user from pengguna WHERE username = '$username' " );
+        return $this->db->resultSet();
+    }
+
     public function addUser($data)
     {
         $nama = $data['nama'];
@@ -50,7 +56,10 @@ class User_model{
 
         $this->db->query($que);
         $this->db->execute();
+
     }
+
+    // Testing purpose
 
     public function addImage($filename)
     {

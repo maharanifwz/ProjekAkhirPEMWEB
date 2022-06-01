@@ -15,8 +15,8 @@
                 <div class="col clinic-box2">
                     <p class="bold">Ringkasan Pemesanan</p>
                     <img src="../../public/images/layanan.png" alt="Ringkasan Pemesanan">
-                    <p class="bold top">Layanan ke Rumah</p>
-                    <p class="bold identity">150.000</p>
+                    <p class="bold top">Pembayaran Muka x hewan</p>
+                    <p class="bold identity">xx0.000</p>
                 </div>
                 <div class="col clinic-box2">
                     <p class="buktiBayar">Silahkan lakukan pembayaran ke nomor rekening dibawah ini paling lambat 2 jam sebelum jadwal konsultasi yang andah pilih</p>
@@ -33,9 +33,19 @@
                 </div>
                 <form action="<?= BASEURL ?>/konfirmasi" method="post" class="col clinic-box2" enctype="multipart/form-data">
                     <div class="mb-3 unggahBayar">
-                        <label for="formFile" class="form-label">Default file input example</label>
-                        <input class="form-control" type="file" id="formFile" name="invoice">
+                        <label for="formFile" class="form-label">Bukti Pembayaran</label>
+                        <!-- alert -->
+                        <?php if(isset($_SESSION['Invoicestate'])){?>
+                            <div class="alert alert-danger" role="alert" id="invoiceAlert">
+                                <?php echo $_SESSION['Invoicestate'];
+                                ?>
+                            </div>
+                        <?php } ;?>
+
+                        <input class="form-control" type="file" id="formFile" name="invoice" required>
+                        
                     </div>
+
                     <button type="submit" class="btn btn-outline-secondary btn-Bayar" name="konfirm">Konfirmasi Pembayaran</button>
                 </form>
             </div>

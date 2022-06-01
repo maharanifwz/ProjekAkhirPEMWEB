@@ -3,6 +3,7 @@
 namespace Kel1\ProjekAkhirPemweb\Controllers;
 
 use Kel1\ProjekAkhirPemweb\Models\Booking_model;
+// session_start();
 
 class BookingController extends Controller
 {
@@ -53,28 +54,37 @@ class BookingController extends Controller
             $_SESSION[$key] = $value;
         }
         var_dump($_SESSION);
-
         $this->show('form2');
     }
 
+    public function insertHistory($fileName)
+    {
+        $data = [
+            'tanggal' => $_SESSION['tanggal'],
+            'jam' => $_SESSION[jam],
+            'jumlahHewan' => $_SESSION['jumlahHewan'],
+            'idPengguna' => $_SESSION['idPengguna']
+        ];
+    }
     //Upload Image
     public function insertInvoice()
     {
-        // masih memikirkan id nya gimana
-        echo "nunggu id nya dolo";
-
-        // $allowTypes = array('jpg','png','jpeg'); 
-        // $fileName = basename($_FILES["invoice"]["name"]); 
-        // $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
-        // if(in_array($fileType, $allowTypes)){
-        //     if (isset($_POST['konfirm'])) { 
-        //         $file = addslashes(file_get_contents($_FILES["invoice"]["tmp_name"]));  
-        //         $this->booking_model->addImage($file, $id);
-        //         $this->show('form3');
-        //     }
-        // }else{
-        //     echo "<script> alert('Tolong pilih gambar')</script>";
-        // };
+        // Datanya di upload jadi satu
+        $allowTypes = array('jpg','png','jpeg'); 
+        $fileName = basename($_FILES["invoice"]["name"]); 
+        $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+        if(in_array($fileType, $allowTypes)){
+            if (isset($_POST['konfirm'])) { 
+                $file = addslashes(file_get_contents($_FILES["invoice"]["tmp_name"]));  
+                $this->booking_model->addImage($file, $id);
+                $this->show('form3');
+            }
+        }else{
+            $_SESSION['Invoicestate'] = "Harap memilih file gambar!";
+            $this->show('form2');
+            unset($_SESSION['Invoicestate']);
+            return;
+        };
 
     }
 }

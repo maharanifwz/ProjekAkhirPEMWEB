@@ -69,4 +69,14 @@ class Booking_model
         $this->db->execute();
     }
 
+
+    public function addHistory($fileName, $id)
+    {
+        $query = ("UPDATE riwayatkonsultasi  SET invoice = '$fileName' WHERE id =' $id' ");
+        $que = ("INSERT INTO riwayatkonsultasi  VALUES 
+        (NULL, '$nama','$username', '$email', '$alamat', '$pwd')");
+        $this->db->query($query);
+        $this->db->execute();
+    }
+
 }

@@ -35,7 +35,7 @@
             <h1>Masuk</h1>
             <form action="<?= BASEURL ?>\prosesLogin" method="POST">
             <?php if(isset($_SESSION['state'])){?>
-                <div class="alert alert-danger" role="alert">
+                <div class="alert alert-danger" role="alert" id="loginAlert">
                     <?php echo $_SESSION['state']?>
                 </div>
             <?php } ;?>

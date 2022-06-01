@@ -34,9 +34,9 @@
         <div class="container-fluid">
             <h1>Daftar</h1>
             <form action="<?= BASEURL ?>\prosesRegister" method="POST">
-                <?php if(isset($_SESSION['state'])){?>
-                    <div class="alert alert-danger" role="alert">
-                        <?php echo $_SESSION['state']?>
+                <?php if(isset($_SESSION['stateReg'])){?>
+                    <div class="alert alert-danger" role="alert" id="loginAlert">
+                        <?php echo $_SESSION['stateReg']?>
                     </div>
                 <?php } ;?>
                 <div>
