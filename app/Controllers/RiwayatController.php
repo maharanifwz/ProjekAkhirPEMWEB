@@ -3,7 +3,8 @@
 namespace Kel1\ProjekAkhirPemweb\Controllers;
 use Kel1\ProjekAkhirPemweb\models\Riwayat_model;
 
-class RiwayatController extends Controller{
+class RiwayatController extends Controller
+{
     private $model;
 
     public function __construct()
@@ -16,4 +17,19 @@ class RiwayatController extends Controller{
         unset($this->model);
     }
 
+    public function ShowAllHistory()
+    {
+        // 
+        
+    }
+
+    public function ShowOnprocessHistory()
+    {
+        // 
+    }
+
+    public function ShowFinishedHistory()
+    {
+        // 
+    }
 }
