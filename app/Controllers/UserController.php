@@ -57,7 +57,6 @@ class UserController extends Controller{
         
         //verify username
         if(!empty($uname)){
-            $_SESSION['state'] = "";
             if(!empty($pwdHash)){
                 $encodePwd = password_verify($data['password'], $pwdHash[0]['password']);
                 if(!$encodePwd){
