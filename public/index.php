@@ -7,6 +7,7 @@ use Kel1\ProjekAkhirPemweb\Controllers\HomeController;
 use Kel1\ProjekAkhirPemweb\Controllers\UserController;
 use Kel1\ProjekAkhirPemweb\Controllers\BookingController;
 use Kel1\ProjekAkhirPemweb\Controllers\RiwayatController;
+use Kel1\ProjekAkhirPemweb\Controllers\AdminController;
 
 Routes::add('GET','/', HomeController::class,'index');
 Routes::add('GET','/konsultasi', HomeController::class,'konsultasi');
@@ -30,6 +31,10 @@ Routes::add('GET','/check_availability', BookingController::class,'check_availab
 Routes::add('POST','/fill_data', BookingController::class,'fill_data');
 Routes::add('POST','/upload_invoice', BookingController::class,'upload_invoice');
 Routes::add('POST','/konfirmasi', BookingController::class,'insertInvoice');
+
+
+//Admin
+Routes::add('GET','/admin', AdminController::class,'showIndex');
 
 //Testing
 Routes::add('GET','/testing', UserController::class,'testing');
