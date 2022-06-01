@@ -42,17 +42,42 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>
-                                    <li>Toby</li>
-                                    <li>Chloe</li>
-                                    <li>Care</li>
-                                </td>
-                                <td>Layanan Ke Rumah</td>
-                                <td>13 Maret 2022 (16.00 - 19.00 WIB)</td>
-                                <td>Rp 150.000</td>
-                                <td><i class="fa-solid fa-circle green fa-2xs"></i> Belum Terverifikasi</td>
-                            </tr>
+                            <?php foreach ($data['dataHistori'] as $perRiwayat) {
+                                $hours = explode(" ", $perRiwayat['jam']);
+                                // seharusnya date dengan format H:i bakal nampilin 24 jam bukan dengan format 12 jam
+                                $hour_to_show = str_replace("0:00", "0", $hours[0]) . " - " .  date('H:i', strtotime("+30 minutes", strtotime($hours[count($hours) - 1])));
+                            ?>
+                                <tr>
+                                    <td>
+                                        <?php
+                                        $listIdHewan = explode(" ", $perRiwayat['listHewan']);
+                                        $listUmurHewan = [];
+                                        foreach ($data['dataHewan'] as $i) {
+                                            if (in_array($i['id'], $listIdHewan)) {
+                                                $name = $i['nama'];
+                                                echo "<li>$name</li>";
+                                                array_push($listUmurHewan, $i['umur']);
+                                            }
+                                        } ?>
+                                    </td>
+                                    <td>
+                                        <?php
+                                        foreach ($listUmurHewan as $i) {
+                                            echo "<li>$i</li>";
+                                        }
+                                        ?>
+                                    </td>
+                                    <td><?= $perRiwayat['tanggal'] . " " . $hour_to_show . " WIB" ?></td>
+                                    <td>Rp 150.000</td>
+                                    <?php
+                                    $status = $perRiwayat['status'];
+                                    if ($status == 'Belum Terverifikasi') {
+                                        echo "<td><i class='fa-solid fa-circle fa-2xs'></i> $status</td>";
+                                    } else {
+                                        echo "<td><i class='fa-solid fa-circle green fa-2xs'></i> $status</td>";
+                                    } ?>
+                                </tr>
+                            <?php } ?>
                         </tbody>
                     </table>
                 </div>

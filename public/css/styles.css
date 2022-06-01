@@ -762,7 +762,8 @@ footer hr {
 
 .riwayat-box {
     box-shadow: 0px 6px 4px rgba(37, 42, 49, 0.16);
-    height: 219px;
+    height: fit-content;
+    /* height: 219px; */
     margin-right: 100px;
     width: 500px;
 }
