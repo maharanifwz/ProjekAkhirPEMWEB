@@ -34,20 +34,24 @@
                     <table class="table table-hover">
                         <thead>
                             <tr>
-                                <th scope="col">Nama Klinik</th>
-                                <th scope="col">Jenis Layanan</th>
+                                <th scope="col">Nama Hewan</th>
+                                <th scope="col">Umur Hewan</th>
                                 <th scope="col">Jadwal</th>
-                                <th scope="col">Harga</th>
+                                <th scope="col">Uang Muka</th>
                                 <th scope="col">Status</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Andista Animal Care</td>
+                                <td>
+                                    <li>Toby</li>
+                                    <li>Chloe</li>
+                                    <li>Care</li>
+                                </td>
                                 <td>Layanan Ke Rumah</td>
                                 <td>13 Maret 2022 (16.00 - 19.00 WIB)</td>
                                 <td>Rp 150.000</td>
-                                <td><i class="fa-solid fa-circle fa-2xs"></i> Belum Terverifikasi</td>
+                                <td><i class="fa-solid fa-circle green fa-2xs"></i> Belum Terverifikasi</td>
                             </tr>
                         </tbody>
                     </table>

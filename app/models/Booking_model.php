@@ -65,15 +65,16 @@ class Booking_model
     {
         $listIdHewan = [];
         for ($i = 0; $i < $data['jumlahHewan']; $i++) {
-            $name = $data["name" . $i];
+            $name = $data["name" . $i]; 
             $type = $data["type" . $i];
             $race = $data["race" . $i];
             $gender = $data["gender" . $i];
             $weight = $data["weight" . $i];
             $age = $data["age" . $i];
             $complaint = $data["complaint" . $i];
+            $idPengguna = $data["idPengguna"];
             $query = ("INSERT INTO hewan VALUES (
-                NULL, '$name','$type', '$race', '$gender', '$weight', '$age', '$complaint')");
+                NULL, '$name','$type', '$race', '$gender', '$weight', '$age', '$complaint', '$idPengguna')");
 
             $this->db->query($query);
             $id_inserted_data = $this->db->execute_returnId();

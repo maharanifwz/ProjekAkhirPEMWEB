@@ -3,7 +3,7 @@
 namespace Kel1\ProjekAkhirPemweb\Controllers;
 use Kel1\ProjekAkhirPemweb\models\Admin_model;
 
-class AdminControllers{
+class AdminControllers extends Controller{
     private $model;
 
     public function __construct()
