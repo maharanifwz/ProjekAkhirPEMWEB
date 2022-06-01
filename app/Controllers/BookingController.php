@@ -26,8 +26,8 @@ class BookingController extends Controller
 
     public function check_availability()
     {
-        $booking_model = new Booking_model();
-        $data['available_hour'] = $booking_model->getAvailableHour($_GET["date"], $_GET["jumlahHewan"]);
+        // $booking_model = new Booking_model();
+        $data['available_hour'] = $this->booking_model->getAvailableHour($_GET["date"], $_GET["jumlahHewan"]);
         $this->show('detailClinic2', $data);
     }
 
@@ -36,9 +36,13 @@ class BookingController extends Controller
         // Initialize the session
         session_start();
 
-        $_SESSION['date'] = $_POST['date'];
-        $_SESSION['jumlahHewan'] = $_POST['jumlahHewan'];
-        $_SESSION['jam'] = $_POST['jam'];
+        // $_SESSION['date'] = $_POST['date'];
+        // $_SESSION['jumlahHewan'] = $_POST['jumlahHewan'];
+        // $_SESSION['jam'] = $_POST['jam'];
+
+        foreach ($_POST as $key => $value) {
+            $_SESSION[$key] = $value;
+        }
 
         $this->data = $_POST;
         $this->show('form', $_POST);
@@ -49,11 +53,19 @@ class BookingController extends Controller
         // Initialize the session
         session_start();
 
-        foreach ($_POST as $key => $value){
+        foreach ($_POST as $key => $value) {
             $_SESSION[$key] = $value;
         }
-        var_dump($_SESSION);
 
+
+        $listIdHewan = $this->booking_model->uploadDataHewan($_SESSION);
+        // echo "<br><br>";
+        // var_dump($listIdHewan);
+
+        for ($i = 0; $i < count($listIdHewan); $i++) {
+            $_SESSION["idHewan" . $i] = $listIdHewan[$i];
+        }
+        var_dump($_SESSION);
         $this->show('form2');
     }
 
