@@ -51,19 +51,19 @@
 
                                             <?php echo "<select class='form-select' id='floatingSelect' aria-label='Floating label select example' name='gender$i' required>"; ?>
                                             <option selected>Pilih Jenis Kelamin</option>
-                                            <option value="1">Laki-laki</option>
-                                            <option value="2">Perempuan</option>
+                                            <option value="male">Laki-laki</option>
+                                            <option value="female">Perempuan</option>
                                             </select>
                                             <label for="floatingSelect">Jenis Kelamin</label>
                                         </div>
                                         <div class="form-floating mb-3">
-                                            <?php echo "<input type='text' class='form-control' id='floatingBerat' placeholder='Contoh: 1 kg' name='weight$i' required>"; ?>
+                                            <?php echo "<input type='number' step=0.01 class='form-control' id='floatingBerat' placeholder='Contoh: 1 kg' name='weight$i' required>"; ?>
                                             <label for="floatingBerat">Berat Badan</label>
                                         </div>
                                     </div>
                                     <div class="col">
                                         <div class="form-floating mb-3">
-                                            <?php echo "<input type='text' class='form-control' id='floatingUmur' placeholder='Contoh: 1.2 tahun' name='age$i' required>"; ?>
+                                            <?php echo "<input type='number' step=0.01 class='form-control' id='floatingUmur' placeholder='Contoh: 1.2 tahun' name='age$i' required>"; ?>
                                             <label for="floatingUmur">Umur</label>
                                         </div>
                                         <div class="form-floating mb-3">

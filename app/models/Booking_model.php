@@ -61,6 +61,28 @@ class Booking_model
         return $hours;
     }
 
+    public function uploadDataHewan($data)
+    {
+        $listIdHewan = [];
+        for ($i = 0; $i < $data['jumlahHewan']; $i++) {
+            $name = $data["name" . $i];
+            $type = $data["type" . $i];
+            $race = $data["race" . $i];
+            $gender = $data["gender" . $i];
+            $weight = $data["weight" . $i];
+            $age = $data["age" . $i];
+            $complaint = $data["complaint" . $i];
+            $query = ("INSERT INTO hewan VALUES (
+                NULL, '$name','$type', '$race', '$gender', '$weight', '$age', '$complaint')");
+
+            $this->db->query($query);
+            $id_inserted_data = $this->db->execute_returnId();
+
+            array_push($listIdHewan, $id_inserted_data);
+        }
+        return $listIdHewan;
+    }
+
     //Upload Image
     public function addImage($fileName, $id)
     {
@@ -68,6 +90,7 @@ class Booking_model
         $this->db->query($que);
         $this->db->execute();
     }
+<<<<<<< HEAD
 
 
     public function addHistory($fileName, $id)
@@ -79,4 +102,6 @@ class Booking_model
         $this->db->execute();
     }
 
+=======
+>>>>>>> 320d51d19990139a437875c66b30d858a4a6af59
 }
