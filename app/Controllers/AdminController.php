@@ -3,7 +3,7 @@
 namespace Kel1\ProjekAkhirPemweb\Controllers;
 use Kel1\ProjekAkhirPemweb\models\Admin_model;
 
-class AdminControllers extends Controller{
+class AdminController extends Controller{
     private $model;
 
     public function __construct()
@@ -15,6 +15,12 @@ class AdminControllers extends Controller{
     {
         unset($this->model);
     }
+
+    public function showIndex()
+    {
+        $this->show('admin');
+    }
+
 
     public function showRiwayat()
     {
