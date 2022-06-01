@@ -3,7 +3,6 @@
 namespace Kel1\ProjekAkhirPemweb\Controllers;
 
 use Kel1\ProjekAkhirPemweb\Models\Booking_model;
-// session_start();
 
 class BookingController extends Controller
 {
@@ -27,7 +26,6 @@ class BookingController extends Controller
 
     public function check_availability()
     {
-        // $booking_model = new Booking_model();
         $data['available_hour'] = $this->booking_model->getAvailableHour($_GET["date"], $_GET["jumlahHewan"]);
         $this->show('detailClinic2', $data);
     }
@@ -36,10 +34,6 @@ class BookingController extends Controller
     {
         // Initialize the session
         session_start();
-
-        // $_SESSION['date'] = $_POST['date'];
-        // $_SESSION['jumlahHewan'] = $_POST['jumlahHewan'];
-        // $_SESSION['jam'] = $_POST['jam'];
 
         foreach ($_POST as $key => $value) {
             $_SESSION[$key] = $value;
@@ -63,7 +57,7 @@ class BookingController extends Controller
         for ($i = 0; $i < count($listIdHewan); $i++) {
             $_SESSION["idHewan" . $i] = $listIdHewan[$i];
         }
-        // var_dump($_SESSION);
+
         $this->show('form2');
     }
 
