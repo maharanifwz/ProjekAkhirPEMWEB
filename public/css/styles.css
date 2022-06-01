@@ -784,8 +784,16 @@ td {
     width: 139px;
 }
 
+td li {
+    list-style: none;
+}
+
 .fa-circle {
     color: red;
+}
+
+.green {
+    color: green;
 }
 
 .riwayat-heading {
@@ -804,7 +812,6 @@ td {
     border: 0;
 }
 
-#invoiceAlert{
+#invoiceAlert {
     width: 100%;
-    
 }

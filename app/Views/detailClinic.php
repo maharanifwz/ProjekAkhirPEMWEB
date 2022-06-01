@@ -10,7 +10,7 @@
                 </ol>
             </nav>
             <div class="detailClinic-desc">
-                <h2>Andista Animal Care</h2>
+                <h2>PetMate Animal Care</h2>
                 <p>Jl. Kamboja No.2C, RW.1, Jatipulo, Kec. Palmerah, Kota Jakarta Barat, Daerah Khusus Ibukota Jakarta
                 </p>
                 <div class="container">

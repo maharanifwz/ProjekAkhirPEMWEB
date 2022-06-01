@@ -59,11 +59,11 @@ class BookingController extends Controller
         }
 
         $listIdHewan = $this->booking_model->uploadDataHewan($_SESSION);
-        
+      
         for ($i = 0; $i < count($listIdHewan); $i++) {
             $_SESSION["idHewan" . $i] = $listIdHewan[$i];
         }
-        var_dump($_SESSION);
+        // var_dump($_SESSION);
         $this->show('form2');
     }
 
@@ -71,7 +71,7 @@ class BookingController extends Controller
     {
         $data = [
             'tanggal' => $_SESSION['tanggal'],
-            'jam' => $_SESSION[jam],
+            'jam' => $_SESSION['jam'],
             'jumlahHewan' => $_SESSION['jumlahHewan'],
             'idPengguna' => $_SESSION['idPengguna']
         ];
