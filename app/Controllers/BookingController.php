@@ -2,6 +2,7 @@
 
 namespace Kel1\ProjekAkhirPemweb\Controllers;
 
+        session_start();
 use Kel1\ProjekAkhirPemweb\Models\Booking_model;
 // session_start();
 
@@ -35,7 +36,7 @@ class BookingController extends Controller
     public function fill_data()
     {
         // Initialize the session
-        session_start();
+        // session_start();
 
         // $_SESSION['date'] = $_POST['date'];
         // $_SESSION['jumlahHewan'] = $_POST['jumlahHewan'];
@@ -52,7 +53,6 @@ class BookingController extends Controller
     public function upload_invoice()
     {
         // Initialize the session
-        session_start();
 
         foreach ($_POST as $key => $value) {
             $_SESSION[$key] = $value;
@@ -63,24 +63,11 @@ class BookingController extends Controller
         for ($i = 0; $i < count($listIdHewan); $i++) {
             $_SESSION["idHewan" . $i] = $listIdHewan[$i];
         }
-        // var_dump($_SESSION);
+        var_dump($_SESSION);
         $this->show('form2');
     }
 
-    public function insertHistory($fileName)
-    {
-            $data = [
-            'tanggal' => $_SESSION['tanggal'],
-            'jam' => $_SESSION['jam'],
-            'jumlahHewan' => $_SESSION['jumlahHewan'],
-            'idPengguna' => $_SESSION['idPengguna'],
-            'listHewan' => $_SESSION['listHewan'],
-        ];
-
-        $this->model->insertData($fileName, $data);
-        $this->show('form3');
-    }
-    //Upload Image
+    //Cek image type
     public function insertInvoice()
     {
         // Datanya di upload jadi satu
@@ -100,4 +87,25 @@ class BookingController extends Controller
         };
 
     }
+
+    //insertData
+    public function insertHistory($fileName)
+    {
+        $jumlah = (int)$_SESSION["jumlahHewan"];
+        $listIdHewan = "";
+        for ($i=0; $i < $jumlah ; $i++) { 
+            $listIdHewan .= $_SESSION['idHewan' . $i] . " ";
+        };
+            $data = [
+            'tanggal' => $_SESSION["date"],
+            'jam' => $_SESSION["jam"],
+            'jumlahHewan' => $_SESSION["jumlahHewan"],
+            'idPengguna' => $_SESSION["idPengguna"],
+            'listIdHewan' => $listIdHewan,
+        ];
+
+        $this->booking_model->insertData($fileName, $data);
+        $this->show('form3');
+    }
+    
 }

@@ -1,7 +1,7 @@
 <?php
 
 namespace Kel1\ProjekAkhirPemweb\Controllers;
-// use Kel1\ProjekAkhirPemweb\models\Riwayat_model;
+use Kel1\ProjekAkhirPemweb\models\Riwayat_model;
 
 class RiwayatController extends Controller{
     private $model;

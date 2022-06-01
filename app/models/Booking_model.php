@@ -84,17 +84,17 @@ class Booking_model
         return $listIdHewan;
     }
 
-    public function addData($fileName, $data)
+    public function insertData($fileName, $data)
     {
         $tanggal = $data['tanggal'];
         $jam = $data['jam'];
-        $listIdHewan = $data['listHewan'];
+        $listIdHewan = $data['listIdHewan'];
         $jumlahHewan  = $data["jumlahHewan"];
         $idPengguna = $data['idPengguna'];
         $status = "Belum Terverifikasi";
 
-        $que = ("INSERT INTO riwayatkonsultasi  VALUES (
-            NULL, $tanggal. $jam, $listIdHewan, $jumlahHewan, $idPengguna, $fileName, $status)");
+        $query = ("INSERT INTO riwayatkonsultasi  VALUES (
+            NULL, '$tanggal', '$jam', '$listIdHewan', '$jumlahHewan', '$idPengguna', '$fileName', '$status')");
         $this->db->query($query);
         $this->db->execute();
     }    
