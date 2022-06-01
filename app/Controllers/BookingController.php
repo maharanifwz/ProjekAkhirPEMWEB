@@ -57,11 +57,8 @@ class BookingController extends Controller
             $_SESSION[$key] = $value;
         }
 
-
         $listIdHewan = $this->booking_model->uploadDataHewan($_SESSION);
-        // echo "<br><br>";
-        // var_dump($listIdHewan);
-
+        
         for ($i = 0; $i < count($listIdHewan); $i++) {
             $_SESSION["idHewan" . $i] = $listIdHewan[$i];
         }
