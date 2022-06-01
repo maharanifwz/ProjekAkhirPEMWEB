@@ -69,12 +69,16 @@ class BookingController extends Controller
 
     public function insertHistory($fileName)
     {
-        $data = [
+            $data = [
             'tanggal' => $_SESSION['tanggal'],
             'jam' => $_SESSION[jam],
             'jumlahHewan' => $_SESSION['jumlahHewan'],
-            'idPengguna' => $_SESSION['idPengguna']
+            'idPengguna' => $_SESSION['idPengguna'],
+            'listHewan' => $_SESSION['listHewan'],
         ];
+
+        $this->model->insertData($fileName, $data);
+        $this->show('form3');
     }
     //Upload Image
     public function insertInvoice()
@@ -86,8 +90,7 @@ class BookingController extends Controller
         if(in_array($fileType, $allowTypes)){
             if (isset($_POST['konfirm'])) { 
                 $file = addslashes(file_get_contents($_FILES["invoice"]["tmp_name"]));  
-                $this->booking_model->addImage($file, $id);
-                $this->show('form3');
+                $this->insertHistory($file);
             }
         }else{
             $_SESSION['Invoicestate'] = "Harap memilih file gambar!";

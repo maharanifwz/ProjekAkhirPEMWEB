@@ -83,25 +83,19 @@ class Booking_model
         return $listIdHewan;
     }
 
-    //Upload Image
-    public function addImage($fileName, $id)
+    public function addData($fileName, $data)
     {
-        $que = ("UPDATE riwayatkonsultasi  SET invoice = '$fileName' WHERE id =' $id' ");
-        $this->db->query($que);
-        $this->db->execute();
-    }
-<<<<<<< HEAD
+        $tanggal = $data['tanggal'];
+        $jam = $data['jam'];
+        $listIdHewan = $data['listHewan'];
+        $jumlahHewan  = $data["jumlahHewan"];
+        $idPengguna = $data['idPengguna'];
+        $status = "Belum Terverifikasi";
 
-
-    public function addHistory($fileName, $id)
-    {
-        $query = ("UPDATE riwayatkonsultasi  SET invoice = '$fileName' WHERE id =' $id' ");
-        $que = ("INSERT INTO riwayatkonsultasi  VALUES 
-        (NULL, '$nama','$username', '$email', '$alamat', '$pwd')");
+        $que = ("INSERT INTO riwayatkonsultasi  VALUES (
+            NULL, $tanggal. $jam, $listIdHewan, $jumlahHewan, $idPengguna, $fileName, $status)");
         $this->db->query($query);
         $this->db->execute();
-    }
+    }    
 
-=======
->>>>>>> 320d51d19990139a437875c66b30d858a4a6af59
 }
