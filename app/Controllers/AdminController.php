@@ -51,9 +51,11 @@ class AdminController extends Controller{
     {
         $status = $_GET["status"];
         $id = $_GET["id"];
-        $this->model->updateStatus($status, $id);
-        $data = $this->model->fetchYetConfirm();
-        header('Location: '. BASEURL . '/admin');
+        $value = $this->model->updateStatus($status, $id);
+
+        $status = "Status berhasil di";
+        // header('Location: '. BASEURL . '/admin');
+        $this->show('admin');
     }
 
 
