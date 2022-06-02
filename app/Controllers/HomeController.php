@@ -1,7 +1,7 @@
 <?php
 
 namespace Kel1\ProjekAkhirPemweb\Controllers;
-
+session_start();
 class HomeController extends Controller
 {
 

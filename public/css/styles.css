@@ -84,18 +84,6 @@ p {
     background: #FFFFFF;
 }
 
-
-/* .navigasi .sticky {
-    padding: 5px 10px;
-    background: black;
-} */
-
-
-/* header .sticky .logo,
-header .sticky ul li a {
-    color: black;
-} */
-
 .navigasi .logo {
     text-decoration: none;
     font-weight: bold;
@@ -122,6 +110,7 @@ header .sticky ul li a {
     text-decoration: none;
     font-size: 16px;
     color: black;
+    width: max-content;
 }
 
 .navigasi ul li a {
@@ -142,12 +131,14 @@ header .sticky ul li a {
     
 } */
 
+
+
 .navigasi li a:hover {
     color: #FFFCED;
     border-radius: 15px;
-    background: #F7B13C;
-    width: 20%;
+    background: #829C5F;
     padding: 10px;
+    width: fit-content;
 }
 
 .navigasi ul li ul {
@@ -769,6 +760,7 @@ footer hr {
 .riwayat-box {
     box-shadow: 0px 6px 4px rgba(37, 42, 49, 0.16);
     height: fit-content;
+    /* height: 219px; */
     margin-right: 100px;
 }
 
@@ -823,6 +815,10 @@ td li {
 .center {
     align-items: center;
     text-align: center;
+}
+
+.right {
+    margin-left: 600px;
 }
 
 #loginAlert {

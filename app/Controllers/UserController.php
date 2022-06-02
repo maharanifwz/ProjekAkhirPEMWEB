@@ -32,17 +32,18 @@ class UserController extends Controller{
         $email = $this->model->fetchEmail($data['email']);
         if(!empty($email)){
             $_SESSION['stateReg'] = "Email telah terdaftar!";
-            $this->view('register');
+            header('Location: '. BASEURL . '/register');
             return;
         }elseif(!empty($uname)){
             $_SESSION['stateReg'] = "Username telah terdaftar!";
-            $this->view('register');
+            header('Location: '. BASEURL . '/register');
             return;
         }
-
+        
         $this->model->addUser($data);
+        unset($_SESSION['stateReg']);
         unset($data);
-        $this->view('login');
+        header('Location: '. BASEURL . '/login');
     }
 
     public function login()
@@ -61,8 +62,8 @@ class UserController extends Controller{
                 $encodePwd = password_verify($data['password'], $pwdHash[0]['password']);
                 if(!$encodePwd){
                     $_SESSION['state'] = "Password Anda salah. Silahkan coba lagi!";
-                    $this->view('login');
-                    unset($_SESSION['state']);
+                    // $this->view('login');
+                    header('Location: '. BASEURL . '/login');
                     return;
                 }
             }
@@ -71,13 +72,13 @@ class UserController extends Controller{
             $id_user = $this->model->fetchId($data['username']);
             $_SESSION['idPengguna'] = $id_user[0]['id_user'];
             unset($_SESSION['state']);
-            $this->show('index');
+            header('Location: '. BASEURL . '/');
             unset($data);
             return;
         };
         $_SESSION['state'] = "Username Anda salah. Silahkan coba lagi!";
-        $this->view('login');
-        unset($_SESSION['state']);
+        // $this->view('login');
+        header('Location: '. BASEURL . '/login');
         return;
         
     }

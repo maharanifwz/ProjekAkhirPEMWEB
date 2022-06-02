@@ -34,8 +34,8 @@ class Booking_model
         $hours = [];
         $this->db->query('SELECT * FROM ' . $this->table . " WHERE tanggal = '$date'");
         $Booking_data = $this->db->resultSet();
-        foreach ($Booking_data as $jam) {
-            $jam = explode(" ", $jam['jam']);
+        foreach ($Booking_data as $booking) {
+            $jam = explode(" ", $booking['jam']);
             for ($i = 0; $i < count($this->hours); $i++) {
                 if (in_array($this->hours[$i], $jam)) {
                     unset($this->hours[$i]);
