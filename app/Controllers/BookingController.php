@@ -34,9 +34,6 @@ class BookingController extends Controller
 
     public function fill_data()
     {
-        // Initialize the session
-        // session_start();
-
         foreach ($_POST as $key => $value) {
             $_SESSION[$key] = $value;
         }
@@ -47,8 +44,6 @@ class BookingController extends Controller
 
     public function upload_invoice()
     {
-        // Initialize the session
-
         foreach ($_POST as $key => $value) {
             $_SESSION[$key] = $value;
         }
@@ -58,6 +53,7 @@ class BookingController extends Controller
         for ($i = 0; $i < count($listIdHewan); $i++) {
             $_SESSION["idHewan" . $i] = $listIdHewan[$i];
         }
+        // var_dump($_SESSION);
         $this->show('form2');
     }
 
