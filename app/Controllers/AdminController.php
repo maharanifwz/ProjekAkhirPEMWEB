@@ -8,7 +8,7 @@ class AdminController extends Controller{
 
     public function __construct()
     {
-        $model = new Admin_model();
+        $this->model = new Admin_model();
     }
 
     public function __destruct()
@@ -24,24 +24,39 @@ class AdminController extends Controller{
 
     public function showRiwayat()
     {
-        $this->model->fetchAll;
+        $riwayat = $this->model->fetchAll();
+        $this->show('admin', $riwayat);
     }
 
     public function showYetConfirm()
     {
-        $this->model->fetchYetConfirm;
+        $riwayat = $this->model->fetchYetConfirm();
+        $this->show('admin', $riwayat);
     }
 
     public function showConfirm()
     {
-        $this->model->fetchConfirm;
+        $this->model->fetchConfirm();
+        $this->show('admin', $riwayat);
     }
 
     public function displayImage()
     {
-        $img = $this->model->fetchImage();
-
+        $id = $_GET["id"];
+        $img = $this->model->fetchImage($id);
+        $this->show('admin', $img);
     }
+
+    public function updateStatus()
+    {
+        $status = $_GET["status"];
+        $id = $_GET["id"];
+        $this->model->updateStatus($status, $id);
+        $data = $this->model->fetchYetConfirm();
+        header('Location: '. BASEURL . '/admin');
+    }
+
+
 
     
     

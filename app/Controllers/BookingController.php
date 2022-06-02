@@ -58,7 +58,6 @@ class BookingController extends Controller
         for ($i = 0; $i < count($listIdHewan); $i++) {
             $_SESSION["idHewan" . $i] = $listIdHewan[$i];
         }
-        var_dump($_SESSION);
         $this->show('form2');
     }
 
@@ -72,12 +71,12 @@ class BookingController extends Controller
         if (in_array($fileType, $allowTypes)) {
             if (isset($_POST['konfirm'])) {
                 $file = addslashes(file_get_contents($_FILES["invoice"]["tmp_name"]));
+                unset($_SESSION['Invoicestate']);
                 $this->insertHistory($file);
             }
         } else {
             $_SESSION['Invoicestate'] = "Harap memilih file gambar!";
             $this->show('form2');
-            unset($_SESSION['Invoicestate']);
             return;
         };
     }
@@ -99,6 +98,7 @@ class BookingController extends Controller
         ];
 
         $this->booking_model->insertData($fileName, $data);
-        $this->show('form3');
+        header('Location: '. BASEURL . '/form3');
+        // $this->show('form3');
     }
 }
