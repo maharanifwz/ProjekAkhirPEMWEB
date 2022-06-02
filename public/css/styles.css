@@ -202,7 +202,8 @@ th {
 }
 
 .btn-primary,
-.btn-outline-secondary {
+.btn-outline-secondary,
+.btn-success {
     border-color: #829C5F;
 }
 
@@ -221,7 +222,8 @@ th {
     --bs-btn-focus-box-shadow: #829C5F;
 }
 
-.btn-outline-secondary {
+.btn-outline-secondary,
+.btn-success {
     --bs-btn-color: #829C5F;
     --bs-btn-hover-bg: #829C5F;
     --bs-btn-hover-border-color: #829C5F;
@@ -230,6 +232,10 @@ th {
     --bs-btn-active-bg: none;
 }
 
+.btn-success {
+    --bs-btn-bg: none;
+    width: 111px;
+}
 
 /* service */
 
@@ -762,9 +768,8 @@ footer hr {
 
 .riwayat-box {
     box-shadow: 0px 6px 4px rgba(37, 42, 49, 0.16);
-    height: 219px;
+    height: fit-content;
     margin-right: 100px;
-    width: 500px;
 }
 
 .riwayat-box img {
@@ -796,8 +801,23 @@ td li {
     color: green;
 }
 
+.admin-box {
+    border: 2px solid #829C5F;
+    border-radius: 10px;
+    width: fit-content;
+    padding: 5%;
+}
+
 .riwayat-heading {
     width: 700px;
+}
+
+.modal-content {
+    margin-top: 100px;
+}
+
+.form-check {
+    text-align: left;
 }
 
 .center {
