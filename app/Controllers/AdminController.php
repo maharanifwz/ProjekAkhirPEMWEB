@@ -2,6 +2,7 @@
 
 namespace Kel1\ProjekAkhirPemweb\Controllers;
 use Kel1\ProjekAkhirPemweb\models\Admin_model;
+session_start();
 
 class AdminController extends Controller{
     private $model;
@@ -24,8 +25,23 @@ class AdminController extends Controller{
 
     public function showRiwayat()
     {
-        $riwayat = $this->model->fetchAll();
-        $this->show('admin', $riwayat);
+        $data['riwayat'] = $this->model->fetchAll();
+        $nama = $this->model->fetchName();
+        $user = [];
+
+        for ($i=0; $i < count($data['riwayat']) ; $i++) { 
+            foreach ($nama as $name) {
+                if($name['id_user'] == $data['riwayat'][$i]['idPengguna']){
+                    array_push($data['riwayat'][$i], $name['id_user'], $name['nama']);
+                }
+            }
+            array_push($data['riwayat'][$i],$i);
+        }
+        
+        $this->show('admin', $data);
+        // $img = $this->model->fetchImage();
+        // $i = 0;
+        // print_r($data['riwayat'][$i]['2']) ;
     }
 
     public function showYetConfirm()
@@ -43,10 +59,9 @@ class AdminController extends Controller{
     public function displayImage()
     {
         $id = $_GET["id"];
-        $img = $this->model->fetchImage($id);
-        $this->show('admin', $img);
+        $data['img'] = $this->model->fetchImage($id);
+        $this->show('admin', $data);
     }
-
     public function updateStatus()
     {
         $status = $_GET["status"];
