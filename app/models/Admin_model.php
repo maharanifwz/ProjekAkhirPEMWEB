@@ -25,6 +25,13 @@ class Admin_model{
         return $this->db->resultSet();
     }
 
+    public function fetchName()
+    {
+        $que = ("SELECT nama, id_user FROM pengguna");
+        $this->db->query($que);
+        return $this->db->resultSet();
+    }
+
     public function fetchYetConfirm()
     {
         $que = ("SELECT * FROM riwayatKonsultasi where status = 'Belum Terverifikasi' ");
@@ -50,7 +57,7 @@ class Admin_model{
 
     public function fetchImage($id)
     {
-        $this->db->query("SELECT nama FROM riwayatKonsultasi where id_user = '$id' " );
+        $this->db->query("SELECT invoice FROM riwayatkonsultasi WHERE $id = '$id' " );
         return $this->db->resultSet();
     }
 
