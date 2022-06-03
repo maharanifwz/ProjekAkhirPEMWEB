@@ -5,23 +5,26 @@
                 <div class="col riwayat-box">
                     <h3 class="identity">Riwayat Konsultasi</h3>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
                         <label class="form-check-label" for="flexRadioDefault1">
                             Semua
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
                         <label class="form-check-label" for="flexRadioDefault2">
                             Sedang Diproses
                         </label>
                     </div>
                     <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
                         <label class="form-check-label" for="flexRadioDefault3">
                             Selesai
                         </label>
                     </div>
+                    <form>
+                        <button type="button" class="btn btn-primary btn-Riwayat">FILTER</button>
+                    </form>
                 </div>
                 <div class="col riwayat-box">
                     <h3 class="center">Segera perbaharui status pendaftaran pelanggan Anda</h3>
@@ -134,3 +137,4 @@
         </div>
     </div>
 </section>
+<footer>

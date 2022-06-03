@@ -31,26 +31,27 @@ class Booking_model
 
     public function getAvailableHour($date, $jumlahHewan)
     {
+        $hours_default = $this->hours;
         $hours = [];
         $this->db->query('SELECT * FROM ' . $this->table . " WHERE tanggal = '$date'");
         $Booking_data = $this->db->resultSet();
         foreach ($Booking_data as $booking) {
             $jam = explode(" ", $booking['jam']);
-            for ($i = 0; $i < count($this->hours); $i++) {
-                if (in_array($this->hours[$i], $jam)) {
-                    unset($this->hours[$i]);
+            for ($i = 0; $i < count($hours_default); $i++) {
+                if (in_array($hours_default[$i], $jam)) {
+                    unset($hours_default[$i]);
                 }
             }
         }
 
-        for ($i = 0; $i < count($this->hours); $i++) {
+        for ($i = 0; $i < count($hours_default); $i++) {
             $hour = [];
             $temp = true;
             for ($j = $i + 1; $j <= $i + $jumlahHewan; $j++) {
-                if (!isset($this->hours[$j])) {
+                if (!isset($hours_default[$j])) {
                     $temp = false;
                 } else {
-                    array_push($hour, $this->hours[$j]);
+                    array_push($hour, $hours_default[$j]);
                 }
             }
 

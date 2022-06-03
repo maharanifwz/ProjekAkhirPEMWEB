@@ -29,6 +29,9 @@
                             Selesai
                         </label>
                     </div>
+                    <form>
+                        <button type="button" class="btn btn-primary btn-Riwayat">FILTER</button>
+                    </form>
                 </div>
                 <div class="col riwayat-box center">
                     <img src="../../public/images/riwayat.svg" alt="Riwayat Konsultasi">
@@ -38,3 +41,4 @@
         </div>
     </div>
 </section>
+<footer>

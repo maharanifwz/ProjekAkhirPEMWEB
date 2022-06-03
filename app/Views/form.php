@@ -4,9 +4,9 @@
             <!-- breadcrumb -->
             <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
                 <ol class="breadcrumb">
-                    <li class="breadcrumb-item"><a href="#">Beranda</a></li>
-                    <li class="breadcrumb-item" aria-current="page">Konsultasi</li>
-                    <li class="breadcrumb-item" aria-current="page">Andista Animal Care</li>
+                    <li class="breadcrumb-item"><a href="<?= BASEURL ?>/">Beranda</a></li>
+                    <li class="breadcrumb-item" aria-current="page"><a href="<?= BASEURL ?>/konsultasi">Konsultasi</a></li>
+                    <li class="breadcrumb-item active" aria-current="page"><a href="<?= BASEURL ?>/klinik">PetMate Animal Care</a></li>
                     <li class="breadcrumb-item active" aria-current="page">Form Pendaftaran</li>
                 </ol>
             </nav>
@@ -23,8 +23,8 @@
                             </div>
                         </div>
                         <div class="col">
-                            <?php 
-                            
+                            <?php
+
                             for ($i = 0; $i < (int)$data['jumlahHewan']; $i++) {
                                 echo "<h3 class = 'identity'>Data Hewan ke-" . $i + 1 . " </h3>";
                             ?>
@@ -81,9 +81,6 @@
                     <button type="submit" class="btn btn-primary btn-Form2">Lanjutkan ke Pembayaran</button>
                 </form>
             </div>
-
         </div>
     </section>
-    </body>
-
-    </html>
+<footer>
