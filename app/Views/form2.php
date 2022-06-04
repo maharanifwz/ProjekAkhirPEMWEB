@@ -6,7 +6,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="#">Beranda</a></li>
                 <li class="breadcrumb-item" aria-current="page">Konsultasi</li>
-                <li class="breadcrumb-item" aria-current="page">Andista Animal Care</li>
+                <li class="breadcrumb-item" aria-current="page">Pet Mate Animal Care</li>
                 <li class="breadcrumb-item active" aria-current="page">Form Pendaftaran</li>
             </ol>
         </nav>
@@ -15,11 +15,12 @@
                 <div class="col clinic-box2">
                     <p class="bold">Ringkasan Pemesanan</p>
                     <img src="../../public/images/layanan.png" alt="Ringkasan Pemesanan">
-                    <p class="bold top">Pembayaran Muka x hewan</p>
-                    <p class="bold identity">xx0.000</p>
+                    <p class="bold top">Pembayaran Muka <?= $_SESSION['jumlahHewan']?> hewan</p>
+                    <p class="bold identity">Rp. <?= number_format($_SESSION['jumlahHewan']*25000) ?></p>
                 </div>
                 <div class="col clinic-box2">
-                    <p class="buktiBayar">Silahkan lakukan pembayaran ke nomor rekening dibawah ini paling lambat 2 jam sebelum jadwal konsultasi yang andah pilih</p>
+                    <p class="buktiBayar">Silahkan lakukan pembayaran ke nomor rekening dibawah ini paling lambat 2 jam sebelum jadwal konsultasi yang anda pilih</p>
+                    <p class="buktiBayar">Jika anda keluar tanpa melakukan pembayaran, pesanan anda akan dibatalkan</p>
                     <div class="container">
                         <div class="row bca-container">
                             <div class="col logo-bca">
