@@ -19,6 +19,12 @@ class User_model{
         unset($this->db);
     }
 
+    public function fetchData($username)
+    {
+        $this->db->query("SELECT username, password, is_admin FROM pengguna WHERE username = '$username' " );
+        return $this->db->resultSet();
+    }
+
     public function fetchUname($username)
     {
         $this->db->query("SELECT username FROM pengguna WHERE username = '$username' " );
@@ -52,7 +58,7 @@ class User_model{
         $pwd = $data['password'];
 
         $que = ("INSERT INTO pengguna  VALUES (
-            NULL, '$nama','$username', '$email', '$alamat', '$pwd')");
+            NULL, '$nama','$username', '$email', '$alamat', '$pwd' , '0')");
 
         $this->db->query($que);
         $this->db->execute();

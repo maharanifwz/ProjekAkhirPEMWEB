@@ -51,8 +51,6 @@
                                         <button id="mybtn" value="<?=$riwayat['2']?> " type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1">
                                             Lihat Bukti
                                         </button>
-                                            
-
                                     </td>
                                     <td><li><i class="fa-solid fa-circle fa-2xs"></i> Belum Terverifikasi</li>
                                     
@@ -63,8 +61,6 @@
                                     
                                 </tr>
                             <?php } ?>
-                            
-
 
                             <tr>
                                 <td>

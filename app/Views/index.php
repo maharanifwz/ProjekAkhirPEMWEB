@@ -5,8 +5,9 @@
                 tempat</span>
         </p>
         <div>
-            <button type="button" class="btn btn-primary">Mulai</button>
-            <button type="button" class="btn btn-outline-secondary">Pelajari Selengkapnya</button>
+            <a href="<?= BASEURL ?>/mulai"><button type="button" class="btn btn-primary">Mulai</button></a>
+            <a href="#service"><button type="button" class="btn btn-outline-secondary">Pelajari Selengkapnya</button></a>
+            
         </div>
     </div>
 
