@@ -40,7 +40,28 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <td>Budi Hartono</td>
+                            <?php foreach($data['user'] as $riwayat ){?>
+                                <tr>
+                                    <td> <?= $riwayat['1'] ?></td>
+                                    <td> <?= $riwayat['jumlahHewan'] ?></td>
+                                    <td> <?= $riwayat['tanggal']?></td>
+                                    <td> Rp.<?= number_format($riwayat['jumlahHewan']*25000)?></td>
+                                    <td>
+                                        <input type="hidden" id="img" name="index">
+                                        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                                            Lihat Bukti
+                                        </button>
+                                    </td>
+                                    <td>
+                                        <li><i class="fa-solid fa-circle fa-2xs"></i> Belum Terverifikasi</li>
+                                        <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" value='<?= $riwayat['2'] ?>'>
+                                            Ubah Status
+                                        </button>
+                                    </td>
+                                </tr>
+                            <?php } ?>
+
+                            <!-- <td>Budi Hartono</td>
                             <td>Layanan Ke Rumah</td>
                             <td>12 Maret 2022 (10.00 WIB)</td>
                             <td>Rp150.000</td>
@@ -56,9 +77,9 @@
                                 <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" value='<?= $riwayat['2'] ?>'>
                                     Ubah Status
                                 </button>
-                            </td>
+                            </td> -->
                             <!-- Modal -->
-                            <form>
+                            <form action="<?=BASEURL?>/updateStatus" method="GET">
                                 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog">
                                         <div class="modal-content">
@@ -68,19 +89,19 @@
                                             </div>
                                             <div class="modal-body">
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                    <input class="form-check-input" type="radio" name="status" id="flexRadioDefault1" >
                                                     <label class="form-check-label" for="flexRadioDefault1">
                                                         Terverifikasi
                                                     </label>
                                                 </div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                                    <input class="form-check-input" type="radio" status id="flexRadioDefault2" >
                                                     <label class="form-check-label" for="flexRadioDefault2">
                                                         Tidak Valid
                                                     </label>
                                                 </div>
                                                 <div class="form-check">
-                                                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+                                                    <input class="form-check-input" type="radio" status id="flexRadioDefault3" >
                                                     <label class="form-check-label" for="flexRadioDefault3">
                                                         Selesai
                                                     </label>
@@ -104,8 +125,7 @@
                                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                             </div>
                                             <div class="modal-body" id="image">
-                                                <!-- <img src="../../public/images/layanan.png"> -->
-                                                <img src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($data['riwayat'][0]['invoice']) ?>" , height="auto" , width="auto" />
+                                                <img src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($data['user'][0]['invoice']) ?>" , height="auto" , width="auto" />
 
                                             </div>
                                             <div class="modal-footer">
@@ -139,12 +159,3 @@
     </div>
 </section>
 <footer>
-
-    <script>
-        function myFunction(x) {
-            var b = x.rowIndex;
-            // var idx = document.getElementById("mybtn").value
-            //    document.cookie ="index=John Doe";
-            // document.getElementById("image").innerHTML = b + "aaa";
-        }
-    </script>
