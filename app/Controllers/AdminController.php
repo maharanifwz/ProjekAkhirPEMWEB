@@ -52,7 +52,7 @@ class AdminController extends Controller{
 
     public function showConfirm()
     {
-        $this->model->fetchConfirm();
+        $riwayat = $this->model->fetchConfirm();
         $this->show('admin', $riwayat);
     }
 

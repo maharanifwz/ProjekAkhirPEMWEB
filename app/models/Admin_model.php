@@ -51,7 +51,7 @@ class Admin_model{
         $que = ("UPDATE riwayatKonsultasi SET status = '$status' where id = '$id'");
         $this->db->query($que);
         $value = $this->db->execute();
-        return value;
+        return $value;
     }
 
 
