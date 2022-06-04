@@ -26,6 +26,9 @@ Routes::add('GET','/logout', UserController::class,'logout');
 Routes::add('GET','/register', HomeController::class,'register');
 Routes::add('POST','/prosesRegister', UserController::class,'register');
 
+// User - Riwayat Rekomendasi
+Routes::add('GET','/ShowAllHistory', RiwayatController::class,'ShowAllHistory');
+
 
 // Booking
 Routes::add('GET','/klinik', BookingController::class,'index');
