@@ -49,7 +49,7 @@
                         if (isset($_SESSION['loginState'])) { ?>
                             <!-- <li><a  class="right" href="<?= BASEURL ?>/logout">Keluar</a></li> -->
                             <!-- Example single danger button -->
-                            <div class="dropdown">
+                            <!-- <div class="dropdown">
                                 <button class="btn btn-secondary dropdown-toggle show" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
                                     Dropdown button
                                 </button>
@@ -58,7 +58,7 @@
                                     <li><a class="dropdown-item" href="#">Another action</a></li><br>
                                     <li><a class="dropdown-item" href="#">Something else here</a></li>
                                 </ul>
-                            </div>
+                            </div> -->
                         <?php } else { ?>
                             <li><a href="<?= BASEURL ?>/login">Masuk</a></li>
                         <?php } ?>

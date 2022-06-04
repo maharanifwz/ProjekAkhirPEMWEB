@@ -785,8 +785,8 @@ table {
     text-align: center;
 }
 
-td {
-    width: 139px;
+tr {
+    width: 300%;
 }
 
 td li {
