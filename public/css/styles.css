@@ -625,7 +625,8 @@ footer hr {
 /* form */
 
 #formPendaftaran,
-#riwayatKonsultasi {
+#riwayatKonsultasi,
+#detailAdmin {
     padding: 100px 0;
     /* height: 100vh; */
     margin-left: 70px;
@@ -761,7 +762,8 @@ footer hr {
 
 /* riwayat konsultasi */
 
-#riwayatKonsultasi {
+#riwayatKonsultasi,
+#detailAdmin {
     margin-right: 30px;
 }
 
@@ -770,6 +772,7 @@ footer hr {
     height: fit-content;
     /* height: 219px; */
     margin-right: 100px;
+    width: fit-content;
 }
 
 .riwayat-box img {
@@ -847,10 +850,7 @@ td li {
     width: 100%;
 }
 
-.dropdown-menu {
-    --bs-dropdown-border-color: none;
-}
-
-.dropdown-item {
-    width: fit-content;
+/* detail admin */
+#detailAdmin .riwayat-box {
+    margin: 0 auto;
 }

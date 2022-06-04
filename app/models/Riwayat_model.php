@@ -28,6 +28,19 @@ class Riwayat_model
         return $this->db->resultSet();
     }
 
+    public function getonProcessHistory($idPengguna)
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . " WHERE idPengguna = '$idPengguna' and  (status = 'Terverifikasi' or status = 'Belum Terverifikasi')");
+        // $this->db->query('SELECT * FROM ' . $this->table);
+        return $this->db->resultSet();
+    }
+    public function getFinishedHistory($idPengguna)
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . " WHERE idPengguna = '$idPengguna' and  (status = 'Selesai' or status = 'Tidak Valid')");
+        // $this->db->query('SELECT * FROM ' . $this->table);
+        return $this->db->resultSet();
+    }
+
     public function getAllHewan($dataHistori)
     {
         $listIdHewan = [];
@@ -42,4 +55,5 @@ class Riwayat_model
 
         return $this->db->resultSet();
     }
+    
 }
