@@ -71,9 +71,15 @@ class User_model{
 
     public function fetchImage()
     {
-        $this->db->query("SELECT * FROM testing" );
+        $this->db->query("SELECT invoice FROM riwayatkonsultasi" );
         return $this->db->resultSet();
     }
+
+    // public function fetchImage($id)
+    // {
+    //     $this->db->query("SELECT invoice FROM riwayatKonsultasi where id = '$id' " );
+    //     return $this->db->resultSet();
+    // }
 
 
 }

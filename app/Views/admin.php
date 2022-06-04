@@ -40,22 +40,34 @@
                             </tr>
                         </thead>
                         <tbody>
-                            <tr>
-                                <td>Budi Hartono</td>
-                                <td>1</td>
-                                <td>12 Maret 2022 (10.00 WIB)</td>
-                                <td>Rp 150.000</td>
-                                <td>
-                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                                        Lihat Bukti
-                                    </button>
-                                </td>
-                                <td>
-                                    <li><i class="fa-solid fa-circle fa-2xs"></i> Belum Terverifikasi</li>
-                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        Ubah Status
-                                    </button>
+                            <?php foreach($data['riwayat'] as $riwayat ){?>
+                                <tr>
+                                    <td> <?= $riwayat['1'] ?></td>
+                                    <td> <?= $riwayat['jumlahHewan'] ?></td>
+                                    <td> <?= $riwayat['tanggal']?></td>
+                                    <td> <?= $riwayat['jumlahHewan']*25000?></td>
+                                    <td>
+                                        <input type="hidden" id="img" name="index" value="<?=$riwayat['2']?>">
+                                        <button id="mybtn" value="<?=$riwayat['2']?> " type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1">
+                                            Lihat Bukti
+                                        </button>
+                                            
 
+                                    </td>
+                                    <td><li><i class="fa-solid fa-circle fa-2xs"></i> Belum Terverifikasi</li>
+                                    
+                                    <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" value='<?= $riwayat['2'] ?>'>
+                                        Ubah Status
+                                    </button></td>
+                                
+                                    
+                                </tr>
+                            <?php } ?>
+                            
+
+
+                            <tr>
+                                <td>
                                     <!-- Modal -->
                                     <form>
                                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -93,6 +105,7 @@
                                             </div>
                                         </div>
                                     </form>
+                                    <!-- INVOICE -->
                                     <form>
                                         <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
                                             <div class="modal-dialog">
@@ -101,8 +114,10 @@
                                                         <h5 class="modal-title" id="exampleModalLabel">Lihat Bukti Pembayaran</h5>
                                                         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                                                     </div>
-                                                    <div class="modal-body">
-                                                        <img src="../../public/images/layanan.png">
+                                                    <div class="modal-body" id="image">
+                                                        <!-- <img src="../../public/images/layanan.png"> -->
+                                                         <img src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($data['riwayat'][0]['invoice'])?>", height="auto", width="auto" />
+                                                        
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -111,25 +126,10 @@
                                             </div>
                                         </div>
                                     </form>
+                                   
                                 </td>
                             </tr>
-                            <tr>
-                                <td>Ani Pertiwi</td>
-                                <td>2</td>
-                                <td>13 Maret 2022 (14.00 WIB)</td>
-                                <td>Rp 100.000</td>
-                                <td>
-                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                                        Lihat Bukti
-                                    </button>
-                                </td>
-                                <td>
-                                    <li><i class="fa-solid fa-circle fa-2xs"></i> Belum Terverifikasi</li>
-                                    <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                                        Ubah Status
-                                    </button>
-                                </td>
-                            </tr>
+                            
                         </tbody>
                     </table>
                 </div>
@@ -138,3 +138,14 @@
     </div>
 </section>
 <footer>
+
+<script>
+function myFunction(x) {
+    var b =  x.rowIndex;
+    // var idx = document.getElementById("mybtn").value
+//    document.cookie ="index=John Doe";
+    // document.getElementById("image").innerHTML = b + "aaa";
+}
+
+</script>
+
