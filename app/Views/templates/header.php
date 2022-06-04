@@ -50,10 +50,9 @@
                             <!-- <li><a  class="right" href="<?= BASEURL ?>/logout">Keluar</a></li> -->
                             <!-- Example single danger button -->
                             <select class="form-select right" aria-label="Default select example">
-                                <option hidden>Open this select menu</option>
-                                <option value="1">One</option>
-                                <option value="2">Two</option>
-                                <option value="3">Three</option>
+                                <option hidden>Budi Hartono</option>
+                                <option value="1">Riwayat Konsultasi</option>
+                                <option value="2">Komdak</option>
                             </select>
                         <?php } else { ?>
                             <li><a href="<?= BASEURL ?>/login">Masuk</a></li>
