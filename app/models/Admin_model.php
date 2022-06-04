@@ -64,6 +64,13 @@ class Admin_model
         return $this->db->resultSet();
     }
 
+    public function fetchDetail($id)
+    {
+        $query = ("SELECT * FROM riwayatKonsultasi WHERE id = '$id' ");
+        $this->db->query($query);
+        return $this->db->resultSet();
+    }
+
     public function updateStatus($status, $id)
     {
         $que = ("UPDATE riwayatKonsultasi SET status = '$status' where id = '$id'");
@@ -72,10 +79,10 @@ class Admin_model
         return $value;
     }
 
-
-    public function fetchImage($id)
+    public function fetchHewan($idHewan)
     {
-        $this->db->query("SELECT invoice FROM riwayatkonsultasi WHERE $id = '$id' ");
+        $query = ("SELECT nama, jenis, keluhan FROM hewan WHERE id = '$idHewan' ");
+        $this->db->query($query);
         return $this->db->resultSet();
     }
 }
