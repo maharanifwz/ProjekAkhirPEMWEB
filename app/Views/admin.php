@@ -4,27 +4,28 @@
             <div class="row riwayat-desc">
                 <div class="col riwayat-box">
                     <h3 class="identity">Riwayat Konsultasi</h3>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Semua
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2">
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Sedang Diproses
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3">
-                        <label class="form-check-label" for="flexRadioDefault3">
-                            Selesai
-                        </label>
-                    </div>
-                    <form>
-                        <button type="button" class="btn btn-primary btn-Riwayat">FILTER</button>
+                    <form action="<?= BASEURL ?>/" method="get">
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radio" id="flexRadioDefault1" checked value="semua">
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Semua
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radio" id="flexRadioDefault2" value="belum">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Sedang Diproses
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="radio" id="flexRadioDefault3" value="selesai">
+                            <label class="form-check-label" for="flexRadioDefault3">
+                                Selesai
+                            </label>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-Riwayat">FILTER</button>
                     </form>
+                    
                 </div>
                 <div class="col riwayat-box">
                     <h3 class="center">Segera perbaharui status pendaftaran pelanggan Anda</h3>

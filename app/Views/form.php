@@ -19,7 +19,7 @@
                                 <h4>Andista Animal Care</h4>
                                 <p>Jl. Kamboja No.2C, Jakarta Barat</p>
                                 <p class="clinic-desc">09.00 - 24.00 WIB</p>
-                                <button type="button" class="btn btn-outline-secondary btn-Form">Lihat Kembali Detail Klinik</button>
+                                <a href="<?= BASEURL ?>/klinik"><button type="button" class="btn btn-outline-secondary btn-Form">Lihat Kembali Detail Klinik</button></a>
                             </div>
                         </div>
                         <div class="col">

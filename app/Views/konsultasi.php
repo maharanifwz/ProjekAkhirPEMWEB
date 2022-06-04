@@ -38,8 +38,8 @@
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            Kamu bisa memilih klinik sesuai dengan tempat tinggalmu, mengisi form pendaftaran dan pilih
-                            jenis layanannya. Kemudian memilih jadwal konsultasi dan lakukan pembayaran. Langkah
+                            Kamu bisa memilih tanggal sesuai keinginan mu dan masukkan jumlah hewan yang ingin diperiksakan. 
+                            Selanjutnya pilih jam yang tersedia dan mengisi form pendaftaran, kemudian lakukan pembayaran. Langkah
                             terakhir menggunggah bukti pembayarannya agar pesananmu bisa terdaftar!
                         </div>
                     </div>
@@ -63,14 +63,14 @@
                     <h2 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
                             data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                            Bagaimana proses layanan konsultasi ke rumah ?
+                            Berapa biaya yang perlu dibayarkan untuk reservasi ?
                         </button>
                     </h2>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree"
                         data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            Setelah pembayaran diverifikasi, kamu akan mendapatkan waktu untuk pihak klinik hewan tiba
-                            di rumahmu. Pastikan tetap di rumah saja ya!
+                            Setiap satu hewan dikenakan biaya uang muka sebesar Rp.25.000! Tenang saja, biaya konsultasi hewan anda akan
+                            dikurangkan sesuai dengan uang muka yang anda bayar sehingga anda tidak membayar uang tambahan reservasi.
                         </div>
                     </div>
                 </div>
