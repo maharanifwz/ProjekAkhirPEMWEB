@@ -10,80 +10,95 @@
         <div class="container">
             <div class="row riwayat-desc">
                 <div class="col riwayat-box">
-                    <h3 class="identity">Riwayat Konsultasi</h3>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" checked>
-                        <label class="form-check-label" for="flexRadioDefault1">
-                            Semua
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" >
-                        <label class="form-check-label" for="flexRadioDefault2">
-                            Sedang Diproses
-                        </label>
-                    </div>
-                    <div class="form-check">
-                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" >
-                        <label class="form-check-label" for="flexRadioDefault3">
-                            Selesai
-                        </label>
-                    </div>
-                    <form>
-                        <button type="button" class="btn btn-primary btn-Riwayat">FILTER</button>
+                    <form action="<?= BASEURL ?>/FilterHistory" method="GET">
+                        <h3 class="identity">Riwayat Konsultasi</h3>
+                        <div class="form-check">
+                            <?php ?>
+                            <input class="form-check-input" type="radio" name="filter" id="flexRadioDefault1" value="all" checked>
+                            <label class="form-check-label" for="flexRadioDefault1">
+                                Semua
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="filter" id="flexRadioDefault2" value="onProcess">
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Sedang Diproses
+                            </label>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="radio" name="filter" id="flexRadioDefault3" value="Finished">
+                            <label class="form-check-label" for="flexRadioDefault3">
+                                Selesai
+                            </label>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-Riwayat">FILTER</button>
                     </form>
                 </div>
-                <div class="col riwayat-box">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">Nama Hewan</th>
-                                <th scope="col">Umur Hewan</th>
-                                <th scope="col">Jadwal</th>
-                                <th scope="col">Uang Muka</th>
-                                <th scope="col">Status</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($data['dataHistori'] as $perRiwayat) {
-                                $hours = explode(" ", $perRiwayat['jam']);
-                                // seharusnya date dengan format H:i bakal nampilin 24 jam bukan dengan format 12 jam
-                                $hour_to_show = str_replace("0:00", "0", $hours[0]) . " - " .  date('H:i', strtotime("+30 minutes", strtotime($hours[count($hours) - 1])));
-                            ?>
-                                <tr>
-                                    <td>
-                                        <?php
-                                        $listIdHewan = explode(" ", $perRiwayat['listHewan']);
-                                        $listUmurHewan = [];
-                                        foreach ($data['dataHewan'] as $i) {
-                                            if (in_array($i['id'], $listIdHewan)) {
-                                                $name = $i['nama'];
-                                                echo "<li>$name</li>";
-                                                array_push($listUmurHewan, $i['umur']);
+
+                <?php
+                if (count($data['dataHistori']) > 0) { ?>
+                    <div class="col riwayat-box">
+                        <?php
+                        foreach ($data['dataHistori'] as $perRiwayat) {
+                            $hours = explode(" ", $perRiwayat['jam']);
+                            // seharusnya date dengan format H:i bakal nampilin 24 jam bukan dengan format 12 jam
+                            $hour_to_show = str_replace("0:00", "0", $hours[0]) . " - " .  date('H:i', strtotime("+30 minutes", strtotime($hours[count($hours) - 1])));
+                        ?>
+
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Nama Hewan</th>
+                                        <th scope="col">Umur Hewan</th>
+                                        <th scope="col">Jadwal</th>
+                                        <th scope="col">Uang Muka</th>
+                                        <th scope="col">Status</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <?php
+                                            $listIdHewan = explode(" ", $perRiwayat['listHewan']);
+                                            $listUmurHewan = [];
+                                            foreach ($data['dataHewan'] as $i) {
+                                                if (in_array($i['id'], $listIdHewan)) {
+                                                    $name = $i['nama'];
+                                                    echo "<li>$name</li>";
+                                                    array_push($listUmurHewan, $i['umur']);
+                                                }
+                                            } ?>
+                                        </td>
+                                        <td>
+                                            <?php
+                                            foreach ($listUmurHewan as $i) {
+                                                echo "<li>$i</li>";
                                             }
-                                        } ?>
-                                    </td>
-                                    <td>
+                                            ?>
+                                        </td>
+                                        <td><?= $perRiwayat['tanggal'] . " " . $hour_to_show . " WIB" ?></td>
+                                        <td>Rp 150.000</td>
                                         <?php
-                                        foreach ($listUmurHewan as $i) {
-                                            echo "<li>$i</li>";
-                                        }
-                                        ?>
-                                    </td>
-                                    <td><?= $perRiwayat['tanggal'] . " " . $hour_to_show . " WIB" ?></td>
-                                    <td>Rp 150.000</td>
-                                    <?php
-                                    $status = $perRiwayat['status'];
-                                    if ($status == 'Belum Terverifikasi') {
-                                        echo "<td><i class='fa-solid fa-circle fa-2xs'></i> $status</td>";
-                                    } else {
-                                        echo "<td><i class='fa-solid fa-circle green fa-2xs'></i> $status</td>";
-                                    } ?>
-                                </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
+                                        $status = $perRiwayat['status'];
+                                        if ($status == 'Belum Terverifikasi') {
+                                            echo "<td><i class='fa-solid fa-circle fa-2xs'></i> $status</td>";
+                                        } else {
+                                            echo "<td><i class='fa-solid fa-circle green fa-2xs'></i> $status</td>";
+                                        } ?>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        <?php }
+                    } else {
+                        ?>
+                        <div class="col riwayat-box center">
+                            <img src="../../public/images/riwayat.svg" alt="Riwayat Konsultasi">
+                            <p class="riwayat-heading">Tidak ada data histori yang ditemukan</p>
+                        </div>
+                    <?php } ?>
+
+                    </div>
             </div>
         </div>
     </div>
