@@ -4,21 +4,21 @@
             <div class="row riwayat-desc">
                 <div class="col riwayat-box">
                     <h3 class="identity">Riwayat Konsultasi</h3>
-                    <form action="<?= BASEURL ?>/" method="get">
+                    <form action="<?= BASEURL ?>/filterHistoriAdmin" method="get">
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="radio" id="flexRadioDefault1" checked value="semua">
+                            <input class="form-check-input" type="radio" name="filter" id="flexRadioDefault1" checked value="all">
                             <label class="form-check-label" for="flexRadioDefault1">
                                 Semua
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="radio" id="flexRadioDefault2" value="belum">
+                            <input class="form-check-input" type="radio" name="filter" id="flexRadioDefault2" value="onProcess">
                             <label class="form-check-label" for="flexRadioDefault2">
                                 Sedang Diproses
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="radio" id="flexRadioDefault3" value="selesai">
+                            <input class="form-check-input" type="radio" name="filter" id="flexRadioDefault3" value="Finished">
                             <label class="form-check-label" for="flexRadioDefault3">
                                 Selesai
                             </label>

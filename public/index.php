@@ -40,7 +40,8 @@ Routes::add('POST','/konfirmasi', BookingController::class,'insertInvoice');
 
 //Admin
 //ini nnti ganti post supaya gak bisa di bypass
-Routes::add('GET','/admin', AdminController::class,'showRiwayat');
+Routes::add('GET','/admin', AdminController::class,'ShowAllHistory');
+Routes::add('GET','/filterHistoriAdmin', AdminController::class,'ShowAllHistory');
 Routes::add('GET','/detailAdmin', AdminController::class,'showDetail');
 Routes::add('GET','/showAdmin', AdminController::class,'showYetConfirm');
 Routes::add('GET','/getImage', AdminController::class,'showRiwayat');
