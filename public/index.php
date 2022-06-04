@@ -39,6 +39,7 @@ Routes::add('POST','/konfirmasi', BookingController::class,'insertInvoice');
 
 
 //Admin
+//ini nnti ganti post supaya gak bisa di bypass
 Routes::add('GET','/admin', AdminController::class,'showRiwayat');
 Routes::add('GET','/detailAdmin', AdminController::class,'showDetail');
 Routes::add('GET','/showAdmin', AdminController::class,'showYetConfirm');
@@ -49,12 +50,3 @@ Routes::add('GET','/testing', UserController::class,'testing');
 Routes::add('POST','/testingprocess', UserController::class,'testingProcess');
 
 Routes::run();
-
-// testing purpose
-// if(isset($_SERVER['PATH_INFO'])){
-//     echo 'ada path';
-//     echo "\n";
-//     echo($_SERVER['PATH_INFO']);
-// }else{
-//     echo 'tidak ada';
-// }

@@ -27,6 +27,19 @@ class AdminController extends Controller{
         $this->show('detailAdmin');
     }
 
+    public function addUserName($data)
+    {
+        for ($i=0; $i < count($data['riwayat']) ; $i++) { 
+            foreach ($nama as $name) {
+                if($name['id_user'] == $data['riwayat'][$i]['idPengguna']){
+                    array_push($data['riwayat'][$i], $name['id_user'], $name['nama']);
+                }
+            }
+            array_push($data['riwayat'][$i],$i);
+        }
+    }
+
+
 
     public function showRiwayat()
     {
@@ -42,7 +55,6 @@ class AdminController extends Controller{
             }
             array_push($data['riwayat'][$i],$i);
         }
-        
         $this->show('admin', $data);
         // $img = $this->model->fetchImage();
         // $i = 0;
@@ -51,8 +63,8 @@ class AdminController extends Controller{
 
     public function showYetConfirm()
     {
-        $riwayat = $this->model->fetchYetConfirm();
-        $this->show('admin', $riwayat);
+        $data['riwayat'] = $this->model->fetchYetConfirm();
+        $this->show('admin', $data);
     }
 
     public function showConfirm()
