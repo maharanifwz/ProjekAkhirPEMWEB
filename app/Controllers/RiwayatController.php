@@ -48,18 +48,4 @@ class RiwayatController extends Controller
 
         $this->show('riwayatKonsultasi', $data);
     }
-
-    public function FilterProcessing()
-    {
-        $data['dataHistori'] = $this->model->getonProcessHistory($_SESSION['idPengguna']);
-        $data['dataHewan'] = $this->model->getAllHewan($data['dataHistori']);
-        $data['filter'] = 'onProcess';
-
-        $this->show('riwayatKonsultasi', $data);
-    }
-
-    public function ShowFinishedHistory()
-    {
-        // 
-    }
 }
