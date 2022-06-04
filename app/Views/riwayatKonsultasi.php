@@ -13,20 +13,31 @@
                     <form action="<?= BASEURL ?>/FilterHistory" method="GET">
                         <h3 class="identity">Riwayat Konsultasi</h3>
                         <div class="form-check">
-                            <?php ?>
-                            <input class="form-check-input" type="radio" name="filter" id="flexRadioDefault1" value="all" checked>
+                            <?php if ($data['filter'] == 'all') {
+                                echo "<input class='form-check-input' type='radio' name='filter' id='flexRadioDefault1' value='all' checked>";
+                            } else {
+                                echo "<input class='form-check-input' type='radio' name='filter' id='flexRadioDefault1' value='all'>";
+                            } ?>
                             <label class="form-check-label" for="flexRadioDefault1">
                                 Semua
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="filter" id="flexRadioDefault2" value="onProcess">
+                            <?php if ($data['filter'] == 'onProcess') {
+                                echo "<input class='form-check-input' type='radio' name='filter' id='flexRadioDefault1' value='onProcess' checked>";
+                            } else {
+                                echo "<input class='form-check-input' type='radio' name='filter' id='flexRadioDefault1' value='onProcess'>";
+                            } ?>
                             <label class="form-check-label" for="flexRadioDefault2">
                                 Sedang Diproses
                             </label>
                         </div>
                         <div class="form-check">
-                            <input class="form-check-input" type="radio" name="filter" id="flexRadioDefault3" value="Finished">
+                            <?php if ($data['filter'] == 'Finished') {
+                                echo "<input class='form-check-input' type='radio' name='filter' id='flexRadioDefault1' value='Finished' checked>";
+                            } else {
+                                echo "<input class='form-check-input' type='radio' name='filter' id='flexRadioDefault1' value='Finished'>";
+                            } ?>
                             <label class="form-check-label" for="flexRadioDefault3">
                                 Selesai
                             </label>
@@ -39,23 +50,21 @@
                 <?php
                 if (count($data['dataHistori']) > 0) { ?>
                     <div class="col riwayat-box">
-                        <?php
-                        foreach ($data['dataHistori'] as $perRiwayat) {
-                            $hours = explode(" ", $perRiwayat['jam']);
-                            // seharusnya date dengan format H:i bakal nampilin 24 jam bukan dengan format 12 jam
-                            $hour_to_show = str_replace("0:00", "0", $hours[0]) . " - " .  date('H:i', strtotime("+30 minutes", strtotime($hours[count($hours) - 1])));
-                        ?>
-
-                            <table class="table table-hover">
-                                <thead>
-                                    <tr>
-                                        <th scope="col">Nama Hewan</th>
-                                        <th scope="col">Umur Hewan</th>
-                                        <th scope="col">Jadwal</th>
-                                        <th scope="col">Uang Muka</th>
-                                        <th scope="col">Status</th>
-                                    </tr>
-                                </thead>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Nama Hewan</th>
+                                    <th scope="col">Umur Hewan</th>
+                                    <th scope="col">Jadwal</th>
+                                    <th scope="col">Uang Muka</th>
+                                    <th scope="col">Status</th>
+                                </tr>
+                            </thead>
+                            <?php
+                            foreach ($data['dataHistori'] as $perRiwayat) {
+                                $hours = explode(" ", $perRiwayat['jam']);
+                                // seharusnya date dengan format H:i bakal nampilin 24 jam bukan dengan format 12 jam
+                                $hour_to_show = str_replace("0:00", "0", $hours[0]) . " - " .  date('H:i', strtotime("+30 minutes", strtotime($hours[count($hours) - 1]))); ?>
                                 <tbody>
                                     <tr>
                                         <td>
@@ -87,11 +96,13 @@
                                             echo "<td><i class='fa-solid fa-circle green fa-2xs'></i> $status</td>";
                                         } ?>
                                     </tr>
+                                <?php } ?>
                                 </tbody>
-                            </table>
-                        <?php }
-                    } else {
-                        ?>
+                        </table>
+                    <?php
+
+                } else {
+                    ?>
                         <div class="col riwayat-box center">
                             <img src="../../public/images/riwayat.svg" alt="Riwayat Konsultasi">
                             <p class="riwayat-heading">Tidak ada data histori yang ditemukan</p>

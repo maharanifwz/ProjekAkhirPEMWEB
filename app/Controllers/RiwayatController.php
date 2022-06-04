@@ -23,13 +23,13 @@ class RiwayatController extends Controller
     public function ShowAllHistory()
     {
         $data = [];
+        $data['filter'] = 'all';
         if (isset($_GET['filter'])) {
             $filter = $_GET['filter'];
             if ($filter == 'all') {
                 // unset($data['dataHistori']);
                 $data['dataHistori'] = $this->model->getAllHistory($_SESSION['idPengguna']);
                 $data['dataHewan'] = $this->model->getAllHewan($data['dataHistori']);
-                $data['filter'] = 'all';
             } else if ($filter == 'onProcess') {
                 // unset($data['dataHistori']);
                 $data['dataHistori'] = $this->model->getonProcessHistory($_SESSION['idPengguna']);
@@ -39,18 +39,13 @@ class RiwayatController extends Controller
                 // unset($data['dataHistori']);
                 $data['dataHistori'] = $this->model->getFinishedHistory($_SESSION['idPengguna']);
                 $data['dataHewan'] = $this->model->getAllHewan($data['dataHistori']);
-                $data['filter'] = 'onProcess';
+                $data['filter'] = 'Finished';
             }
         } else {
             $data['dataHistori'] = $this->model->getAllHistory($_SESSION['idPengguna']);
             $data['dataHewan'] = $this->model->getAllHewan($data['dataHistori']);
-            $data['filter'] = 'all';
         }
 
-        // $data['dataHistori'] = $this->model->getAllHistory($_SESSION['idPengguna']);
-        // $data['dataHewan'] = $this->model->getAllHewan($data['dataHistori']);
-        // $data['filter'] = 'all';
-        // var_dump($data);
         $this->show('riwayatKonsultasi', $data);
     }
 
