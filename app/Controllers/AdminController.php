@@ -24,19 +24,34 @@ class AdminController extends Controller{
 
     public function showDetail()
     {
-        $this->show('detailAdmin');
+        // echo $_POST['idHist'];
+        $id = $_POST['idHist'];
+        $data['user'] = $this->model->fetchDetail($id);
+        $nama = $this->model->fetchName();
+        for ($i=0; $i < count($nama) ; $i++) { 
+            foreach ($nama as $name) {
+                if($name['id_user'] == $data['user'][0]['idPengguna']){
+                    array_push($data['user'][0], $name['id_user'], $name['nama']);
+                }
+            }
+        }
+        $this->show('detailAdmin', $data);
+
+
+
     }
 
     public function addUserName($data)
     {
+        $nama = $this->model->fetchName();
         for ($i=0; $i < count($data['riwayat']) ; $i++) { 
             foreach ($nama as $name) {
                 if($name['id_user'] == $data['riwayat'][$i]['idPengguna']){
                     array_push($data['riwayat'][$i], $name['id_user'], $name['nama']);
                 }
             }
-            array_push($data['riwayat'][$i],$i);
         }
+        return $data;
     }
 
 
@@ -44,17 +59,8 @@ class AdminController extends Controller{
     public function showRiwayat()
     {
         $data['riwayat'] = $this->model->fetchAll();
-        $nama = $this->model->fetchName();
-        $user = [];
 
-        for ($i=0; $i < count($data['riwayat']) ; $i++) { 
-            foreach ($nama as $name) {
-                if($name['id_user'] == $data['riwayat'][$i]['idPengguna']){
-                    array_push($data['riwayat'][$i], $name['id_user'], $name['nama']);
-                }
-            }
-            array_push($data['riwayat'][$i],$i);
-        }
+        $data = $this->addUserName($data);
         $this->show('admin', $data);
         // $img = $this->model->fetchImage();
         // $i = 0;
@@ -82,14 +88,13 @@ class AdminController extends Controller{
     public function updateStatus()
     {
         $status = $_GET["status"];
-        $id = $_GET["id"];
+        $id = $_POST["idHist"];
         $value = $this->model->updateStatus($status, $id);
 
-        $status = "Status berhasil di";
+        // $status = "Status berhasil di";
         // header('Location: '. BASEURL . '/admin');
-        $this->show('admin');
+        $this->showDetail();
     }
-
 
 
     

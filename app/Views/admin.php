@@ -36,8 +36,8 @@
                                 <th scope="col">Banyak Hewan</th>
                                 <th scope="col">Jadwal</th>
                                 <th scope="col">Uang Muka</th>
-                                <th scope="col">Bukti Transaksi</th>
                                 <th scope="col">Status</th>
+                                <th scope="col"></th>
                             </tr>
                         </thead>
                         <tbody>
@@ -46,20 +46,16 @@
                                     <td> <?= $riwayat['1'] ?></td>
                                     <td> <?= $riwayat['jumlahHewan'] ?></td>
                                     <td> <?= $riwayat['tanggal']?></td>
-                                    <td> <?= $riwayat['jumlahHewan']*25000?></td>
+                                    <td> <?= number_format($riwayat['jumlahHewan']*25000)?></td>
+                                    <td><li><i class="fa-solid fa-circle fa-2xs"></i> Belum Terverifikasi</li></td>
                                     <td>
-                                        <input type="hidden" id="img" name="index" value="<?=$riwayat['2']?>">
-                                        <button id="mybtn" value="<?=$riwayat['2']?> " type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1">
-                                            Lihat Bukti
-                                        </button>
+                                        <form action="<?= BASEURL ?>/detailAdmin" method="POST">
+                                            <button type="submit" class="btn btn-success" name="idHist"value="<?= $riwayat['id']?>">
+                                                Ubah Status
+                                            </button>
+                                        </form>
+                                        
                                     </td>
-                                    <td><li><i class="fa-solid fa-circle fa-2xs"></i> Belum Terverifikasi</li>
-                                    
-                                    <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" value='<?= $riwayat['2'] ?>'>
-                                        Ubah Status
-                                    </button></td>
-                                
-                                    
                                 </tr>
                             <?php } ?>
 
@@ -76,19 +72,19 @@
                                                     </div>
                                                     <div class="modal-body">
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="terverifikasi">
                                                             <label class="form-check-label" for="flexRadioDefault1">
                                                                 Terverifikasi
                                                             </label>
                                                         </div>
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked value="tidak valid">
                                                             <label class="form-check-label" for="flexRadioDefault2">
                                                                 Tidak Valid
                                                             </label>
                                                         </div>
                                                         <div class="form-check">
-                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked>
+                                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked value="selesai">
                                                             <label class="form-check-label" for="flexRadioDefault3">
                                                                 Selesai
                                                             </label>
@@ -96,7 +92,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                                        <button type="button" class="btn btn-primary">Save changes</button>
+                                                        <button type="submit" class="btn btn-primary">Save changes</button>
                                                     </div>
                                                 </div>
                                             </div>
