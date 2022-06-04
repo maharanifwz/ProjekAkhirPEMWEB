@@ -61,10 +61,10 @@ class Admin_model{
         return $value;
     }
 
-
-    public function fetchImage($id)
+    public function fetchHewan($idHewan)
     {
-        $this->db->query("SELECT invoice FROM riwayatkonsultasi WHERE $id = '$id' " );
+        $query = ("SELECT nama, jenis, keluhan FROM hewan WHERE id = '$idHewan' ");
+        $this->db->query($query);
         return $this->db->resultSet();
     }
 

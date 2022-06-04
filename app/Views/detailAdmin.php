@@ -3,7 +3,7 @@
         <!-- breadcrumb -->
         <nav style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='%236c757d'/%3E%3C/svg%3E&#34;);" aria-label="breadcrumb">
             <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="<?= BASEURL ?>/">Semua Riwayat</a></li>
+                <li class="breadcrumb-item"><a href="<?= BASEURL ?>/admin">Semua Riwayat</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Detail Riwayat</li>
             </ol>
         </nav>
@@ -18,6 +18,7 @@
                         <th scope="col">Harga</th>
                         <th scope="col">Bukti Transaksi</th>
                         <th scope="col">Status</th>
+                        <th></th>
                     </tr>
                 </thead>
                 <tbody>
@@ -34,90 +35,95 @@
                                         </button>
                                     </td>
                                     <td>
-                                        <li><i class="fa-solid fa-circle fa-2xs"></i>Pembayaran Tidak Valid</li>
+                                        <li><?= $riwayat['status'] ?></li>
                                         <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" value='<?= $riwayat['2'] ?>'>
                                             Ubah Status
                                         </button>
                                     </td>
                                 </tr>
                             <?php } ?>
-                    <!-- Modal -->
-                    <form action="<?=BASEURL?>/updateStatus" method="POST">
-                        <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <h5 class="modal-title" id="exampleModalLabel">Ubah Status Transaksi</h5>
-                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Terverifikasi">
-                                            <label class="form-check-label" for="flexRadioDefault1">
-                                                Terverifikasi
-                                            </label>
+                                     <!-- Modal -->
+                                <form action="<?=BASEURL?>/updateStatus" method="POST">
+                                    <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Ubah Status Transaksi</h5>
+                                                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1" value="Terverifikasi">
+                                                        <label class="form-check-label" for="flexRadioDefault1">
+                                                            Terverifikasi
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked value="Pembayaran Tidak Valid">
+                                                        <label class="form-check-label" for="flexRadioDefault2">
+                                                            Tidak Valid
+                                                        </label>
+                                                    </div>
+                                                    <div class="form-check">
+                                                        <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked value="Selesai">
+                                                        <label class="form-check-label" for="flexRadioDefault3">
+                                                            Selesai
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    <input type="hidden" name="idHist" value="<?=$data['user'][0]['id']?>">
+                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </div>
                                         </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked value="Pembayaran Tidak Valid">
-                                            <label class="form-check-label" for="flexRadioDefault2">
-                                                Tidak Valid
-                                            </label>
-                                        </div>
-                                        <div class="form-check">
-                                            <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault3" checked value="Selesai">
-                                            <label class="form-check-label" for="flexRadioDefault3">
-                                                Selesai
-                                            </label>
-                                        </div>
                                     </div>
-                                    <div class="modal-footer">
-                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                                        <input type="hidden" name="idHist" value="<?=$data['user'][0]['id']?>">
-                                        <button type="submit" class="btn btn-primary">Save changes</button>
-                                    </div>
-                                </div>
+                                </form>
                             </div>
-                        </div>
-                    </form>
-                </div>
                             <!-- INVOICE -->
-                            <form>
-                                <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
-                                    <div class="modal-dialog">
-                                        <div class="modal-content">
-                                            <div class="modal-header">
-                                                <h5 class="modal-title" id="exampleModalLabel">Lihat Bukti Pembayaran</h5>
-                                                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                                            </div>
-                                            <div class="modal-body" id="image">
-                                                <img src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($data['user'][0]['invoice']) ?>" , height="auto" , width="auto" />
+                                    <form>
+                                        <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel1" aria-hidden="true">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+                                                    <div class="modal-header">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Lihat Bukti Pembayaran</h5>
+                                                        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                                                    </div>
+                                                    <div class="modal-body" id="image">
+                                                        <img id="invoice" src="data:image/jpg;charset=utf8;base64, <?php echo base64_encode($data['user'][0]['invoice']) ?>" , height="auto" , width="auto" />
 
-                                            </div>
-                                            <div class="modal-footer">
-                                                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
                                             </div>
                                         </div>
-                                    </div>
-                                </div>
-                            </form>
+                                    </form>
+                                
+                   
                         </tbody>
                     </table>
-                    <div class="form-floating mb-3">
-                        <textarea class="form-control" placeholder="Alamat" id="floatingTextarea2" style="height: 100px"></textarea>
-                        <label for="floatingTextarea2">Alamat</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingContact" placeholder="Kontak">
-                        <label for="floatingContact">Kontak</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingHewan" placeholder="Jenis Hewan">
-                        <label for="floatingHewan">Jenis Hewan</label>
-                    </div>
-                    <div class="form-floating mb-3">
-                        <input type="text" class="form-control" id="floatingKelamin" placeholder="Jenis Kelamin">
-                        <label for="floatingKelamin">Jenis Kelamin</label>
-                    </div>
+                    <?php $i=1;
+                    foreach ($data['hewan'] as $hewan) {?>
+                        <h5>Hewan <?=$i?></h3>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingContact"  readonly="readonly" value=<?=$hewan['nama']?>>
+                            <label for="floatingContact">Nama Hewan</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingHewan" placeholder="Jenis Hewan" readonly="readonly" value=<?=$hewan['jenis']?>>
+                            <label for="floatingHewan">Jenis Hewan</label>
+                        </div>
+                        <div class="form-floating mb-3">
+                            <input type="text" class="form-control" id="floatingHewan" placeholder="Jenis Hewan" readonly="readonly" value=<?=$hewan['keluhan']?>>
+                            <label for="floatingHewan">Keluhan</label>
+                        </div>
+                    <?php $i++;}
+                    
+                    ?>
+                    
                 </div>
         </div>
 </section>

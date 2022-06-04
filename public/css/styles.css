@@ -855,3 +855,11 @@ td li {
 #detailAdmin .riwayat-box {
     margin: 0 auto;
 }
+
+/* image */
+#invoice{
+      display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 80%;
+}

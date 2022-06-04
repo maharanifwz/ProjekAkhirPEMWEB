@@ -26,6 +26,9 @@ class AdminController extends Controller{
     {
         $id = $_POST['idHist'];
         $data['user'] = $this->model->fetchDetail($id);
+        $listHewan = $data['user'][0]['listHewan'];
+        $idHewan = explode(" ", $listHewan);
+        $data['hewan'] = $this->dataHewan($idHewan);
         $nama = $this->model->fetchName();
         for ($i=0; $i < count($nama) ; $i++) { 
             foreach ($nama as $name) {
@@ -34,6 +37,12 @@ class AdminController extends Controller{
                 }
             }
         }
+        $status = $data['user'][0]['status'];
+        if($status=="Belum Terverifikasi" || $status == 'Pembayaran Tidak Valid'){
+            $data['user'][0]['status'] = "<i class='fa-solid fa-circle fa-2xs'></i> $status";
+        }else{
+            $data['user'][0]['status'] = "<i class='fa-solid fa-circle green fa-2xs'></i> $status";
+        };
         $this->show('detailAdmin', $data);
 
 
@@ -53,17 +62,13 @@ class AdminController extends Controller{
         return $data;
     }
 
-
-
     public function showRiwayat()
     {
         $data['riwayat'] = $this->model->fetchAll();
 
         $data = $this->addUserName($data);
+
         $this->show('admin', $data);
-        // $img = $this->model->fetchImage();
-        // $i = 0;
-        // print_r($data['riwayat'][$i]['2']) ;
     }
 
     public function showYetConfirm()
@@ -78,12 +83,6 @@ class AdminController extends Controller{
         $this->show('admin', $riwayat);
     }
 
-    public function displayImage()
-    {
-        $id = $_GET["id"];
-        $data['img'] = $this->model->fetchImage($id);
-        $this->show('admin', $data);
-    }
     public function updateStatus()
     {
         $status = $_POST["flexRadioDefault"];
@@ -95,6 +94,17 @@ class AdminController extends Controller{
         $this->showDetail();
     }
 
+    public function dataHewan($idHewan)
+    {
+        $dataHewan = [];
+        foreach ($idHewan as $id) {
+            if($id != ""){
+                $data = $this->model->fetchHewan($id);
+                array_push($dataHewan, $data[0]);
+            }
+        };
+        return $dataHewan;
+    }
 
     
     
