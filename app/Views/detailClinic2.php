@@ -6,7 +6,7 @@
                 <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="#">Beranda</a></li>
                     <li class="breadcrumb-item" aria-current="page">Konsultasi</li>
-                    <li class="breadcrumb-item active" aria-current="page">Andista Animal Care</li>
+                    <li class="breadcrumb-item active" aria-current="page">Pet Mate Animal Care</li>
                 </ol>
             </nav>
             <div class="detailClinic-desc">

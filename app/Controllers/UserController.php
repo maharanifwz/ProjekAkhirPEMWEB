@@ -27,7 +27,6 @@ class UserController extends Controller{
             'alamat' => $_POST['alamat'],
             'password' => password_hash($_POST['password'], PASSWORD_BCRYPT)
         ];
-
         $uname = $this->model->fetchUname($data['username']);
         $email = $this->model->fetchEmail($data['email']);
         if(!empty($email)){
@@ -52,21 +51,32 @@ class UserController extends Controller{
             'username' => $_POST['username'],
             'password' => $_POST['password']
         ];
-        
+        $dbData = $this->model->fetchData($data['username']);
+        $uname = $dbData[0]['username'];
+        $pwd = $dbData[0]['password'];
+        $is_admin = $dbData[0]['is_admin'];
+
         $uname = $this->model->fetchUname($data['username']);
         $pwdHash = $this->model->fetchPwd($data['username']);
         
-        //verify username
+        // verify username
+
         if(!empty($uname)){
-            if(!empty($pwdHash)){
-                $encodePwd = password_verify($data['password'], $pwdHash[0]['password']);
+            if(!empty($pwd)){
+                $encodePwd = password_verify($data['password'], $pwd);
+                
                 if(!$encodePwd){
                     $_SESSION['state'] = "Password Anda salah. Silahkan coba lagi!";
-                    // $this->view('login');
-                    header('Location: '. BASEURL . '/login');
+                    $this->view('login');
+                    // header('Location: '. BASEURL . '/login');
                     return;
                 }
             }
+            if($is_admin){
+                $_SESSION['loginState'] = true;
+                header('Location: '. BASEURL . '/admin');
+                return;
+            };
             //success
             $_SESSION['loginState'] = true;
             $id_user = $this->model->fetchId($data['username']);

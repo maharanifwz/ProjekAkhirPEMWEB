@@ -55,4 +55,17 @@ class HomeController extends Controller
     {
         $this->show('riwayatKonsultasi2');
     }
+
+    
+    public function checkAcc()
+    {
+        if(isset($_SESSION['loginState'])){
+            if($_SESSION['loginState']){
+                $this->show('detailClinic');
+                return;
+            }
+        }
+        $this->view('login');
+    }
+
 }
