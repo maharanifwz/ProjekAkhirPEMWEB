@@ -40,6 +40,7 @@ Routes::add('POST','/konfirmasi', BookingController::class,'insertInvoice');
 
 //Admin
 Routes::add('GET','/admin', AdminController::class,'showRiwayat');
+Routes::add('GET','/detailAdmin', AdminController::class,'showDetail');
 Routes::add('GET','/showAdmin', AdminController::class,'showYetConfirm');
 Routes::add('GET','/getImage', AdminController::class,'showRiwayat');
 

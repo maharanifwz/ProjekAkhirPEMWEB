@@ -22,6 +22,11 @@ class AdminController extends Controller{
         $this->show('admin');
     }
 
+    public function showDetail()
+    {
+        $this->show('detailAdmin');
+    }
+
 
     public function showRiwayat()
     {
