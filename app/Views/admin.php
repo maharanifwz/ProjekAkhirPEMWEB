@@ -47,7 +47,15 @@
                                     <td> <?= $riwayat['jumlahHewan'] ?></td>
                                     <td> <?= $riwayat['tanggal']?></td>
                                     <td> <?= number_format($riwayat['jumlahHewan']*25000)?></td>
-                                    <td><li><i class="fa-solid fa-circle fa-2xs"></i> Belum Terverifikasi</li></td>
+                                    <td>
+                                       <?php
+                                        $status = $riwayat['status'];
+                                        if ($status == 'Belum Terverifikasi') {
+                                            echo "<td><i class='fa-solid fa-circle fa-2xs'></i> $status</td>";
+                                        } else {
+                                            echo "<td><i class='fa-solid fa-circle green fa-2xs'></i> $status</td>";
+                                        } ?>
+                                    </td>
                                     <td>
                                         <form action="<?= BASEURL ?>/detailAdmin" method="POST">
                                             <button type="submit" class="btn btn-success" name="idHist"value="<?= $riwayat['id']?>">

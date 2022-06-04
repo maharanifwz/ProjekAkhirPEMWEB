@@ -24,7 +24,6 @@ class AdminController extends Controller{
 
     public function showDetail()
     {
-        // echo $_POST['idHist'];
         $id = $_POST['idHist'];
         $data['user'] = $this->model->fetchDetail($id);
         $nama = $this->model->fetchName();
@@ -87,7 +86,7 @@ class AdminController extends Controller{
     }
     public function updateStatus()
     {
-        $status = $_GET["status"];
+        $status = $_POST["flexRadioDefault"];
         $id = $_POST["idHist"];
         $value = $this->model->updateStatus($status, $id);
 
