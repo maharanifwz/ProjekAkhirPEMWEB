@@ -16,6 +16,16 @@
                             </label>
                         </div>
                         <div class="form-check">
+                            <?php if ($data['filter'] == 'unverified') {
+                                echo "<input class='form-check-input' type='radio' name='filter' id='flexRadioDefault1' value='unverified' checked>";
+                            } else {
+                                echo "<input class='form-check-input' type='radio' name='filter' id='flexRadioDefault1' value='unverified'>";
+                            } ?>
+                            <label class="form-check-label" for="flexRadioDefault2">
+                                Belum Terverifikasi
+                            </label>
+                        </div>
+                        <div class="form-check">
                             <?php if ($data['filter'] == 'onProcess') {
                                 echo "<input class='form-check-input' type='radio' name='filter' id='flexRadioDefault1' value='onProcess' checked>";
                             } else {

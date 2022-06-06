@@ -53,19 +53,19 @@ class Admin_model
         return $this->db->resultSet();
     }
 
-    public function getAllHistory($idPengguna)
+    public function getAllHistory()
     {
         $this->db->query('SELECT * FROM ' . $this->table);
         return $this->db->resultSet();
     }
 
-    public function getonProcessHistory($idPengguna)
+    public function getonProcessHistory()
     {
         $this->db->query('SELECT * FROM ' . $this->table . " WHERE status = 'Belum Terverifikasi'");
         return $this->db->resultSet();
     }
 
-    public function getFinishedHistory($idPengguna)
+    public function getFinishedHistory()
     {
         $this->db->query('SELECT * FROM ' . $this->table . " WHERE status = 'Selesai' or status = 'Tidak Valid' or status = 'Terverifikasi'");
         return $this->db->resultSet();

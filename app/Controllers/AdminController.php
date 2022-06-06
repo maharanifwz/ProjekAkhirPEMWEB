@@ -47,18 +47,6 @@ class AdminController extends Controller
 
     }
 
-    public function addUserName($data)
-    {
-        for ($i = 0; $i < count($data['riwayat']); $i++) {
-            foreach ($nama as $name) {
-                if ($name['id_user'] == $data['riwayat'][$i]['idPengguna']) {
-                    array_push($data['riwayat'][$i], $name['id_user'], $name['nama']);
-                }
-            }
-            array_push($data['riwayat'][$i], $i);
-        }
-    }
-
     public function ShowAllHistory()
     {
         $data = [];
@@ -66,19 +54,19 @@ class AdminController extends Controller
         if (isset($_GET['filter'])) {
             $filter = $_GET['filter'];
             if ($filter == 'all') {
-                $data['riwayat'] = $this->model->getAllHistory($_SESSION['idPengguna']);
+                $data['riwayat'] = $this->model->getAllHistory();
                 $nama = $this->model->fetchName($data['riwayat']);
             } else if ($filter == 'onProcess') {
-                $data['riwayat'] = $this->model->getonProcessHistory($_SESSION['idPengguna']);
+                $data['riwayat'] = $this->model->getonProcessHistory();
                 $nama = $this->model->fetchName($data['riwayat']);
                 $data['filter'] = 'onProcess';
             } else {
-                $data['riwayat'] = $this->model->getFinishedHistory($_SESSION['idPengguna']);
+                $data['riwayat'] = $this->model->getFinishedHistory();
                 $nama = $this->model->fetchName($data['riwayat']);
                 $data['filter'] = 'Finished';
             }
         } else {
-            $data['riwayat'] = $this->model->getAllHistory($_SESSION['idPengguna']);
+            $data['riwayat'] = $this->model->getAllHistory();
             $nama = $this->model->fetchName($data['riwayat']);
         }
 
@@ -90,13 +78,6 @@ class AdminController extends Controller
             }
             array_push($data['riwayat'][$i], $i);
         }
-        $this->show('admin', $data);
-    }
-
-    public function displayImage()
-    {
-        $id = $_GET["id"];
-        $data['img'] = $this->model->fetchImage($id);
         $this->show('admin', $data);
     }
     
