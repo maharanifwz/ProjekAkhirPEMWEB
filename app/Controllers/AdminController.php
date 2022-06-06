@@ -27,7 +27,24 @@ class AdminController extends Controller
 
     public function showDetail()
     {
-        $this->show('detailAdmin');
+        $id = $_POST['idHist'];
+        $data['user'] = $this->model->fetchDetail($id);
+        $idUser = $data['user'][0]['idPengguna'];
+        $listHewan = $data['user'][0]['listHewan'];
+        $idHewan = explode(" ", $listHewan);
+        $data['hewan'] = $this->dataHewan($idHewan);
+        $name = $this->model->fetch1Name($idUser);
+
+        array_push($data['user'][0], $name[0]['id_user'], $name[0]['nama']);
+        $status = $data['user'][0]['status'];
+        if($status=="Belum Terverifikasi" || $status == 'Pembayaran Tidak Valid'){
+            $data['user'][0]['status'] = "<i class='fa-solid fa-circle fa-2xs'></i> $status";
+        }else{
+            $data['user'][0]['status'] = "<i class='fa-solid fa-circle green fa-2xs'></i> $status";
+        };
+
+        $this->show('detailAdmin', $data);
+
     }
 
     public function addUserName($data)
@@ -85,12 +102,23 @@ class AdminController extends Controller
     
     public function updateStatus()
     {
-        $status = $_GET["status"];
-        $id = $_GET["id"];
+       $status = $_POST["flexRadioDefault"];
+        $id = $_POST["idHist"];
         $value = $this->model->updateStatus($status, $id);
-
-        $status = "Status berhasil di";
+        // $status = "Status berhasil di";
         // header('Location: '. BASEURL . '/admin');
-        $this->show('admin');
+        $this->showDetail();
+    }
+
+    public function dataHewan($idHewan)
+    {
+        $dataHewan = [];
+        foreach ($idHewan as $id) {
+            if($id != ""){
+                $data = $this->model->fetchHewan($id);
+                array_push($dataHewan, $data[0]);
+            }
+        };
+        return $dataHewan;
     }
 }

@@ -39,12 +39,19 @@ class Admin_model
         return $this->db->resultSet();
     }
 
-    // public function fetchName()
-    // {
-    //     $que = ("SELECT nama, id_user FROM pengguna");
-    //     $this->db->query($que);
-    //     return $this->db->resultSet();
-    // }
+    public function fetchDetail($id)
+    {
+        $query = ("SELECT * FROM riwayatKonsultasi WHERE id = '$id' ");
+        $this->db->query($query);
+        return $this->db->resultSet();
+    }
+
+    public function fetch1Name($iduser)
+    {
+        $que = ("SELECT nama, id_user FROM pengguna WHERE id_user = '$iduser' ");
+        $this->db->query($que);
+        return $this->db->resultSet();
+    }
 
     public function getAllHistory($idPengguna)
     {
@@ -61,13 +68,6 @@ class Admin_model
     public function getFinishedHistory($idPengguna)
     {
         $this->db->query('SELECT * FROM ' . $this->table . " WHERE status = 'Selesai' or status = 'Tidak Valid' or status = 'Terverifikasi'");
-        return $this->db->resultSet();
-    }
-
-    public function fetchDetail($id)
-    {
-        $query = ("SELECT * FROM riwayatKonsultasi WHERE id = '$id' ");
-        $this->db->query($query);
         return $this->db->resultSet();
     }
 
