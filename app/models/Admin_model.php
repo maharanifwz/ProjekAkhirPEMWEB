@@ -53,7 +53,7 @@ class Admin_model
         return $this->db->resultSet();
     }
 
-    public function getAllHistory($idPengguna)
+    public function getAllHistory()
     {
         $this->db->query('SELECT * FROM ' . $this->table);
         return $this->db->resultSet();

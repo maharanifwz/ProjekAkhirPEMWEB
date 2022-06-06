@@ -78,7 +78,7 @@ class AdminController extends Controller
                 $data['filter'] = 'Finished';
             }
         } else {
-            $data['riwayat'] = $this->model->getAllHistory($_SESSION['idPengguna']);
+            $data['riwayat'] = $this->model->getAllHistory();
             $nama = $this->model->fetchName($data['riwayat']);
         }
 
