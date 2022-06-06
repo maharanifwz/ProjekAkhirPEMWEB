@@ -47,18 +47,6 @@ class AdminController extends Controller
 
     }
 
-    public function addUserName($data)
-    {
-        for ($i = 0; $i < count($data['riwayat']); $i++) {
-            foreach ($nama as $name) {
-                if ($name['id_user'] == $data['riwayat'][$i]['idPengguna']) {
-                    array_push($data['riwayat'][$i], $name['id_user'], $name['nama']);
-                }
-            }
-            array_push($data['riwayat'][$i], $i);
-        }
-    }
-
     public function ShowAllHistory()
     {
         $data = [];
@@ -90,13 +78,6 @@ class AdminController extends Controller
             }
             array_push($data['riwayat'][$i], $i);
         }
-        $this->show('admin', $data);
-    }
-
-    public function displayImage()
-    {
-        $id = $_GET["id"];
-        $data['img'] = $this->model->fetchImage($id);
         $this->show('admin', $data);
     }
     
