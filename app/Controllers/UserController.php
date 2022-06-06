@@ -99,7 +99,8 @@ class UserController extends Controller{
     {
         session_unset();
         session_destroy();
-        $this->show('index');
+        header('Location: '. BASEURL . '/');
+        // $this->show('index');
     }
 
 }
