@@ -58,6 +58,7 @@
                                     <th scope="col">Jadwal</th>
                                     <th scope="col">Uang Muka</th>
                                     <th scope="col">Status</th>
+                                    <th scope="col">Detail</th>
                                 </tr>
                             </thead>
                             <?php
@@ -95,6 +96,17 @@
                                         } else {
                                             echo "<td><i class='fa-solid fa-circle green fa-2xs'></i> $status</td>";
                                         } ?>
+                                        <td>
+                                            <?php if($status){
+                                                
+                                            }
+                                            ?>
+                                            <form action="<?= BASEURL ?>/detailAdmin" method="POST">
+                                            <button type="submit" class="btn btn-success" name="idHist" value="<?= $riwayat['id'] ?>">
+                                                Batalkan Pesanan
+                                            </button>
+                                        </form>
+                                        </td>
                                     </tr>
                                 <?php } ?>
                                 </tbody>
