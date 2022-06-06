@@ -42,23 +42,6 @@ class AdminController extends Controller
         }
     }
 
-    // public function showRiwayat()
-    // {
-    //     $data['riwayat'] = $this->model->fetchAll();
-    //     $nama = $this->model->fetchName();
-    //     $user = [];
-
-    //     for ($i = 0; $i < count($data['riwayat']); $i++) {
-    //         foreach ($nama as $name) {
-    //             if ($name['id_user'] == $data['riwayat'][$i]['idPengguna']) {
-    //                 array_push($data['riwayat'][$i], $name['id_user'], $name['nama']);
-    //             }
-    //         }
-    //         array_push($data['riwayat'][$i], $i);
-    //     }
-    //     $this->show('admin', $data);
-    // }
-
     public function ShowAllHistory()
     {
         $data = [];
@@ -93,24 +76,13 @@ class AdminController extends Controller
         $this->show('admin', $data);
     }
 
-    // public function showYetConfirm()
-    // {
-    //     $data['riwayat'] = $this->model->fetchYetConfirm();
-    //     $this->show('admin', $data);
-    // }
-
-    // public function showConfirm()
-    // {
-    //     $riwayat = $this->model->fetchConfirm();
-    //     $this->show('admin', $riwayat);
-    // }
-
     public function displayImage()
     {
         $id = $_GET["id"];
         $data['img'] = $this->model->fetchImage($id);
         $this->show('admin', $data);
     }
+    
     public function updateStatus()
     {
         $status = $_GET["status"];
