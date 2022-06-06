@@ -74,7 +74,8 @@ class UserController extends Controller{
             }
             if($is_admin){
                 $_SESSION['loginState'] = true;
-                $this->show('admin', $data);
+                
+                header('Location: '. BASEURL . '/admin');
                 return;
             };
             //success
@@ -83,7 +84,7 @@ class UserController extends Controller{
             $_SESSION['idPengguna'] = $id_user[0]['id_user'];
             unset($_SESSION['state']);
             
-            $this->show('/');
+            header('Location: '. BASEURL . '/');
             unset($data);
             return;
         };
