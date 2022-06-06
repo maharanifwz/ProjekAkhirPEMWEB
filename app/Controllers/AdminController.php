@@ -66,14 +66,14 @@ class AdminController extends Controller
         if (isset($_GET['filter'])) {
             $filter = $_GET['filter'];
             if ($filter == 'all') {
-                $data['riwayat'] = $this->model->getAllHistory($_SESSION['idPengguna']);
+                $data['riwayat'] = $this->model->getAllHistory();
                 $nama = $this->model->fetchName($data['riwayat']);
             } else if ($filter == 'onProcess') {
-                $data['riwayat'] = $this->model->getonProcessHistory($_SESSION['idPengguna']);
+                $data['riwayat'] = $this->model->getonProcessHistory();
                 $nama = $this->model->fetchName($data['riwayat']);
                 $data['filter'] = 'onProcess';
             } else {
-                $data['riwayat'] = $this->model->getFinishedHistory($_SESSION['idPengguna']);
+                $data['riwayat'] = $this->model->getFinishedHistory();
                 $nama = $this->model->fetchName($data['riwayat']);
                 $data['filter'] = 'Finished';
             }
