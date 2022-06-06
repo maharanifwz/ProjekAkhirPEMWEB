@@ -59,15 +59,21 @@ class Admin_model
         return $this->db->resultSet();
     }
 
-    public function getonProcessHistory()
+    public function getUnverifiedHistory()
     {
         $this->db->query('SELECT * FROM ' . $this->table . " WHERE status = 'Belum Terverifikasi'");
         return $this->db->resultSet();
     }
 
+    public function getonProcessHistory()
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . " WHERE status = 'Terverifikasi'");
+        return $this->db->resultSet();
+    }
+
     public function getFinishedHistory()
     {
-        $this->db->query('SELECT * FROM ' . $this->table . " WHERE status = 'Selesai' or status = 'Tidak Valid' or status = 'Terverifikasi'");
+        $this->db->query('SELECT * FROM ' . $this->table . " WHERE status = 'Selesai' or status = 'Tidak Valid'");
         return $this->db->resultSet();
     }
 

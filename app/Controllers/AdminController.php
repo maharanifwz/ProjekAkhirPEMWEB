@@ -37,14 +37,13 @@ class AdminController extends Controller
 
         array_push($data['user'][0], $name[0]['id_user'], $name[0]['nama']);
         $status = $data['user'][0]['status'];
-        if($status=="Belum Terverifikasi" || $status == 'Pembayaran Tidak Valid'){
+        if ($status == "Belum Terverifikasi" || $status == 'Pembayaran Tidak Valid') {
             $data['user'][0]['status'] = "<i class='fa-solid fa-circle fa-2xs'></i> $status";
-        }else{
+        } else {
             $data['user'][0]['status'] = "<i class='fa-solid fa-circle green fa-2xs'></i> $status";
         };
 
         $this->show('detailAdmin', $data);
-
     }
 
     public function ShowAllHistory()
@@ -56,6 +55,10 @@ class AdminController extends Controller
             if ($filter == 'all') {
                 $data['riwayat'] = $this->model->getAllHistory();
                 $nama = $this->model->fetchName($data['riwayat']);
+            } else if ($filter == 'unverified') {
+                $data['riwayat'] = $this->model->getUnverifiedHistory();
+                $nama = $this->model->fetchName($data['riwayat']);
+                $data['filter'] = 'unverified';
             } else if ($filter == 'onProcess') {
                 $data['riwayat'] = $this->model->getonProcessHistory();
                 $nama = $this->model->fetchName($data['riwayat']);
@@ -80,10 +83,10 @@ class AdminController extends Controller
         }
         $this->show('admin', $data);
     }
-    
+
     public function updateStatus()
     {
-       $status = $_POST["flexRadioDefault"];
+        $status = $_POST["flexRadioDefault"];
         $id = $_POST["idHist"];
         $value = $this->model->updateStatus($status, $id);
         // $status = "Status berhasil di";
@@ -95,7 +98,7 @@ class AdminController extends Controller
     {
         $dataHewan = [];
         foreach ($idHewan as $id) {
-            if($id != ""){
+            if ($id != "") {
                 $data = $this->model->fetchHewan($id);
                 array_push($dataHewan, $data[0]);
             }
