@@ -47,12 +47,10 @@
                         <li><a href="<?= BASEURL ?>/tentangKami">Tentang Kami</a></li>
                         <?php
                         if (isset($_SESSION['loginState'])) { ?>
-                            <!-- <li><a  class="right" href="<?= BASEURL ?>/logout">Keluar</a></li> -->
-                            <!-- Example single danger button -->
-                            <select class="form-select right" aria-label="Default select example">
+                            <select id="dropdown1" onchange="location = this.options[this.selectedIndex].value;">
                                 <option hidden>Budi Hartono</option>
-                                <option value="1">Riwayat Konsultasi</option>
-                                <option value="2">Komdak</option>
+                                <option value="ShowAllHistory">Riwayat Konsultasi</option>
+                                <option value="logout">Keluar</option>
                             </select>
                         <?php } else { ?>
                             <li><a href="<?= BASEURL ?>/login">Masuk</a></li>
@@ -63,3 +61,8 @@
             </header>
         </div>
     </div>
+
+<script>
+    temp = document.getElementById('dropdown1').value
+    console.log(temp)
+</script>

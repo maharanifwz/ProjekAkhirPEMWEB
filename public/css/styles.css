@@ -828,9 +828,12 @@ td li {
     text-align: center;
 }
 
-.navigasi .form-select {
+.navigasi select {
     /* margin-left: 300px; */
     width: min-content;
+    border-radius: 10px;
+    border-color: #829C5F;
+    background-color: #4F692F;
 }
 
 .btn-Riwayat {
