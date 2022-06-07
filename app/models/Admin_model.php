@@ -48,7 +48,7 @@ class Admin_model
 
     public function fetch1Name($iduser)
     {
-        $que = ("SELECT nama, id_user FROM pengguna WHERE id_user = '$iduser' ");
+        $que = ("SELECT nama, id_user, email FROM pengguna WHERE id_user = '$iduser' ");
         $this->db->query($que);
         return $this->db->resultSet();
     }
