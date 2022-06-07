@@ -27,7 +27,7 @@
         <div class="col">
             <div className="logo">
                 <img src="../../public/images/logo.png" />
-                <a class="logo-desc">Pet<span class="identity">Mate</span></a>
+                <a class="logo-footer">Pet<span class="identity">Mate</span></a>
             </div>
             <p>Dapatkan informasi terbaru tentang layanan dan promo dari Pet Mate</p>
             <div class="input-group mb-3">
