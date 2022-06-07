@@ -36,7 +36,7 @@ class Riwayat_model
     }
     public function getFinishedHistory($idPengguna)
     {
-        $this->db->query('SELECT * FROM ' . $this->table . " WHERE idPengguna = '$idPengguna' and  (status = 'Selesai' or status = 'Tidak Valid')");
+        $this->db->query('SELECT * FROM ' . $this->table . " WHERE idPengguna = '$idPengguna' and  (status = 'Selesai' or status = 'Pembayaran Tidak Valid')");
         // $this->db->query('SELECT * FROM ' . $this->table);
         return $this->db->resultSet();
     }

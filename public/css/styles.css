@@ -70,7 +70,13 @@ p {
     margin: 0 auto;
 }
 
-.navigasi {
+.navbar {
+    background: #FFFFFF;
+    width: 100%;
+
+}
+
+/* .navigasi {
     position: fixed;
     display: flex;
     left: 0;
@@ -90,11 +96,11 @@ p {
     font-size: 40px;
     color: black;
     /* Tambahan*/
-    position: relative;
+/* position: relative;
     transition: 0.6s;
-}
+} */
 
-.navigasi ul {
+/* .navigasi ul {
     position: relative;
     display: flex;
     justify-content: content;
@@ -124,15 +130,15 @@ p {
 .navigasi ul li:hover ul {
     display: block;
     position: absolute;
-}
-
-
+} */
+*/
 /* nav ul li:hover {
     
 } */
 
 
 
+/* .navigasi li a:hover {
 .navigasi li a:hover {
     color: #FFFCED;
     border-radius: 15px;
@@ -143,7 +149,7 @@ p {
 
 .navigasi ul li ul {
     display: none;
-}
+} */
 
 
 /* logo */
@@ -152,12 +158,24 @@ p {
     display: flex;
 }
 
-.logo-desc {
+.logo-desc,
+.logo-footer {
     font-weight: 600;
     font-size: 22px;
     color: #4F692F;
-    margin-top: 10px;
+    margin-top: 3px;
     text-decoration: none;
+    margin-left: -15px;
+}
+
+.logo-footer {
+    margin-left: 0px;
+    margin-top: 125px;
+}
+
+.nav-item {
+    margin-top: 7px;
+    margin-left: 15px;
 }
 
 .logo-desc:hover {
@@ -227,6 +245,7 @@ th {
     --bs-btn-bg: none;
     width: 111px;
 }
+
 
 /* service */
 
@@ -812,7 +831,7 @@ td li {
 }
 
 .riwayat-heading {
-    width: 700px;
+    width: 600px;
 }
 
 .modal-content {
@@ -830,10 +849,21 @@ td li {
 
 .navigasi select {
     /* margin-left: 300px; */
-    width: min-content;
+    color: white;
     border-radius: 10px;
-    border-color: #829C5F;
-    background-color: #4F692F;
+    border-color: none;
+    background-color: #829C5F;
+    width: min-content;
+    padding: 1%;
+}
+
+.dropdown2 {
+    color: #353F28;
+    background-color: none;
+}
+
+li {
+    list-style: none;
 }
 
 .btn-Riwayat {
@@ -854,15 +884,50 @@ td li {
     width: 100%;
 }
 
+
 /* detail admin */
+
 #detailAdmin .riwayat-box {
     margin: 0 auto;
 }
 
+
 /* image */
-#invoice{
-      display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
+
+#invoice {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
+}
+
+.dropdown,
+.masuk-style {
+    border-color: #829C5F;
+    background-color: #829C5F;
+    padding: 0.8%;
+    border-radius: 10px;
+    color: white;
+}
+
+.masuk-style {
+    padding: 20%;
+    text-decoration: none;
+}
+
+.masuk-style:hover {
+    color: white;
+    background-color: #829C5F;
+}
+
+.dropdown-menu {
+    --bs-dropdown-link-hover-bg: #829C5F;
+    --bs-dropdown-link-active-bg: #829C5F;
+    --bs-dropdown-link-hover-color: white;
+}
+
+.nav-item:hover {
+    background-color: #829C5F;
+    border-radius: 10px;
+    color: white;
 }

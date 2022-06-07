@@ -91,11 +91,11 @@
                                         <td>Rp. <?= number_format($perRiwayat['jumlahHewan']*25000)?></td>
                                         <?php
                                         $status = $perRiwayat['status'];
-                                        if ($status == 'Terverifikasi' || $status == 'Selesai') {
-                                            echo "<td><i class='fa-solid fa-circle green fa-2xs'></i> $status</td>";
-                                        } else {
+                                        if ($status == 'Belum Terverifikasi' || $status == 'Pembayaran Tidak Valid') {
                                             echo "<td><i class='fa-solid fa-circle fa-2xs'></i> $status</td>";
-                                        } ?>
+                                        } else {
+                                            echo "<td><i class='fa-solid fa-circle green fa-2xs'></i> $status</td>";
+                                        }  ?>
                                         <td>
                                             <form action="<?= BASEURL ?>/ShowDetailHistory" method="GET">
                                             <input type="hidden" name="historyId" value="<?=$perRiwayat['id']?>">
@@ -121,7 +121,7 @@
                 } else {
                     ?>
                         <div class="col riwayat-box center">
-                            <img src="../../public/images/riwayat.svg" alt="Riwayat Konsultasi">
+                            <img src="../../public/images/riwayat.svg" alt="Riwayat Konsultasi" width="150" height="150">
                             <p class="riwayat-heading">Tidak ada data histori yang ditemukan</p>
                         </div>
                     <?php } ?>
