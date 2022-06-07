@@ -23,7 +23,7 @@ try {
     $mail->Port       = "587";                                    //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
     //Recipients
-    $mail->setFrom('harunasrori408@gmail.com', 'petmate');
+    $mail->setFrom('harunasrori408@gmail.com', 'PetMate');
     $mail->addAddress('maharanifwz@student.ub.ac.id');     //Add a recipient
 
     //Attachments
@@ -33,7 +33,7 @@ try {
     $body = "<p> <strong>HELLO</strong> This is my first Email </p>";
     //Content
     $mail->isHTML(true);                                  //Set email format to HTML
-    $mail->Subject = 'This is a test Email';
+    $mail->Subject = '';
 
     $mail->Body    = $body;
     $mail->AltBody = strip_tags($body);

@@ -98,6 +98,7 @@ class AdminController extends Controller
         $id = $_POST["idHist"];
         $value = $this->model->updateStatus($status, $id);
         if (($value == true) & ($status == 'Terverifikasi')) {
+            
         }
         // $status = "Status berhasil di";
         // header('Location: '. BASEURL . '/admin');
@@ -121,14 +122,10 @@ class AdminController extends Controller
             $mail->Port       = "587";                          //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail->setFrom('harunasrori408@gmail.com', 'petmate');
-            $mail->addAddress('maharanifwz@student.ub.ac.id');     //Add a recipient
+            $mail->setFrom('harunasrori408@gmail.com', 'PetMate');
+            $mail->addAddress($ReceiverEmail);     //Add a recipient
 
-            //Attachments
-            // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-            // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-
-            $body = "<p> <strong>HELLO</strong> Ini tandanya kalo booking mu di petmate telah di konfirmasi </p>";
+            $body = "<p>Ini tandanya kalo booking mu di petmate telah di konfirmasi </p>";
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = 'Booking Telah Terkonfirmasi';
