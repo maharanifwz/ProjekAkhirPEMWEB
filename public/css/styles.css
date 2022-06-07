@@ -131,8 +131,6 @@ p {
     
 } */
 
-
-
 .navigasi li a:hover {
     color: #FFFCED;
     border-radius: 15px;
@@ -227,6 +225,7 @@ th {
     --bs-btn-bg: none;
     width: 111px;
 }
+
 
 /* service */
 
@@ -812,7 +811,7 @@ td li {
 }
 
 .riwayat-heading {
-    width: 700px;
+    width: 600px;
 }
 
 .modal-content {
@@ -854,15 +853,19 @@ td li {
     width: 100%;
 }
 
+
 /* detail admin */
+
 #detailAdmin .riwayat-box {
     margin: 0 auto;
 }
 
+
 /* image */
-#invoice{
-      display: block;
-  margin-left: auto;
-  margin-right: auto;
-  width: 80%;
+
+#invoice {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 80%;
 }

@@ -90,7 +90,7 @@
                                         <td>Rp 150.000</td>
                                         <?php
                                         $status = $perRiwayat['status'];
-                                        if ($status == 'Belum Terverifikasi') {
+                                        if ($status == 'Belum Terverifikasi' || $status == 'Pembayaran Tidak Valid') {
                                             echo "<td><i class='fa-solid fa-circle fa-2xs'></i> $status</td>";
                                         } else {
                                             echo "<td><i class='fa-solid fa-circle green fa-2xs'></i> $status</td>";
@@ -104,7 +104,7 @@
                 } else {
                     ?>
                         <div class="col riwayat-box center">
-                            <img src="../../public/images/riwayat.svg" alt="Riwayat Konsultasi">
+                            <img src="../../public/images/riwayat.svg" alt="Riwayat Konsultasi" width="150" height="150">
                             <p class="riwayat-heading">Tidak ada data histori yang ditemukan</p>
                         </div>
                     <?php } ?>

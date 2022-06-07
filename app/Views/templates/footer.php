@@ -18,9 +18,8 @@
             <h4>Informasi Website</h4>
             <ul>
                 <li>Konsultasi</li>
-                <li>Layanan Grooming</li>
-                <li>Komunitas</li>
-                <li>Blog</li>
+                <li>Booking</li>
+                <li>Frequently Asked Question</li>
                 <li>Tentang Kami</li>
             </ul>
         </div>

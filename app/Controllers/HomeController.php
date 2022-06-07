@@ -61,7 +61,7 @@ class HomeController extends Controller
     {
         if(isset($_SESSION['loginState'])){
             if($_SESSION['loginState']){
-                $this->show('detailClinic');
+                $this->show('konsultasi');
                 return;
             }
         }
