@@ -34,30 +34,30 @@
         <div class="container-fluid">
             <h1>Daftar</h1>
             <form action="<?= BASEURL ?>\prosesRegister" method="POST">
-                <?php if(!empty($_SESSION['stateReg'])){?>
+                <?php if (!empty($_SESSION['stateReg'])) { ?>
                     <div class="alert alert-danger" role="alert" id="loginAlert">
-                        <?php echo $_SESSION['stateReg']?>
+                        <?php echo $_SESSION['stateReg'] ?>
                     </div>
-                <?php } ;?>
-                <div>
-                    <label for="name">Nama</label><br>
-                    <input type="text" name="name" id="name" required>
+                <?php }; ?>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="name" id="floatingNama" placeholder="Maharani Fawwaz" required>
+                    <label for="floatingNama">Nama</label>
                 </div>
-                <div>
-                    <label for="email">Email</label><br>
-                    <input type="email" name="email" id="email" required>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" name="email" id="floatingEmail" placeholder="maharanifwz@gmail.com" required>
+                    <label for="floatingEmail">Email</label>
                 </div>
-                <div>
-                    <label for="username">Username</label><br>
-                    <input type="text" name="username" id="username" required>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="username" id="floatingUsername" placeholder="maharanifwz" required>
+                    <label for="floatingUsername">Username</label>
                 </div>
-                <div>
-                    <label for="alamat">Alamat</label><br>
-                    <input type="text" name="alamat" id="alamat" required>
+                <div class="form-floating mb-3">
+                    <input type="text" class="form-control" name="alamat" id="floatingAlamat" placeholder="Bekasi" required>
+                    <label for="floatingAlamat">Alamat</label>
                 </div>
-                <div>
-                    <label for="password">Password</label><br>
-                    <input type="password" name="password" id="password" required>
+                <div class="form-floating">
+                    <input type="password" class="form-control" name="password" id="floatingPassword" placeholder="Password">
+                    <label for="floatingPassword">Password</label>
                 </div>
                 <div>
                     <button style="width: 300px" type="submit" class="btn btn-primary">Masuk</button>

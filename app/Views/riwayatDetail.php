@@ -37,7 +37,7 @@
                             <td>
                                 <?php  $status = $riwayat['status'];
                                 if($status=='Belum Terverifikasi' || $status=='Terverifikasi'){?>
-                                <button type="submit" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal" value='<?= $riwayat['2'] ?>'>
+                                <button type="submit" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#exampleModal" value='<?= $riwayat['2'] ?>'>
                                     Batalkan
                                 </button>
                                <?php }?>  

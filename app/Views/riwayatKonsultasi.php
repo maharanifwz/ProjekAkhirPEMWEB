@@ -100,7 +100,7 @@
                                             <form action="<?= BASEURL ?>/ShowDetailHistory" method="GET">
                                             <input type="hidden" name="historyId" value="<?=$perRiwayat['id']?>">
                                             <?php if($status == 'Belum Terverifikasi' || $status == 'Terverifikasi'){?>
-                                                    <button type="submit" class="btn btn-success" name="idHist" value="<?= $riwayat['id'] ?>">
+                                                    <button type="submit" class="btn btn-danger" name="idHist" value="<?= $riwayat['id'] ?>">
                                                         Batalkan Pesanan
                                                     </button>
                                            <?php }else{?>
