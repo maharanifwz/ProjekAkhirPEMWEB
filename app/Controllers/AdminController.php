@@ -27,19 +27,23 @@ class AdminController extends Controller
 
     public function showDetail()
     {
-        $this->show('detailAdmin');
-    }
+        $id = $_POST['idHist'];
+        $data['user'] = $this->model->fetchDetail($id);
+        $idUser = $data['user'][0]['idPengguna'];
+        $listHewan = $data['user'][0]['listHewan'];
+        $idHewan = explode(" ", $listHewan);
+        $data['hewan'] = $this->dataHewan($idHewan);
+        $name = $this->model->fetch1Name($idUser);
 
-    public function addUserName($data)
-    {
-        for ($i = 0; $i < count($data['riwayat']); $i++) {
-            foreach ($nama as $name) {
-                if ($name['id_user'] == $data['riwayat'][$i]['idPengguna']) {
-                    array_push($data['riwayat'][$i], $name['id_user'], $name['nama']);
-                }
-            }
-            array_push($data['riwayat'][$i], $i);
-        }
+        array_push($data['user'][0], $name[0]['id_user'], $name[0]['nama']);
+        $status = $data['user'][0]['status'];
+        if ($status == "Belum Terverifikasi" || $status == 'Pembayaran Tidak Valid') {
+            $data['user'][0]['status'] = "<i class='fa-solid fa-circle fa-2xs'></i> $status";
+        } else {
+            $data['user'][0]['status'] = "<i class='fa-solid fa-circle green fa-2xs'></i> $status";
+        };
+
+        $this->show('detailAdmin', $data);
     }
 
     public function ShowAllHistory()
@@ -49,19 +53,23 @@ class AdminController extends Controller
         if (isset($_GET['filter'])) {
             $filter = $_GET['filter'];
             if ($filter == 'all') {
-                $data['riwayat'] = $this->model->getAllHistory($_SESSION['idPengguna']);
+                $data['riwayat'] = $this->model->getAllHistory();
                 $nama = $this->model->fetchName($data['riwayat']);
+            } else if ($filter == 'unverified') {
+                $data['riwayat'] = $this->model->getUnverifiedHistory();
+                $nama = $this->model->fetchName($data['riwayat']);
+                $data['filter'] = 'unverified';
             } else if ($filter == 'onProcess') {
-                $data['riwayat'] = $this->model->getonProcessHistory($_SESSION['idPengguna']);
+                $data['riwayat'] = $this->model->getonProcessHistory();
                 $nama = $this->model->fetchName($data['riwayat']);
                 $data['filter'] = 'onProcess';
             } else {
-                $data['riwayat'] = $this->model->getFinishedHistory($_SESSION['idPengguna']);
+                $data['riwayat'] = $this->model->getFinishedHistory();
                 $nama = $this->model->fetchName($data['riwayat']);
                 $data['filter'] = 'Finished';
             }
         } else {
-            $data['riwayat'] = $this->model->getAllHistory($_SESSION['idPengguna']);
+            $data['riwayat'] = $this->model->getAllHistory();
             $nama = $this->model->fetchName($data['riwayat']);
         }
 
@@ -76,21 +84,25 @@ class AdminController extends Controller
         $this->show('admin', $data);
     }
 
-    public function displayImage()
-    {
-        $id = $_GET["id"];
-        $data['img'] = $this->model->fetchImage($id);
-        $this->show('admin', $data);
-    }
-    
     public function updateStatus()
     {
-        $status = $_GET["status"];
-        $id = $_GET["id"];
+        $status = $_POST["flexRadioDefault"];
+        $id = $_POST["idHist"];
         $value = $this->model->updateStatus($status, $id);
-
-        $status = "Status berhasil di";
+        // $status = "Status berhasil di";
         // header('Location: '. BASEURL . '/admin');
-        $this->show('admin');
+        $this->showDetail();
+    }
+
+    public function dataHewan($idHewan)
+    {
+        $dataHewan = [];
+        foreach ($idHewan as $id) {
+            if ($id != "") {
+                $data = $this->model->fetchHewan($id);
+                array_push($dataHewan, $data[0]);
+            }
+        };
+        return $dataHewan;
     }
 }

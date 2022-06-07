@@ -36,7 +36,7 @@ class Riwayat_model
     }
     public function getFinishedHistory($idPengguna)
     {
-        $this->db->query('SELECT * FROM ' . $this->table . " WHERE idPengguna = '$idPengguna' and  (status = 'Selesai' or status = 'Tidak Valid')");
+        $this->db->query('SELECT * FROM ' . $this->table . " WHERE idPengguna = '$idPengguna' and  (status = 'Selesai' or status = 'Pembayaran Tidak Valid')");
         // $this->db->query('SELECT * FROM ' . $this->table);
         return $this->db->resultSet();
     }
@@ -54,6 +54,36 @@ class Riwayat_model
         $this->db->query("SELECT * FROM hewan WHERE id IN ('" . implode("','", $listIdHewan) . "')");
 
         return $this->db->resultSet();
+    }
+
+    public function getDetailHistory($id)
+    {
+        $query = ("SELECT * FROM riwayatKonsultasi WHERE id = '$id' ");
+        $this->db->query($query);
+        return $this->db->resultSet();
+    }
+
+    public function getUserName($iduser)
+    {
+        $que = ("SELECT nama, id_user FROM pengguna WHERE id_user = '$iduser' ");
+        $this->db->query($que);
+        return $this->db->resultSet();
+    }
+
+    public function getUserPet($idHewan)
+    {
+        $query = ("SELECT * FROM hewan WHERE id = '$idHewan' ");
+        $this->db->query($query);
+        return $this->db->resultSet();
+    }
+    
+    public function cancelBooking($id)
+    {
+        $status = "Dibatalkan";
+        $que = ("UPDATE riwayatKonsultasi SET status = '$status' where id = '$id'");
+        $this->db->query($que);
+        $value = $this->db->execute();
+        return $value;
     }
     
 }

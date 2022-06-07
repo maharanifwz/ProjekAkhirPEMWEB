@@ -139,6 +139,7 @@ p {
 
 
 /* .navigasi li a:hover {
+.navigasi li a:hover {
     color: #FFFCED;
     border-radius: 15px;
     background: #829C5F;
@@ -244,6 +245,7 @@ th {
     --bs-btn-bg: none;
     width: 111px;
 }
+
 
 /* service */
 
@@ -829,7 +831,7 @@ td li {
 }
 
 .riwayat-heading {
-    width: 700px;
+    width: 600px;
 }
 
 .modal-content {
@@ -882,12 +884,16 @@ li {
     width: 100%;
 }
 
+
 /* detail admin */
+
 #detailAdmin .riwayat-box {
     margin: 0 auto;
 }
 
+
 /* image */
+
 #invoice {
     display: block;
     margin-left: auto;

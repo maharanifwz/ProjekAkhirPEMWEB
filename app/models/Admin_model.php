@@ -39,35 +39,41 @@ class Admin_model
         return $this->db->resultSet();
     }
 
-    // public function fetchName()
-    // {
-    //     $que = ("SELECT nama, id_user FROM pengguna");
-    //     $this->db->query($que);
-    //     return $this->db->resultSet();
-    // }
+    public function fetchDetail($id)
+    {
+        $query = ("SELECT * FROM riwayatKonsultasi WHERE id = '$id' ");
+        $this->db->query($query);
+        return $this->db->resultSet();
+    }
 
-    public function getAllHistory($idPengguna)
+    public function fetch1Name($iduser)
+    {
+        $que = ("SELECT nama, id_user FROM pengguna WHERE id_user = '$iduser' ");
+        $this->db->query($que);
+        return $this->db->resultSet();
+    }
+
+    public function getAllHistory()
     {
         $this->db->query('SELECT * FROM ' . $this->table);
         return $this->db->resultSet();
     }
 
-    public function getonProcessHistory($idPengguna)
+    public function getUnverifiedHistory()
     {
         $this->db->query('SELECT * FROM ' . $this->table . " WHERE status = 'Belum Terverifikasi'");
         return $this->db->resultSet();
     }
 
-    public function getFinishedHistory($idPengguna)
+    public function getonProcessHistory()
     {
-        $this->db->query('SELECT * FROM ' . $this->table . " WHERE status = 'Selesai' or status = 'Tidak Valid' or status = 'Terverifikasi'");
+        $this->db->query('SELECT * FROM ' . $this->table . " WHERE status = 'Terverifikasi'");
         return $this->db->resultSet();
     }
 
-    public function fetchDetail($id)
+    public function getFinishedHistory()
     {
-        $query = ("SELECT * FROM riwayatKonsultasi WHERE id = '$id' ");
-        $this->db->query($query);
+        $this->db->query('SELECT * FROM ' . $this->table . " WHERE status = 'Selesai' or status = 'Tidak Valid'");
         return $this->db->resultSet();
     }
 

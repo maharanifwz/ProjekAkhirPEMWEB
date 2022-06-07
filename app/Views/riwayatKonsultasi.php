@@ -58,6 +58,7 @@
                                     <th scope="col">Jadwal</th>
                                     <th scope="col">Uang Muka</th>
                                     <th scope="col">Status</th>
+                                    <th scope="col">Detail</th>
                                 </tr>
                             </thead>
                             <?php
@@ -87,14 +88,30 @@
                                             ?>
                                         </td>
                                         <td><?= $perRiwayat['tanggal'] . " " . $hour_to_show . " WIB" ?></td>
-                                        <td>Rp 150.000</td>
+                                        <td>Rp. <?= number_format($perRiwayat['jumlahHewan']*25000)?></td>
                                         <?php
                                         $status = $perRiwayat['status'];
-                                        if ($status == 'Belum Terverifikasi') {
+                                        if ($status == 'Belum Terverifikasi' || $status == 'Pembayaran Tidak Valid') {
                                             echo "<td><i class='fa-solid fa-circle fa-2xs'></i> $status</td>";
                                         } else {
                                             echo "<td><i class='fa-solid fa-circle green fa-2xs'></i> $status</td>";
-                                        } ?>
+                                        }  ?>
+                                        <td>
+                                            <form action="<?= BASEURL ?>/ShowDetailHistory" method="GET">
+                                            <input type="hidden" name="historyId" value="<?=$perRiwayat['id']?>">
+                                            <?php if($status == 'Belum Terverifikasi' || $status == 'Terverifikasi'){?>
+                                                    <button type="submit" class="btn btn-success" name="idHist" value="<?= $riwayat['id'] ?>">
+                                                        Batalkan Pesanan
+                                                    </button>
+                                           <?php }else{?>
+                                                <button type="submit" class="btn btn-success" name="idHist" value="<?= $riwayat['id'] ?>">
+                                                    Detail Pesanan
+                                                </button>
+                                           <?php }
+                                            ?>
+                                            
+                                        </form>
+                                        </td>
                                     </tr>
                                 <?php } ?>
                                 </tbody>
@@ -104,7 +121,7 @@
                 } else {
                     ?>
                         <div class="col riwayat-box center">
-                            <img src="../../public/images/riwayat.svg" alt="Riwayat Konsultasi">
+                            <img src="../../public/images/riwayat.svg" alt="Riwayat Konsultasi" width="150" height="150">
                             <p class="riwayat-heading">Tidak ada data histori yang ditemukan</p>
                         </div>
                     <?php } ?>

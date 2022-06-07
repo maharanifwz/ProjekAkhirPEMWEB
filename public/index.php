@@ -29,6 +29,9 @@ Routes::add('POST','/prosesRegister', UserController::class,'register');
 // User - Riwayat Rekomendasi
 Routes::add('GET','/ShowAllHistory', RiwayatController::class,'ShowAllHistory');
 Routes::add('GET','/FilterHistory', RiwayatController::class,'ShowAllHistory');
+Routes::add('GET','/ShowDetailHistory', RiwayatController::class,'ShowDetailHistory');
+Routes::add('POST','/cancelBooking', RiwayatController::class,'cancelBooking');
+
 
 // Booking
 Routes::add('GET','/klinik', BookingController::class,'index');
