@@ -48,4 +48,42 @@ class RiwayatController extends Controller
 
         $this->show('riwayatKonsultasi', $data);
     }
+
+    public function ShowDetailHistory($id = null)
+    {
+        if(empty($id)){
+            $idHist= $_GET['historyId'];
+        }else{
+            $idHist = $id;
+        }
+        
+        $data['riwayat'] = $this->model->getDetailHistory($idHist);
+        $idHewan = explode(" ", $data['riwayat'][0]['listHewan']);
+        $data['hewan'] = $this->getPet($idHewan);
+
+        $nama = $this->model->getUserName($data['riwayat'][0]['idPengguna']);
+        $data['riwayat'][0]['nama'] = $nama[0]['nama'];
+
+        $this->show('riwayatDetail', $data);
+
+    }
+
+    public function getPet($idHewan)
+    {
+        $dataHewan = [];
+        foreach ($idHewan as $id) {
+            if ($id != "") {
+                $data = $this->model->getUserPet($id);
+                array_push($dataHewan, $data[0]);
+            }
+        };
+        return $dataHewan;
+    }
+
+    public function cancelBooking()
+    {
+        $id = $_POST["idHist"];
+        $value = $this->model->cancelBooking($id);
+        $this->ShowDetailHistory($id);
+    }
 }
