@@ -1,14 +1,13 @@
 <?php
 
 namespace Kel1\ProjekAkhirPemweb\Controllers;
-
 use Kel1\ProjekAkhirPemweb\models\Admin_model;
 
 use PHPMailer\PHPMailer\PHPMailer;
 use PHPMailer\PHPMailer\SMTP;
 use PHPMailer\PHPMailer\Exception;
 
-require_once "../../vendor/autoload.php";
+
 
 session_start();
 
@@ -97,7 +96,8 @@ class AdminController extends Controller
         $status = $_POST["flexRadioDefault"];
         $id = $_POST["idHist"];
         $value = $this->model->updateStatus($status, $id);
-        if (($value == true) & ($status == 'Terverifikasi')) {
+        if ($status == 'Terverifikasi') {
+            $this->sendVerifiedEmail($_POST['email']);
         }
         // $status = "Status berhasil di";
         // header('Location: '. BASEURL . '/admin');
@@ -116,7 +116,7 @@ class AdminController extends Controller
             $mail->Host       = 'smtp.gmail.com';               //Set the SMTP server to send through
             $mail->SMTPAuth   = true;                           //Enable SMTP authentication
             $mail->Username   = 'harunasrori408@gmail.com';     //SMTP username
-            $mail->Password   = 'ygoqiinwqdvqoaeq';             //SMTP password
+            $mail->Password   = 'kewjhrjmhxudmvuj';             //SMTP password
             $mail->SMTPSecure = 'tls';                          //Enable implicit TLS encryption
             $mail->Port       = "587";                          //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
