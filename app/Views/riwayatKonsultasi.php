@@ -88,23 +88,28 @@
                                             ?>
                                         </td>
                                         <td><?= $perRiwayat['tanggal'] . " " . $hour_to_show . " WIB" ?></td>
-                                        <td>Rp 150.000</td>
+                                        <td>Rp. <?= number_format($perRiwayat['jumlahHewan']*25000)?></td>
                                         <?php
                                         $status = $perRiwayat['status'];
-                                        if ($status == 'Belum Terverifikasi') {
-                                            echo "<td><i class='fa-solid fa-circle fa-2xs'></i> $status</td>";
-                                        } else {
+                                        if ($status == 'Terverifikasi' || $status == 'Selesai') {
                                             echo "<td><i class='fa-solid fa-circle green fa-2xs'></i> $status</td>";
+                                        } else {
+                                            echo "<td><i class='fa-solid fa-circle fa-2xs'></i> $status</td>";
                                         } ?>
                                         <td>
-                                            <?php if($status){
-                                                
-                                            }
+                                            <form action="<?= BASEURL ?>/ShowDetailHistory" method="GET">
+                                            <input type="hidden" name="historyId" value="<?=$perRiwayat['id']?>">
+                                            <?php if($status == 'Belum Terverifikasi' || $status == 'Terverifikasi'){?>
+                                                    <button type="submit" class="btn btn-success" name="idHist" value="<?= $riwayat['id'] ?>">
+                                                        Batalkan Pesanan
+                                                    </button>
+                                           <?php }else{?>
+                                                <button type="submit" class="btn btn-success" name="idHist" value="<?= $riwayat['id'] ?>">
+                                                    Detail Pesanan
+                                                </button>
+                                           <?php }
                                             ?>
-                                            <form action="<?= BASEURL ?>/detailAdmin" method="POST">
-                                            <button type="submit" class="btn btn-success" name="idHist" value="<?= $riwayat['id'] ?>">
-                                                Batalkan Pesanan
-                                            </button>
+                                            
                                         </form>
                                         </td>
                                     </tr>
