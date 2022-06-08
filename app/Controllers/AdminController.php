@@ -1,6 +1,7 @@
 <?php
 
 namespace Kel1\ProjekAkhirPemweb\Controllers;
+
 use Kel1\ProjekAkhirPemweb\models\Admin_model;
 
 use PHPMailer\PHPMailer\PHPMailer;
@@ -39,10 +40,11 @@ class AdminController extends Controller
         $idHewan = explode(" ", $listHewan);
         $data['hewan'] = $this->dataHewan($idHewan);
         $name = $this->model->fetch1Name($idUser);
+
         $data['user'][0]['id_user'] = $name[0]['id_user'];
         $data['user'][0]['nama'] = $name[0]['nama'];
         $data['user'][0]['email'] = $name[0]['email'];
-        // array_push($data['user'][0], $name[0]['id_user'], $name[0]['nama'], $name[0]['email']);
+
         $status = $data['user'][0]['status'];
         if ($status == "Belum Terverifikasi" || $status == 'Pembayaran Tidak Valid') {
             $data['user'][0]['status'] = "<i class='fa-solid fa-circle fa-2xs'></i> $status";
@@ -96,15 +98,15 @@ class AdminController extends Controller
         $status = $_POST["flexRadioDefault"];
         $id = $_POST["idHist"];
         $value = $this->model->updateStatus($status, $id);
-        if ($status == 'Terverifikasi') {
-            $this->sendVerifiedEmail($_POST['email']);
+        if (($value == true) & ($status == 'Terverifikasi')) {
+            $this->sendVerifiedEmail($_POST['email'], $_POST['nama'], $_POST['tanggal'], $_POST['pembayaran']);
         }
         // $status = "Status berhasil di";
         // header('Location: '. BASEURL . '/admin');
         $this->showDetail();
     }
 
-    public function sendVerifiedEmail($ReceiverEmail)
+    public function sendVerifiedEmail($ReceiverEmail, $nama, $tanggal, $pembayaran)
     {
         //Create an instance; passing `true` enables exceptions
         $mail = new PHPMailer(true);
@@ -121,17 +123,19 @@ class AdminController extends Controller
             $mail->Port       = "587";                          //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
 
             //Recipients
-            $mail->setFrom('harunasrori408@gmail.com', 'petmate');
-            $mail->addAddress('maharanifwz@student.ub.ac.id');     //Add a recipient
+            $mail->setFrom('harunasrori408@gmail.com', 'PetMate');
+            $mail->addAddress($ReceiverEmail);     //Add a recipient
 
-            //Attachments
-            // $mail->addAttachment('/var/tmp/file.tar.gz');         //Add attachments
-            // $mail->addAttachment('/tmp/image.jpg', 'new.jpg');    //Optional name
-
-            $body = "<p> <strong>HELLO</strong> Ini tandanya kalo booking mu di petmate telah di konfirmasi </p>";
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
-            $mail->Subject = 'Booking Telah Terkonfirmasi';
+            $mail->Subject = 'Booking mu Telah Terkonfirmasi';
+            $body = "<p>Hi $nama, \n\n
+            Terimakasih telah memilih PetMate sebagai teman konsultasi mu. \n
+            Pembayaran anda telah tervalidasi, dengan ini kami ingatkan mengenai jadwal konsultasi anda pada :\n
+            Tanggal\t\t\t\t : $tanggal \n
+            Nominal Pembayaran\t : $pembayaran \n\n
+
+            Terimakasih atas transaksi anda, kami segenap tim PetMate berharap konsultasi anda nantinya akan bermanfaat bagi teman Pet kalian.</p>";
 
             $mail->Body    = $body;
             $mail->AltBody = strip_tags($body);

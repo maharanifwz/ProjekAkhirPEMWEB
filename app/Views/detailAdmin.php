@@ -32,7 +32,6 @@
                             <td> Rp.<?= number_format($riwayat['jumlahHewan'] * 25000) ?></td>
                             <td>
                                 <input type="hidden" id="img" name="index">
-                                <input type="hidden" id="email" name="index" value="<?php $riwayat['email'] ?>">
                                 <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal1">
                                     Lihat Bukti
                                 </button>
@@ -47,6 +46,10 @@
                     <?php } ?>
                     <!-- Modal -->
                     <form action="<?= BASEURL ?>/updateStatus" method="POST">
+                        <input type="hidden" id="email" name="index" value="<?php $riwayat['email'] ?>">
+                        <input type="hidden" id="nama" name="index" value="<?php $riwayat['nama'] ?>">
+                        <input type="hidden" id="tanggal" name="index" value="<?php $riwayat['tanggal'] ?>">
+                        <input type="hidden" id="pembayaran" name="index" value="<?php number_format($riwayat['jumlahHewan'] * 25000) ?>">
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
