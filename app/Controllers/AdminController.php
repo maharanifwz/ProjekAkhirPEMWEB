@@ -97,7 +97,7 @@ class AdminController extends Controller
             }
             $this->show('admin', $data);
         } else {
-            header("HTTP/1.1 403 Not Found");
+            header('Location: '. BASEURL . '/pageNotFound');
         }
     }
 
@@ -112,7 +112,7 @@ class AdminController extends Controller
         }
 
         // $status = "Status berhasil di";
-        // header('Location: '. BASEURL . '/admin');
+        header('Location: '. BASEURL . '/admin');
         $this->showDetail();
     }
 
