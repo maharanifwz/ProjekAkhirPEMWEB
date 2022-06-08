@@ -36,6 +36,16 @@
                             </label>
                         </div>
                         <div class="form-check">
+                            <?php if ($data['filter'] == 'Dibatalkan') {
+                                echo "<input class='form-check-input' type='radio' name='filter' id='flexRadioDefault1' value='Dibatalkan' checked>";
+                            } else {
+                                echo "<input class='form-check-input' type='radio' name='filter' id='flexRadioDefault1' value='Dibatalkan'>";
+                            } ?>
+                            <label class="form-check-label" for="flexRadioDefault3">
+                                Dibatalkan
+                            </label>
+                        </div>
+                        <div class="form-check">
                             <?php if ($data['filter'] == 'Finished') {
                                 echo "<input class='form-check-input' type='radio' name='filter' id='flexRadioDefault1' value='Finished' checked>";
                             } else {
@@ -72,7 +82,7 @@
                                     <td>
                                         <?php
                                         $status = $riwayat['status'];
-                                        if ($status == 'Belum Terverifikasi' || $status == 'Pembayaran Tidak Valid') {
+                                        if ($status == 'Belum Terverifikasi' || $status == 'Pembayaran Tidak Valid' || $status == 'Dibatalkan') {
                                             echo "<i class='fa-solid fa-circle fa-2xs'></i> $status";
                                         } else {
                                             echo "<i class='fa-solid fa-circle green fa-2xs'></i> $status";
