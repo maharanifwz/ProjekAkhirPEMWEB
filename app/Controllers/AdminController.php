@@ -142,8 +142,8 @@ class AdminController extends Controller
             $body = "<p>Hi $nama, <br><br>
             Terimakasih telah memilih PetMate sebagai teman konsultasi mu. <br>
             Pembayaran anda telah tervalidasi, dengan ini kami ingatkan mengenai jadwal konsultasi anda pada :<br>
-            Tanggal &nbsp&nbsp&nbsp : $tanggal <br>
-            Nominal Pembayaran &nbsp : $pembayaran <br><br>
+            Tanggal                  : $tanggal <br>
+            Nominal Pembayaran       : $pembayaran <br><br>
 
             Terimakasih atas transaksi anda, kami segenap tim PetMate berharap konsultasi anda nantinya akan bermanfaat bagi teman Pet kalian.</p>";
 
