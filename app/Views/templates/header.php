@@ -49,28 +49,53 @@
                             <span class="navbar-toggler-icon"></span>
                         </button>
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                                <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>/konsultasi">Konsultasi</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link active" href="<?= BASEURL ?>/tentangKami">Tentang Kami</a>
-                                </li>
-                            </ul>
-                            <?php
-                            if (isset($_SESSION['loginState'])) { ?>
-                                <li class="nav-item dropdown">
-                                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        <?= $_SESSION['nama'] ?>
-                                    </a>
-                                    <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                        <li><a class="dropdown-item" href="<?= BASEURL ?>/ShowAllHistory">Riwayat Konsultasi</a></li>
-                                        <li><a class="dropdown-item" href="<?= BASEURL ?>/logout">Keluar</a></li>
-                                    </ul>
-                                </li>
-                            <?php } else { ?>
-                                <li><a class="masuk-style" href="<?= BASEURL ?>/login">Masuk</a></li>
-                            <?php } ?>
+                            <?php if (!isset($_SESSION['isAdmin'])) { ?>
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>/konsultasi">Konsultasi</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="<?= BASEURL ?>/tentangKami">Tentang Kami</a>
+                                    </li>
+                                </ul>
+                                <?php
+                                if (isset($_SESSION['loginState'])) { ?>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <?= $_SESSION['nama'] ?>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="<?= BASEURL ?>/ShowAllHistory">Riwayat Konsultasi</a></li>
+                                            <li><a class="dropdown-item" href="<?= BASEURL ?>/logout">Keluar</a></li>
+                                        </ul>
+                                    </li>
+                                <?php } else { ?>
+                                    <li><a class="masuk-style" href="<?= BASEURL ?>/login">Masuk</a></li>
+                                <?php }
+                            } else { ?>
+                                <ul class="navbar-nav me-auto mb-2 mb-lg-0" style=" visibility:hidden;">
+                                    <li class="nav-item">
+                                        <a class="nav-link active" aria-current="page" href="<?= BASEURL ?>/konsultasi">Konsultasi</a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link active" href="<?= BASEURL ?>/tentangKami">Tentang Kami</a>
+                                    </li>
+                                </ul>
+                                <?php
+                                if (isset($_SESSION['loginState'])) { ?>
+                                    <li class="nav-item dropdown">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                                            <?= $_SESSION['nama'] ?>
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <!-- <li><a class="dropdown-item" href="<?= BASEURL ?>/ShowAllHistory">Riwayat Konsultasi</a></li> -->
+                                            <li><a class="dropdown-item" href="<?= BASEURL ?>/logout">Keluar</a></li>
+                                        </ul>
+                                    </li>
+                                <?php } else { ?>
+                                    <li><a class="masuk-style" href="<?= BASEURL ?>/login">Masuk</a></li>
+                            <?php }
+                            } ?>
                         </div>
                     </div>
                 </nav>

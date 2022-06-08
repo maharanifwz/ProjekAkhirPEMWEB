@@ -76,6 +76,7 @@ class UserController extends Controller{
                 $_SESSION['loginState'] = true;
                 $_SESSION['idPengguna'] = $id_user[0]['id_user'];
                 $_SESSION['isAdmin'] = true;
+                $_SESSION['nama'] = $id_user[0]['nama'];
                 header('Location: '. BASEURL . '/admin');
                 return;
             };
