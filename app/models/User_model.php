@@ -45,7 +45,7 @@ class User_model{
 
     public function fetchId($username)
     {
-        $this->db->query("SELECT id_user from pengguna WHERE username = '$username' " );
+        $this->db->query("SELECT id_user, nama from pengguna WHERE username = '$username' " );
         return $this->db->resultSet();
     }
 

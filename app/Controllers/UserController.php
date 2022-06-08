@@ -82,6 +82,7 @@ class UserController extends Controller{
             $_SESSION['loginState'] = true;
             $id_user = $this->model->fetchId($data['username']);
             $_SESSION['idPengguna'] = $id_user[0]['id_user'];
+            $_SESSION['nama'] = $id_user[0]['nama'];
             unset($_SESSION['state']);
             
             header('Location: '. BASEURL . '/');
