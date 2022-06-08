@@ -74,7 +74,9 @@ class UserController extends Controller{
             }
             if($is_admin){
                 $_SESSION['loginState'] = true;
+                $id_user = $this->model->fetchId($data['username']);
                 $_SESSION['idPengguna'] = $id_user[0]['id_user'];
+                $_SESSION['nama'] = $id_user[0]['nama'];
                 $_SESSION['isAdmin'] = true;
                 header('Location: '. BASEURL . '/admin');
                 return;
