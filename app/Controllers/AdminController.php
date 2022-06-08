@@ -57,50 +57,48 @@ class AdminController extends Controller
 
     public function ShowAllHistory()
     {
-        if(isset($_SESSION['isAdmin'])){
+        if (isset($_SESSION['isAdmin'])) {
             $data = [];
-        $data['filter'] = 'all';
-        if (isset($_GET['filter'])) {
-            $filter = $_GET['filter'];
-            if ($filter == 'all') {
+            $data['filter'] = 'all';
+            if (isset($_GET['filter'])) {
+                $filter = $_GET['filter'];
+                if ($filter == 'all') {
+                    $data['riwayat'] = $this->model->getAllHistory();
+                    $nama = $this->model->fetchName($data['riwayat']);
+                } else if ($filter == 'unverified') {
+                    $data['riwayat'] = $this->model->getUnverifiedHistory();
+                    $nama = $this->model->fetchName($data['riwayat']);
+                    $data['filter'] = 'unverified';
+                } else if ($filter == 'onProcess') {
+                    $data['riwayat'] = $this->model->getonProcessHistory();
+                    $nama = $this->model->fetchName($data['riwayat']);
+                    $data['filter'] = 'onProcess';
+                } else if ($filter == 'Dibatalkan') {
+                    $data['riwayat'] = $this->model->getCanceledHistory();
+                    $nama = $this->model->fetchName($data['riwayat']);
+                    $data['filter'] = 'Dibatalkan';
+                } else {
+                    $data['riwayat'] = $this->model->getFinishedHistory();
+                    $nama = $this->model->fetchName($data['riwayat']);
+                    $data['filter'] = 'Finished';
+                }
+            } else {
                 $data['riwayat'] = $this->model->getAllHistory();
                 $nama = $this->model->fetchName($data['riwayat']);
-            } else if ($filter == 'unverified') {
-                $data['riwayat'] = $this->model->getUnverifiedHistory();
-                $nama = $this->model->fetchName($data['riwayat']);
-                $data['filter'] = 'unverified';
-            } else if ($filter == 'onProcess') {
-                $data['riwayat'] = $this->model->getonProcessHistory();
-                $nama = $this->model->fetchName($data['riwayat']);
-                $data['filter'] = 'onProcess';
-            } else if ($filter == 'Dibatalkan') {
-                $data['riwayat'] = $this->model->getCanceledHistory();
-                $nama = $this->model->fetchName($data['riwayat']);
-                $data['filter'] = 'Dibatalkan';
-            } else {
-                $data['riwayat'] = $this->model->getFinishedHistory();
-                $nama = $this->model->fetchName($data['riwayat']);
-                $data['filter'] = 'Finished';
             }
-        } else {
-            $data['riwayat'] = $this->model->getAllHistory();
-            $nama = $this->model->fetchName($data['riwayat']);
-        }
 
-        for ($i = 0; $i < count($data['riwayat']); $i++) {
-            foreach ($nama as $name) {
-                if ($name['id_user'] == $data['riwayat'][$i]['idPengguna']) {
-                    array_push($data['riwayat'][$i], $name['id_user'], $name['nama']);
+            for ($i = 0; $i < count($data['riwayat']); $i++) {
+                foreach ($nama as $name) {
+                    if ($name['id_user'] == $data['riwayat'][$i]['idPengguna']) {
+                        array_push($data['riwayat'][$i], $name['id_user'], $name['nama']);
+                    }
                 }
+                array_push($data['riwayat'][$i], $i);
             }
-            array_push($data['riwayat'][$i], $i);
+            $this->show('admin', $data);
+        } else {
+            header("HTTP/1.1 403 Not Found");
         }
-        $this->show('admin', $data);
-        }else{
-                header("HTTP/1.1 403 Not Found");
-
-        }
-        
     }
 
     public function updateStatus()
@@ -112,7 +110,7 @@ class AdminController extends Controller
         if (($status == 'Terverifikasi')) {
             $this->sendVerifiedEmail($_POST['email'], $_POST['nama'], $_POST['tanggal'], $_POST['pembayaran']);
         }
-        
+
         // $status = "Status berhasil di";
         // header('Location: '. BASEURL . '/admin');
         $this->showDetail();
@@ -141,21 +139,28 @@ class AdminController extends Controller
             //Content
             $mail->isHTML(true);                                  //Set email format to HTML
             $mail->Subject = 'Booking mu Telah Terkonfirmasi';
-            $body = "<p>Hi $nama, \n\n
-            Terimakasih telah memilih PetMate sebagai teman konsultasi mu. \n
-            Pembayaran anda telah tervalidasi, dengan ini kami ingatkan mengenai jadwal konsultasi anda pada :\n
-            Tanggal\t\t\t\t : $tanggal \n
-            Nominal Pembayaran\t : $pembayaran \n\n
+            $body = "<p>Hi $nama, <br><br>
+            Terimakasih telah memilih PetMate sebagai teman konsultasi mu. <br>
+            Pembayaran anda telah tervalidasi, dengan ini kami ingatkan mengenai jadwal konsultasi anda pada :<br>
+            Tanggal &nbsp&nbsp&nbsp : $tanggal <br>
+            Nominal Pembayaran &nbsp : $pembayaran <br><br>
 
             Terimakasih atas transaksi anda, kami segenap tim PetMate berharap konsultasi anda nantinya akan bermanfaat bagi teman Pet kalian.</p>";
 
             $mail->Body    = $body;
             $mail->AltBody = strip_tags($body);
 
-            $mail->send();
-            echo 'Message has been sent';
-        } catch (Exception $e) {
-            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+            $mail->send(); ?>
+            <script>
+                console.log('Message has been sent')
+            </script>
+        <?php
+        } catch (Exception $e) { ?>
+            <script>
+                console.log('Message has been sent')
+            </script>
+<?php
+            // echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
         }
     }
 
