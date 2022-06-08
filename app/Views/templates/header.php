@@ -10,12 +10,7 @@
     <!-- Font Awsome -->
     <script src="https://kit.fontawesome.com/ea1f512027.js" crossorigin="anonymous"></script>
 
-    <!-- Link Bootstrap
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.5/dist/umd/popper.min.js" integrity="sha384-Xe+8cL9oJa6tN/veChSP7q+mnSPaj5Bcu9mPX5F5xIGE0DVittaqT5lorf0EI7Vk" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.min.js" integrity="sha384-kjU+l4N0Yf4ZOJErLsIcvOU2qSb74wXpOhqTvwVx3OElZRweTnQ6d31fXEoRD1Jy" crossorigin="anonymous"></script> -->
-
+    <!--  Link Bootstrap -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
 
@@ -40,30 +35,9 @@
     <div class="container-fluid">
         <div class="wrapper">
             <header>
-                <!-- <nav class="navigasi">
-                    <a href="<?= BASEURL ?>/" class="logo">
-                        <img src="<?= BASEURL ?>/images/logo.png" alt="Logo PetMate">
-                        <a href="<?= BASEURL ?>/" class="logo-desc">Pet<span class="identity">Mate</span></a>
-                    </a>
-                    <ul>
-                        <li><a href="<?= BASEURL ?>/konsultasi">Konsultasi</a></li>
-                        <li><a href="<?= BASEURL ?>/tentangKami">Tentang Kami</a></li>
-                        <?php
-                        if (isset($_SESSION['loginState'])) { ?>
-                            <select id="dropdown1" onchange="location = this.options[this.selectedIndex].value;">
-                                <option hidden>Budi Hartono</option>
-                                <option class="dropdown2" value="ShowAllHistory">Riwayat Konsultasi</option>
-                                <option class="dropdown2" value="logout">Keluar</option>
-                            </select>
-                        <?php } else { ?>
-                            <li><a href="<?= BASEURL ?>/login">Masuk</a></li>
-                        <?php } ?>
-
-                    </ul>
-                </nav> -->
                 <nav class="navbar fixed-top navbar-expand-lg">
                     <div class="container-fluid">
-                        <a class="navbar-brand" href="#">
+                        <a class="navbar-brand" href="<?= BASEURL ?>/">
                             <img src="<?= BASEURL ?>/images/logo.png" alt="Logo PetMate" class="d-inline-block align-text-top">
                         </a>
                         <a href="<?= BASEURL ?>/" class="logo-desc">Pet<span class="identity">Mate</span></a>
@@ -83,7 +57,7 @@
                             if (isset($_SESSION['loginState'])) { ?>
                                 <li class="nav-item dropdown">
                                     <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                        Budi Hartono
+                                        <?= $_SESSION['nama'] ?>
                                     </a>
                                     <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                                         <li><a class="dropdown-item" href="<?= BASEURL ?>/ShowAllHistory">Riwayat Konsultasi</a></li>
