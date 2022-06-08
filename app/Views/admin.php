@@ -60,7 +60,6 @@
 
                 </div>
                 <div class="col riwayat-box">
-                    <h3 class="center">Segera perbaharui status pendaftaran pelanggan Anda</h3>
                     <table class="table table-hover">
                         <thead>
                             <tr>
