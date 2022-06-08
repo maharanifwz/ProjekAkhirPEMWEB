@@ -178,6 +178,7 @@ th {
     background: #F6EDD9;
     height: 100vh;
     padding-top: 65px;
+    /* animation: geserKanan 1s; */
 }
 
 .service-section {
@@ -188,6 +189,8 @@ th {
     height: 450px;
     background: rgba(130, 156, 95, 0.5);
     border-radius: 50px;
+    animation: geserKanan 1s;
+
 }
 
 .service-desc-1 {
@@ -845,4 +848,16 @@ li {
     background-color: #829C5F;
     border-radius: 10px;
     color: white;
+}
+
+@keyframes geserKanan {
+    from {
+        opacity: 0.1;
+        transform: translateX(-32px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0px);
+    }
 }
