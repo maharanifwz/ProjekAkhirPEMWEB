@@ -69,7 +69,7 @@
                                     </ul>
                                 </li>
                             <?php } else { ?>
-                                <li><a class="masuk-style" href="<?= BASEURL ?>/login">Masuk</a></li>
+                                <li class="margin"><a class="masuk-style" href="<?= BASEURL ?>/login">Masuk</a></li>
                             <?php } ?>
                         </div>
                     </div>
