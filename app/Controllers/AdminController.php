@@ -57,7 +57,8 @@ class AdminController extends Controller
 
     public function ShowAllHistory()
     {
-        $data = [];
+        if(isset($_SESSION['isAdmin'])){
+            $data = [];
         $data['filter'] = 'all';
         if (isset($_GET['filter'])) {
             $filter = $_GET['filter'];
@@ -91,6 +92,11 @@ class AdminController extends Controller
             array_push($data['riwayat'][$i], $i);
         }
         $this->show('admin', $data);
+        }else{
+                header("HTTP/1.1 403 Not Found");
+
+        }
+        
     }
 
     public function updateStatus()
@@ -98,9 +104,11 @@ class AdminController extends Controller
         $status = $_POST["flexRadioDefault"];
         $id = $_POST["idHist"];
         $value = $this->model->updateStatus($status, $id);
-        if (($value == true) & ($status == 'Terverifikasi')) {
+
+        if (($status == 'Terverifikasi')) {
             $this->sendVerifiedEmail($_POST['email'], $_POST['nama'], $_POST['tanggal'], $_POST['pembayaran']);
         }
+        
         // $status = "Status berhasil di";
         // header('Location: '. BASEURL . '/admin');
         $this->showDetail();

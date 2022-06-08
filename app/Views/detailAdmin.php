@@ -45,11 +45,12 @@
                         </tr>
                     <?php } ?>
                     <!-- Modal -->
+                    <?php $data_riwayat = $data['user'][0]; ?>
                     <form action="<?= BASEURL ?>/updateStatus" method="POST">
-                        <input type="hidden" id="email" name="index" value="<?php $riwayat['email'] ?>">
-                        <input type="hidden" id="nama" name="index" value="<?php $riwayat['nama'] ?>">
-                        <input type="hidden" id="tanggal" name="index" value="<?php $riwayat['tanggal'] ?>">
-                        <input type="hidden" id="pembayaran" name="index" value="<?php number_format($riwayat['jumlahHewan'] * 25000) ?>">
+                        <input type="hidden" id="email" name="email" value="<?= $data_riwayat['email'] ?>">
+                        <input type="hidden" id="nama" name="nama" value="<?= $data_riwayat['nama'] ?>">
+                        <input type="hidden" id="tanggal" name="tanggal" value="<?= $data_riwayat['tanggal'] ?>">
+                        <input type="hidden" id="pembayaran" name="pembayaran" value="<?= number_format($data_riwayat['jumlahHewan'] * 25000) ?>">
                         <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
