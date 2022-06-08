@@ -46,7 +46,7 @@ class AdminController extends Controller
         $data['user'][0]['email'] = $name[0]['email'];
 
         $status = $data['user'][0]['status'];
-        if ($status == "Belum Terverifikasi" || $status == 'Pembayaran Tidak Valid') {
+        if ($status == "Belum Terverifikasi" || $status == 'Pembayaran Tidak Valid' || $status == 'Dibatalkan') {
             $data['user'][0]['status'] = "<i class='fa-solid fa-circle fa-2xs'></i> $status";
         } else {
             $data['user'][0]['status'] = "<i class='fa-solid fa-circle green fa-2xs'></i> $status";
@@ -169,5 +169,10 @@ class AdminController extends Controller
             }
         };
         return $dataHewan;
+    }
+
+    public function showError()
+    {
+        $this->view('errorPage404');
     }
 }
