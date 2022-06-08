@@ -4,6 +4,12 @@ namespace Kel1\ProjekAkhirPemweb\Controllers;
 
 use Kel1\ProjekAkhirPemweb\models\Admin_model;
 
+use PHPMailer\PHPMailer\PHPMailer;
+use PHPMailer\PHPMailer\SMTP;
+use PHPMailer\PHPMailer\Exception;
+
+
+
 session_start();
 
 class AdminController extends Controller
@@ -35,7 +41,10 @@ class AdminController extends Controller
         $data['hewan'] = $this->dataHewan($idHewan);
         $name = $this->model->fetch1Name($idUser);
 
-        array_push($data['user'][0], $name[0]['id_user'], $name[0]['nama']);
+        $data['user'][0]['id_user'] = $name[0]['id_user'];
+        $data['user'][0]['nama'] = $name[0]['nama'];
+        $data['user'][0]['email'] = $name[0]['email'];
+
         $status = $data['user'][0]['status'];
         if ($status == "Belum Terverifikasi" || $status == 'Pembayaran Tidak Valid') {
             $data['user'][0]['status'] = "<i class='fa-solid fa-circle fa-2xs'></i> $status";
@@ -89,9 +98,53 @@ class AdminController extends Controller
         $status = $_POST["flexRadioDefault"];
         $id = $_POST["idHist"];
         $value = $this->model->updateStatus($status, $id);
+        if (($value == true) & ($status == 'Terverifikasi')) {
+            $this->sendVerifiedEmail($_POST['email'], $_POST['nama'], $_POST['tanggal'], $_POST['pembayaran']);
+        }
         // $status = "Status berhasil di";
         // header('Location: '. BASEURL . '/admin');
         $this->showDetail();
+    }
+
+    public function sendVerifiedEmail($ReceiverEmail, $nama, $tanggal, $pembayaran)
+    {
+        //Create an instance; passing `true` enables exceptions
+        $mail = new PHPMailer(true);
+
+        try {
+            //Server settings
+            $mail->SMTPDebug = 1;                               //Enable verbose debug output
+            $mail->isSMTP();                                    //Send using SMTP
+            $mail->Host       = 'smtp.gmail.com';               //Set the SMTP server to send through
+            $mail->SMTPAuth   = true;                           //Enable SMTP authentication
+            $mail->Username   = 'harunasrori408@gmail.com';     //SMTP username
+            $mail->Password   = 'kewjhrjmhxudmvuj';             //SMTP password
+            $mail->SMTPSecure = 'tls';                          //Enable implicit TLS encryption
+            $mail->Port       = "587";                          //TCP port to connect to; use 587 if you have set `SMTPSecure = PHPMailer::ENCRYPTION_STARTTLS`
+
+            //Recipients
+            $mail->setFrom('harunasrori408@gmail.com', 'PetMate');
+            $mail->addAddress($ReceiverEmail);     //Add a recipient
+
+            //Content
+            $mail->isHTML(true);                                  //Set email format to HTML
+            $mail->Subject = 'Booking mu Telah Terkonfirmasi';
+            $body = "<p>Hi $nama, \n\n
+            Terimakasih telah memilih PetMate sebagai teman konsultasi mu. \n
+            Pembayaran anda telah tervalidasi, dengan ini kami ingatkan mengenai jadwal konsultasi anda pada :\n
+            Tanggal\t\t\t\t : $tanggal \n
+            Nominal Pembayaran\t : $pembayaran \n\n
+
+            Terimakasih atas transaksi anda, kami segenap tim PetMate berharap konsultasi anda nantinya akan bermanfaat bagi teman Pet kalian.</p>";
+
+            $mail->Body    = $body;
+            $mail->AltBody = strip_tags($body);
+
+            $mail->send();
+            echo 'Message has been sent';
+        } catch (Exception $e) {
+            echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        }
     }
 
     public function dataHewan($idHewan)
