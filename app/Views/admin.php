@@ -59,47 +59,60 @@
                     </form>
 
                 </div>
-                <div class="col riwayat-box">
-                    <table class="table table-hover">
-                        <thead>
-                            <tr>
-                                <th scope="col">Nama User</th>
-                                <th scope="col">Banyak Hewan</th>
-                                <th scope="col">Jadwal</th>
-                                <th scope="col">Uang Muka</th>
-                                <th scope="col">Status</th>
-                                <th scope="col"></th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <?php foreach ($data['riwayat'] as $riwayat) { ?>
-                                <tr>
-                                    <td> <?= $riwayat['1'] ?></td>
-                                    <td> <?= $riwayat['jumlahHewan'] ?></td>
-                                    <td> <?= $riwayat['tanggal'] ?></td>
-                                    <td> <?= number_format($riwayat['jumlahHewan'] * 25000) ?></td>
-                                    <td>
-                                        <?php
-                                        $status = $riwayat['status'];
-                                        if ($status == 'Belum Terverifikasi' || $status == 'Pembayaran Tidak Valid' || $status == 'Dibatalkan') {
-                                            echo "<i class='fa-solid fa-circle fa-2xs'></i> $status";
-                                        } else {
-                                            echo "<i class='fa-solid fa-circle green fa-2xs'></i> $status";
-                                        } ?>
-                                    </td>
-                                    <td>
-                                        <form action="<?= BASEURL ?>/detailAdmin" method="POST">
-                                            <button type="submit" class="btn btn-success" name="idHist" value="<?= $riwayat['id'] ?>">
-                                                Ubah Status
-                                            </button>
-                                        </form>
+                <?php if (isset($data['riwayat'])) {
+                    if (count($data['riwayat']) > 0) { ?>
+                        <div class="col riwayat-box">
+                            <table class="table table-hover">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">Nama User</th>
+                                        <th scope="col">Banyak Hewan</th>
+                                        <th scope="col">Jadwal</th>
+                                        <th scope="col">Uang Muka</th>
+                                        <th scope="col">Status</th>
+                                        <th scope="col"></th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <?php
 
-                                    </td>
-                                </tr>
-                            <?php } ?>
-                        </tbody>
-                    </table>
-                </div>
+                                    foreach ($data['riwayat'] as $riwayat) { ?>
+                                        <tr>
+                                            <td> <?= $riwayat['1'] ?></td>
+                                            <td> <?= $riwayat['jumlahHewan'] ?></td>
+                                            <td> <?= $riwayat['tanggal'] ?></td>
+                                            <td> <?= number_format($riwayat['jumlahHewan'] * 25000) ?></td>
+                                            <td>
+                                                <?php
+                                                $status = $riwayat['status'];
+                                                if ($status == 'Belum Terverifikasi' || $status == 'Pembayaran Tidak Valid' || $status == 'Dibatalkan') {
+                                                    echo "<i class='fa-solid fa-circle fa-2xs'></i> $status";
+                                                } else {
+                                                    echo "<i class='fa-solid fa-circle green fa-2xs'></i> $status";
+                                                } ?>
+                                            </td>
+                                            <td>
+                                                <form action="<?= BASEURL ?>/detailAdmin" method="POST">
+                                                    <button type="submit" class="btn btn-success" name="idHist" value="<?= $riwayat['id'] ?>">
+                                                        Ubah Status
+                                                    </button>
+                                                </form>
+
+                                            </td>
+                                        </tr>
+                                </tbody>
+                            <?php }
+                                } else {
+                            ?>
+                            <div class="col riwayat-box center">
+                                <img src="../../public/images/riwayat.svg" alt="Riwayat Konsultasi" width="150" height="150">
+                                <p class="riwayat-heading">Tidak ada data histori yang ditemukan</p>
+                            </div>
+                    <?php
+                                }
+                            } ?>
+                            </table>
+                        </div>
             </div>
         </div>
     </div>
