@@ -77,6 +77,12 @@ class Admin_model
         return $this->db->resultSet();
     }
 
+    public function getCanceledHistory()
+    {
+        $this->db->query('SELECT * FROM ' . $this->table . " WHERE status = 'Dibatalkan'");
+        return $this->db->resultSet();
+    }
+
     public function updateStatus($status, $id)
     {
         $que = ("UPDATE riwayatKonsultasi SET status = '$status' where id = '$id'");

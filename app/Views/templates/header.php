@@ -7,6 +7,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Pet Mate</title>
 
+    <!-- Link Favicon -->
+    <link rel="shortcut icon" href="<?= BASEURL ?>/favicon/favicon.ico">
+    <link rel="icon" type="image/gif" href="<?= BASEURL ?>favicon/animated_favicon1.gif">
+
     <!-- Font Awsome -->
     <script src="https://kit.fontawesome.com/ea1f512027.js" crossorigin="anonymous"></script>
 

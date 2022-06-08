@@ -73,6 +73,10 @@ class AdminController extends Controller
                 $data['riwayat'] = $this->model->getonProcessHistory();
                 $nama = $this->model->fetchName($data['riwayat']);
                 $data['filter'] = 'onProcess';
+            } else if ($filter == 'Dibatalkan') {
+                $data['riwayat'] = $this->model->getCanceledHistory();
+                $nama = $this->model->fetchName($data['riwayat']);
+                $data['filter'] = 'Dibatalkan';
             } else {
                 $data['riwayat'] = $this->model->getFinishedHistory();
                 $nama = $this->model->fetchName($data['riwayat']);
