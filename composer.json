@@ -14,12 +14,5 @@
     ],
     "require": {
         "phpmailer/phpmailer": "^6.6"
-    },
-    
-    "scripts": {
-        "post-install-cmd": [
-            "php artisan clear-compiled",
-            "chmod -R 777 public/"
-        ]
     }
 }
