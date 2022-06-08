@@ -47,6 +47,7 @@ Routes::add('GET','/admin', AdminController::class,'ShowAllHistory');
 Routes::add('GET','/filterHistoriAdmin', AdminController::class,'ShowAllHistory');
 Routes::add('POST','/detailAdmin', AdminController::class,'showDetail');
 Routes::add('POST','/updateStatus', AdminController::class,'updateStatus');
+Routes::add('GET','/showError', AdminController::class,'showError');
 
 Routes::add('GET','/showAdmin', AdminController::class,'showYetConfirm');
 Routes::add('GET','/getImage', AdminController::class,'showRiwayat');

@@ -108,7 +108,8 @@ p {
 }
 
 .identity,
-th {
+th,
+.error-desc {
     color: #829C5F;
 }
 
@@ -765,21 +766,6 @@ td li {
     text-align: center;
 }
 
-.navigasi select {
-    /* margin-left: 300px; */
-    color: white;
-    border-radius: 10px;
-    border-color: none;
-    background-color: #829C5F;
-    width: min-content;
-    padding: 1%;
-}
-
-.dropdown2 {
-    color: #353F28;
-    background-color: none;
-}
-
 li {
     list-style: none;
 }
@@ -847,17 +833,28 @@ li {
 .nav-item:hover {
     background-color: #829C5F;
     border-radius: 10px;
-    color: white;
 }
 
-@keyframes geserKanan {
-    from {
-        opacity: 0.1;
-        transform: translateX(-32px);
-    }
+.dropdown {
+    margin-right: 100px;
+}
 
-    to {
-        opacity: 1;
-        transform: translateX(0px);
-    }
+.error {
+    background-image: url('../../public/images/404.png');
+    background-repeat: no-repeat;
+    background-position: right 15% bottom 65%;
+    height: 100vh;
+}
+
+.error-heading {
+    font-family: 'Roboto';
+    font-weight: 600;
+    font-size: 128px;
+    padding-top: 150px;
+    text-align: center;
+    color: #4F692F;
+}
+
+.error-desc {
+    margin-left: 200px;
 }

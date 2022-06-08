@@ -158,4 +158,9 @@ class AdminController extends Controller
         };
         return $dataHewan;
     }
+
+    public function showError()
+    {
+        $this->view('errorPage404');
+    }
 }
